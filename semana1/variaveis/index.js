@@ -71,26 +71,25 @@ g) Para finalizar, imprima na tela a mensagem: "Olá `nome`,  você tem `idade` 
 
 */ 
 
-/*                 RESOLUÇÃO
+                /* RESOLUÇÃO */
 
 
-const nome = null
-typeof nome 
+/* let nome;
+let idade;   
 
-let idade = null
-typeof idade 
-
-alert(typeof nome) 
-alert(typeof idade)     RESPOSTA: O Js imprimiu "Object" pois não foi definido um valor a variável e nem o tipo dela pelo typeof */
+console.log(typeof nome); 
+console.log(typeof idade);    /* RESPOSTA: // // Como não atribuímos nenhum valor à variável, o código não sabe qual tipo ela tem, e portanto considera como indefinido (undefined)
+*/
                     
 
-/*const nome = prompt("Olá! Informe seu nome:")
+/* const nome = prompt("Olá! Informe seu nome:")
 
 let idade = prompt("Insira a sua idade:")
-
-alert(typeof nome)
-alert(typeof idade)   
-console.log("Olá", nome,"! Você tem", idade, "anos de idade.") */                      /* RESPOSTA: O Js retornou que as duas variáveis são strings, pois ele lê qualquer informação cedida pelo usuário como string se você não especificá-la usando uma conversão em sua declaração.       */
+  
+console.log("Olá", nome,"! Você tem", idade, "anos de idade.")   
+console.log(typeof nome)
+console.log(typeof idade) 
+/* RESPOSTA: O Js retornou que as duas variáveis são strings, pois ele lê qualquer informação cedida pelo usuário como string se você não especificá-la usando uma conversão em sua declaração.       */
  
 
 
@@ -102,10 +101,12 @@ console.log("Olá", nome,"! Você tem", idade, "anos de idade.") */             
     b) Imprima na tela todas as perguntas seguidas por suas respectivas respostas. Por exemplo:
 
     ```
-    Você está usando uma roupa azul hoje? - SIM
+    Você está usando uma roupa azul hoje? - SIM */
     
     
      
+    /* MINHA RESOLUÇÃO 
+    
     alert("Seja bem vindo ao nosso questionário. Responda apenas com SIM ou NÃO.")
 
     let roupa = prompt("Olá, você está usando uma camiseta?")
@@ -117,11 +118,31 @@ console.log("Olá", nome,"! Você tem", idade, "anos de idade.") */             
              
      alert("Você está usando uma camiseta hoje? " +roupa)  
      alert("Você está usando chapéu hoje? " +chapeu)           
-     alert("Você está usando adornos? " +adorno)   
-                                                  */    
+     alert("Você está usando adornos? " +adorno) */
+     
+     /*
+                 RESOLUÇÃO CHIJO
+     const pergunta1 = "Você está usando uma camiseta?"
+     const pergunta2 = "Você está usando um chapéu?"
+     const pergunta3 = "Você está usando algum adorno"
+
+     const resposta1 = prompt(pergunta1)
+           console.log(pergunta1 , "-" , resposta1)
+     const resposta2 = prompt(pergunta2)
+           console.log(pergunta2 , "-" , resposta2)
+     const resposta3 = prompt(pergunta3)
+           console.log(pergunta3 , "-" , resposta3)
+                                                    */
+
+
+
+                                                     
                                                  
      
-     /* 3. Dadas duas variáveis a e b com valores diferentes, troque o conteúdo delas sem atribuir diretamente os valores!
+     /*
+     
+     
+     3. Dadas duas variáveis a e b com valores diferentes, troque o conteúdo delas sem atribuir diretamente os valores!
 
     ```jsx
     // valores iniciais:
@@ -134,16 +155,19 @@ console.log("Olá", nome,"! Você tem", idade, "anos de idade.") */             
     ```
 */           
 
-let a = temporaria
-let b = temporariaDois
-let temporaria = 10
-let temporariaDois = 25
-temporaria = b
-temporariaDois = a
-
-
 /*
-                                  DESAFIO
+let a = 10
+let b = 25
+let c;
+// c = a; // c = 10
+// a = b; // a = 25
+// b = c; // b = 10
+
+console.log(a)
+console.log(b)
+                */
+
+                                 
 
 alert("Bem Vindo a Calculadora Muito Esperta. Aperte OK para continuar.")
 let primeiroValor = Number (prompt("Insira o primeiro valor da sua equação:"))
@@ -155,4 +179,4 @@ console.log("O resultado da multiplicação entre", primeiroValor, "e", segundoV
 alert("Realizamos a soma e subtração dos valores informados!")
 alert(primeiroValor + " somado com " + segundoValor + " é igual a: " + resultadoSoma)
 alert(primeiroValor + " multiplicado por " + segundoValor + " é igual a: " + resultadoMultiplicacao)
-                                                                                                      */
+                                                                                                      
