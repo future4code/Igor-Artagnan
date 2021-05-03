@@ -1,0 +1,2 @@
+# Aprendizados da Semana
+    Durante essa semana, além de todo conteúdo técnico, eu essencialmente aprendi a como aprender (*how to learn*), o que foi muito importante para conseguir absorver sem contratempos todas as informações passadas até o presente momento. Aprendi o conceito de terminal e como operar o GitBash (e assim resolvendo um misterio!), como usar o Github e fazer **pull's** e **pushes**. Foi uma semana repleta de desafios e aprendizados! .
