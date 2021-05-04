@@ -136,7 +136,20 @@ console.log('O segundo numero é divisível pelo primeiro?', teste4)
  valorPagamento = horaConsumo * 0.05
  console.log('O valor a ser pago por', horaConsumo, 'quilowatt-hora consumidos será de R$',valorPagamento) */
 
- //b) FALTA RESOLUÇÃO
+ //b) O valor com desconto será de R$11,90
+ /*
+ let energiaConsumida = Number(prompt('Insira a quantidade de energia consumida:'))
+ let valorPagamento;
+ valorPagamento = energiaConsumida * 0.05
+ console.log('O valor a ser pago por', energiaConsumida, 'quilowatt-hora consumidos será de R$',valorPagamento)
+ let desconto = Number(prompt('Insira a porcentagem de desconto:'))
+ let porcentagem;
+ porcentagem = 1 - (desconto / 100)
+ let valorComDesc
+ valorComDesc = valorPagamento - porcentagem
+ console.log('O valor com desconto será de ', valorComDesc)
+                                                              */
+
 
  /* let horaConsumo = Number(prompt('Insira a quantidade de Quilowatt-hora consumida: '))
  let desconto = Number(prompt ('Insira aqui a procentagem de desconto (sem o %): '))
@@ -167,3 +180,45 @@ console.log('O segundo numero é divisível pelo primeiro?', teste4)
  kg = onça / 35.274
  console.log(onça, 'onças equivale a', kg, 'kg')
  alert(onça + ' onças equivalem a ' + kg + ' kg') */
+
+ //c) 100 milhas equivalem a aproximadamente 160934 metros
+
+ /*
+ let milha = Number(prompt('Insira em milhas (mi) o valor a ser convertido:'))
+ console.log(milha, 'milhas')
+ let metros;
+ metros = milha * 1609
+ console.log(milha, 'milhas equivalem aproximadamente a', metros,'metros')
+ alert(milha + ' milhas equivalem aproximadamente a ' + metros + ' metros') */
+
+ //d) 50ft equivalem a aproximadamente  15,24m
+
+ /*
+ let pes = Number (prompt('Insira em pés (ft) o valor a ser convertido:'))
+ console.log(pes, 'pés')
+ let metros;
+ metros = pes / 3.281
+ console.log(pes, 'pés equivalem a aproximadamente ', metros, 'metros')
+alert(pes + ' pés equivalem a aproximadamente ' + metros + ' metros.') */
+
+//e) 103.56 "galões equivalem a aproximadamente " 39249.24 "litros"
+
+/*
+let gal = Number(prompt('Insira em galões (gal) a quantidade a ser convertida:'))
+console.log(gal, 'galões')
+let litros;
+litros = gal * 379
+console.log(gal, 'galões equivalem a aproximadamente ', litros, 'litros')
+alert(gal + ' galões equivalem a aproximadamente ' + litros + ' litros.') */
+
+//f) 450 "xícaras equivalem a aproximadamente " 67.5 "litros"
+
+/*
+let xic = Number(prompt('Insira em xícaras (xic) a quantidade a ser convertida:'))
+console.log(xic, 'xícaras')
+let litros;
+litros = xic * 0.15
+console.log(xic, 'xícaras equivalem a aproximadamente ', litros, 'litros')
+alert(xic + ' xícaras equivalem a aproximadamente ' + litros + ' litros.') */
+
+
