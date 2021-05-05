@@ -1,11 +1,12 @@
 //                                             *EXERCÍCIOS DE INTERPRETAÇÃO DE CÓDIGO*
 
 //1
-//a) O console retornará a. undefined pois a array foi colocada no código como uma variável sem definição.
-//b) O console retornará b. null (vazio)
-//c) O console retornará c. 11, que é a quantidade (tamanho do conteúdo) de strings inseridas dentro da array.
-//d) O console retornará um erro pois nada foi definido para a array no código.
-//e) O console retornará erro pois a pois a array foi colocada no código como uma variável sem definição.
+//a) O console retornará a. undefined pois a array foi colocada no código como uma variável sem definição. (correto)
+//b) O console retornará b. null (vazio) (correto)
+//c) O console retornará c. 11, que é a quantidade (tamanho do conteúdo) de strings inseridas dentro da array. (correto)
+//d) ERRAD0 O console retornará um erro pois nada foi definido para a array no código.(correção: o console retornará 3)
+//e) ERRAD0 O console retornará erro pois a pois a array foi colocada no código como uma variável sem definição. (correção [3, 19, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+//f) 9 (corrigido)
 
 //2 O valor impresso no console será: "SUBI NUM ONIBUS EM MIRROCOS" 27.
 
@@ -79,14 +80,22 @@ listaDeTarefas.splice(0, realizada)
 console.log(`As tarefas restantes são: ${listaDeTarefas} `)
 alert(`As tarefas restantes são: ${listaDeTarefas}`)    */
 
-//                                  *DESAFIO EM ANDAMENTO
+//                                  *DESAFIO*
+//Não os realizei mas assisti a resolução e entendi. Colei aqui apenas como um registro.
 
 //1
 /*
-let frase = [prompt('Insira sua frase aqui: '), ]
-console.log(frase)
-console.log(frase[0].trim(0))
-console.log(frase)
-console.log(frase.length)
+// const minhaFrase = "Eu amo Javascript!"
+// const minhaFraseArray = minhaFrase.split(" ")
+// console.log(minhaFraseArray)
+
                           */
 
+//2
+
+const frutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"];
+
+const indexAbacaxi = frutas.indexOf("Abacaxi");
+const tamanhoArray = frutas.length;
+
+console.log("Index abacaxi: ", indexAbacaxi, "tamanho do array:", tamanhoArray);
