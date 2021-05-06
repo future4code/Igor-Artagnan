@@ -99,3 +99,4 @@ const indexAbacaxi = frutas.indexOf("Abacaxi");
 const tamanhoArray = frutas.length;
 
 console.log("Index abacaxi: ", indexAbacaxi, "tamanho do array:", tamanhoArray);
+//corrigido
