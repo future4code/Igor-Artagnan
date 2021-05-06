@@ -2,11 +2,11 @@
 
 //1
 
-//a) 10 e 50.
-//b) Retornaria um erro, como se minhaFuncao não fosse uma função pois o console não conseguiria lê-la.
+//a) 10 e 50. (correto)
+//b) Retornaria um erro, como se minhaFuncao não fosse uma função pois o console não conseguiria lê-la. (correto)
 
 //2 
-//a) A função irá primeiramente converter a inserção do usuário para lowercase e retornar true ou false para o conjunto de caracteres "cenoura"
+//a) A função irá primeiramente converter a inserção do usuário para lowercase e retornar true ou false para o conjunto de caracteres "cenoura" (correto)
 
 //b) i- true
 //   ii- true
@@ -39,6 +39,31 @@ return userData
 
    myInformations()    */
 
+//Corrigido com as variaveis declaradas no escopo global  
+
+/*
+    const  nome = 'Igor' 
+    const  age =  24
+    const  city = 'Uberaba'
+    const  amIStudent =  'sou'
+
+function myInformations(){
+    
+   
+   
+    const userData = `Eu sou ${nome}, tenho ${age} anos, moro em ${city} e ${amIStudent} estudante`
+    
+    console.log(userData)
+
+return userData
+    
+   }
+
+   myInformations()
+
+                    */
+
+
 
 //b)
 
@@ -59,7 +84,18 @@ return userData
     
    }
 
-   myInformations()             */
+   myInformations()       */  
+   
+    //Codigo da correção
+
+    //function formaFrase(nome, idade, cidade, profissao) {
+    // 	return `Eu sou ${nome}, tenho ${idade} anos, moro em ${cidade} e sou ${profissao}`
+    // }
+    
+    // const frase = formaFrase('Amanda', 33, 'Poços de Caldas', 'Dev')
+    
+    // console.log(frase)
+    // console.log(formaFrase('Amanda', 33, 'Poços de Caldas', 'Dev'))
 
 //2
 
@@ -80,7 +116,7 @@ const result = operation(30,10) */
 //b)
 
 /*
-function operation( num1, num2){
+function operation(num1, num2){
     const compar = num1 >= num2
     console.log(compar)
 
@@ -115,6 +151,8 @@ const final = conver("CAMINHÃO") */
 
 //3
 
+/*
+
 const num1 = Number(prompt('Insira o primeiro número: '))
 const num2 = Number(prompt('Insira o segundo número: '))
 
@@ -145,11 +183,11 @@ function div(num1, num2) {
 
     return division
 }
-function result(num1,num2) {
-    const add = addition(num1,num2)
-    const Subtração = sub(num1,num2)
-    const multi = mult(num1,num2)
-    const divis = div(num1,num2)
+function result(num1, num2) {
+    const add = addition(num1, num2)
+    const Subtração = sub(num1, num2)
+    const multi = mult(num1, num2)
+    const divis = div(num1, num2)
     console.log(`Os resultados são: Soma: ${num1} + ${num2} = ${add}. Subtração: ${num1} - ${num2} = ${Subtração}. Multiplicação: ${num1} x ${num2} = ${multi} e Divisão: ${num1} divido por ${num2} é igual a ${divis}`)
 
     const resultado = `Os resultados são: Soma: ${num1} + ${num2} = ${add}. Subtração: ${num1} - ${num2} = ${Subtração}. Multiplicação: ${num1} x ${num2} = ${multi} e Divisão: ${num1} divido por ${num2} é igual a ${divis}`
@@ -157,11 +195,11 @@ function result(num1,num2) {
     return resultado
 }
 
-result(num1,num2)
+result(num1, num2)
+                     */
 
 
-
-//FAREI OS DESAFIOS POSTERIORMENTE
+//DESAFIOS 
 
 
 
