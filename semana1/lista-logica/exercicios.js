@@ -76,7 +76,7 @@ function imprimeTresCoresFavoritas() {
 function retornaStringEmMaiuscula(string) {
    return string.toUpperCase()
 }
-retornaStringEmMaiuscula(oi)
+
 
 //Exercício 7
 
@@ -146,17 +146,31 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 // Exercício 13
 
 function checaRenovacaoRG() {
-   let anoAtual = Number(prompt(`Qual é o ano em que estamos?`))
-   let anoNasc = Number(prompt(`Qual foi o ano em que você nasceu?`))
-   let emissaoID = Number(prompt(`Em que ano sua carteira de identidade foi emitida??`))
-   let idade = anoAtual - anoNasc
-   
+
+   const anoAtual = Number(prompt(`Qual é o ano em que estamos?`))
+   const anoNasc = Number(prompt(`Qual foi o ano em que você nasceu?`))
+   const emissaoID = Number(prompt(`Em que ano sua carteira de identidade foi emitida??`))
+
+   const idade = anoAtual - anoNasc
+   const tempoID = anoAtual - emissaoID
+
+   const condicao1 = idade <= 20 && tempoID >= 5
+   const condicao2 = idade > 20 && idade <= 50 && tempoID >= 10
+   const condicao3 = idade > 50 && tempoID >= 15
+
+   console.log(condicao1 || condicao2 || condicao3)
+
+
 }
 
 // Exercício 14
 
 function checaAnoBissexto(ano) {
-   // implemente sua lógica aqui
+   let condicao1 = ano % 400 === 0
+   console.log(condicao1)
+   let condicao2 = (ano % 4 === 0) && (ano % 100 !== 0)
+   return condicao1 || condicao2
+
 }
 
 // Exercício 15
@@ -170,6 +184,6 @@ function checaValidadeInscricaoLabenu(pessoa) {
    let comp3 = (disponibilidade === 'sim')
    let comp4 = comp1 === comp2 === comp3
    console.log(comp4)
-   return comp4  
+   return comp4
 }
 
