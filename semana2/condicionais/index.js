@@ -201,7 +201,7 @@ Quantidade de ingressos: ${quantidadeIngressos} ingresso(s)
                       valorDoIngresso = 330.00         
                }
            } if (tipoDeJogo === 'IN'){
-               valorDoIngresso = valorDoIngresso * 4.1
+               valorDoIngresso = valorDoIngresso / 4.1
 
             
               
