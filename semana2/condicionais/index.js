@@ -158,9 +158,59 @@ Quantidade de ingressos: ${quantidadeIngressos} ingresso(s)
     if (confirmarComprar === 'sim'){
         if (etapaJogo === 'SF' || tipoDeJogo === 'DO' || categoriaIngresso === 1){
             valorDoIngresso = 1320.00
-            valorTotalIngresso = quantidadeIngressos * valorDoIngresso
          
+            switch (categoriaIngresso){
+                case 2:
+                    valorDoIngresso = 880.00
+                    
+                    break
+                case 3:
+                    valorDoIngresso = 550.00
+                   
+                    break
+                case 4:
+                    valorDoIngresso = 220.00
+                            
+           } if (etapaJogo === 'DT') {
+               switch (categoriaIngresso){
+                   case 1:
+                       valorDoIngresso = 660.00
+                       break
+                  case 2:
+                      valorDoIngresso = 440.00
+                      break
+                  case 3:
+                      valorDoIngresso = 330.00
+                      break
+                  case 4:
+                      valorDoIngresso = 170.00        
+               }
+
+           } if (etapaJogo === 'FI'){
+               switch (categoriaIngresso){
+                   case 1:
+                       valorDoIngresso = 1980.00
+                       break
+                  case 2:
+                      valorDoIngresso = 1320.00
+                      break
+                  case 3:
+                      valorDoIngresso = 880.00
+                      break
+                  case 4:
+                      valorDoIngresso = 330.00         
+               }
+           } if (tipoDeJogo === 'IN'){
+               valorDoIngresso = valorDoIngresso * 4.1
+
+            
+              
+           }
+
            
+           
+           
+            valorTotalIngresso = quantidadeIngressos * valorDoIngresso
 
             let dadosDaCompraNacional = `
 ---Dados da compra--- 
@@ -171,25 +221,13 @@ Categoria:  ${categoriaIngresso}
 Quantidade de Ingressos: ${quantidadeIngressos} 
 ---Valores--- 
 Valor do ingresso: R$${valorDoIngresso}
-Valor total: ${valorTotalIngresso}
+Valor total: R$${valorTotalIngresso}
             `
         
             console.log(dadosDaCompraNacional)
 
 
-            switch (categoriaIngresso){
-                 case 2:
-                     valorDoIngresso = 880.00
-                     console.log(dadosDaCompraNacional)
-                     break
-                 case 3:
-                     valorDoIngresso = 550.00
-                     console.log(dadosDaCompraNacional)
-                     break
-                 case 4:
-                     valorDoIngresso = 220.00
-                     console.log(dadosDaCompraNacional)          
-            }
+           
                  
 
 
