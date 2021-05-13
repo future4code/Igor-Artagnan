@@ -43,7 +43,7 @@ let perguntaUsuario = () =>{
     } else {
         for (let i = 0; i < bichos; i++) {
         let perguntaNomes = prompt('Digite os nomes dos animais que você tem (um de cada vez):')
-        array.push(perguntaNomes)
+        array.push(perguntaNomes)  // se colocasse o prompt diretamente dentro do push da array, funcionaria e evitaria o uso da variável "perguntaNomes"
        
        }
        
@@ -61,6 +61,8 @@ const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 
 let arrayPar = []
 let arrayResultadoPar = []
+let arrayStrings = []
+
 
 
 
@@ -97,7 +99,18 @@ let imprimeArrayNumerosPares = () => {
 
 }
 
+//d)
+
 let imprimeArrayComStrings = () =>{
+    for (let i = 0; i < arrayOriginal.length; i++) {
+        let resposta = `O elemento do índex ${i} é ${arrayOriginal[i]}`
+        
+        arrayStrings.push(resposta)
+        
+
+    }
+
+    console.log(arrayStrings)
     
 }
 
@@ -108,6 +121,8 @@ let imprimeArrayComStrings = () =>{
 
 
 
+
+//imprimeArrayComStrings()
 //imprimeArrayNumerosPares ()
 //imprimeValoresArray()
 //imprimeValoresArrayDivididos()
