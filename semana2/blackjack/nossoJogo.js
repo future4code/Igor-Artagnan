@@ -10,6 +10,9 @@
  * 
  * 
  */
+
+//MEU CÓDIGO
+  
 let somaCartas = (numero1, numero2) => {
    return numero1 + numero2
 }
@@ -44,5 +47,36 @@ if (confirm(`Quer iniciar uma nova rodada?`) === true) {
 } else {
    console.log(`O jogo acabou!`)
 }
+                                  
 
+//CÓDIGO DO GABARITO
+/*
+console.log("Bem vindo ao jogo de Blackjack!")
 
+let jogo = confirm("Quer iniciar uma nova jogada?")
+
+if (jogo) {
+   let carta1Usuario = comprarCarta()
+   let carta2Usuario = comprarCarta()
+   let carta1Pc = comprarCarta()
+   let carta2Pc = comprarCarta()
+
+   let pontuacaUsuario = carta1Usuario.valor + carta2Usuario.valor
+   let pontuacaoPc = carta1Pc.valor + carta2Pc.valor
+
+   console.log(`Usuário - cartas ${carta1Usuario.texto} ${carta2Usuario.texto} - ${pontuacaUsuario}`)
+
+   console.log(`Usuário - cartas ${carta1Pc.texto} ${carta2Pc.texto} - ${pontuacaoPc}`)
+
+   if (pontuacaUsuario > pontuacaoPc){
+      console.log("O usuário ganhou!")
+   }else if (pontuacaoPc > pontuacaUsuario){
+      console.log("O computador ganhou!")
+   }else if(pontuacaUsuario === pontuacaoPc) {
+       console.log("Empate!")
+   }
+
+} else {
+   console.log("O jogo acabou!")
+}
+    */
