@@ -235,13 +235,24 @@ function imprimeChamada() {
 // Exercício 14
 
 function criaRetangulo(lado1, lado2) {
-   // implemente sua lógica aqui
+   const retangulo = {
+      largura: lado1,
+       altura: lado2,
+       perimetro: 2 * (lado1 + lado2),
+       area: lado1 * lado2
+     }
+   
+     return retangulo
 }
 
 // Exercício 15
 
 function anonimizaPessoa(pessoa) {
-   // implemente sua lógica aqui
+   return {
+      ...pessoa, 
+      nome: 'ANÔNIMO'
+     }
+
 }
 
 // Exercício 16
@@ -256,31 +267,51 @@ const arrayDePessoas = [
 // Exercício 16, letra A
 
 function maioresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+   const novoArray = arrayDePessoas.filter((pessoa) => {
+      return pessoa.idade >= 18
+     })
+     return novoArray
 }
 
 // Exercício 16, letra B
 
 function menoresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+   const novoArray = arrayDePessoas.filter((pessoa) => {
+      return pessoa.idade < 18
+      })
+     return novoArray
 }
 
 // Exercício 17, letra A
 
 function multiplicaArrayPor2(array) {
-   // implemente sua lógica aqui
+   const novoArray = array.map((num) => {
+      return num * 2
+      })
+     return novoArray
 }
 
 // Exercício 17, letra B
 
 function multiplicaArrayPor2S(array) {
-   // implemente sua lógica aqui
+   const novoArray = array.map((num) => {
+      return(num * 2).toString()
+      })
+     return novoArray
 }
 
 // Exercício 17, letra C
 
 function verificaParidade(array) {
-   // implemente sua lógica aqui
+   const novoArray = array.map((num) => {
+      if (num % 2 === 0) {
+        return `${num} é par`
+      } else {
+        return `${num} é ímpar`
+      }
+    })
+  
+    return novoArray
 }
 
 // Exercício 18
@@ -297,14 +328,26 @@ const pessoas = [
 //Exercício 18, letra A
 
 function retornaPessoasAutorizadas() {
-   // implemente sua lógica aqui
+   let pessoasAutorizadas = [];
+   for(const pessoa of pessoas) {
+     if(pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60) {
+       pessoasAutorizadas.push(pessoa)
+     }
+   }
+   return pessoasAutorizadas;
 }
 
 
 // Exercício 18, letra B
 
 function retornaPessoasNaoAutorizadas() {
-   // implemente sua lógica aqui
+   let pessoasNaoAutorizadas = [];
+  for(const pessoa of pessoas) {
+    if(pessoa.altura < 1.5 || pessoa.idade < 14 || pessoa.idade > 60) {
+      pessoasNaoAutorizadas.push(pessoa)
+    }
+  }
+  return pessoasNaoAutorizadas;
 }
 
 //Exercício 19
@@ -319,6 +362,16 @@ const consultasNome = [
 //Exercício 19, letra A
 
 function ordenaPorNome() {
+   for(let i = 0; i < consultasNome.length; i++) {
+      for(let j = 0; j < consultasNome.length - i - 1; j++) {
+        if(consultasNome[j].nome > consultasNome[j + 1].nome) {
+          const temp = consultasNome[j]
+          consultasNome[j] = consultasNome[j + 1]
+          consultasNome[j + 1] = temp
+        }
+      }
+    }
+    return consultasNome
 
 }
 
@@ -332,6 +385,31 @@ const consultasData = [
 ]
 
 function ordenaPorData() {
+
+   for(let i = 0; i < consultasData.length; i++) {
+      for(let j = 0; j < consultasData.length - i - 1; j++) {
+  
+        const arrayData1 = consultasData[j].dataDaConsulta.split('/')
+        const dia1 = Number(arrayData1[0])
+        const mes1 = Number(arrayData1[1])
+        const ano1 = Number(arrayData1[2])
+  
+        const arrayData2 = consultasData[j + 1].dataDaConsulta.split('/')
+        const dia2 = Number(arrayData2[0])
+        const mes2 = Number(arrayData2[1])
+        const ano2 = Number(arrayData2[2])
+  
+        const data1 = new Date(ano1, mes1 -1, dia1).getTime()
+        const data2 = new Date(ano2, mes2-1, dia2).getTime()
+  
+        if(data1 > data2) {
+          const temp = consultasData[j]
+          consultasData[j] = consultasData[j + 1]
+          consultasData[j + 1] = temp
+        }
+      }
+    }
+    return consultasData
 
 }
 
@@ -347,5 +425,12 @@ const contas = [
 ]
 
 function atualizaSaldo() {
-   // implemente sua lógica aqui
+   contas.forEach((conta) => {
+      let totalDeCompras = 0
+      conta.compras.forEach((valor) => {
+        totalDeCompras += valor
+      })
+      conta.saldoTotal -= totalDeCompras
+    })
+    return contas
 }
