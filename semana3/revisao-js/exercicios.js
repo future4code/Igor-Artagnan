@@ -68,9 +68,25 @@ retornaQuantidadeElementos([1, 2, 3, 4, 5, 6])
 
 //Exercício 6
 
-function retornaExpressoesBooleanas() {
 
+function retornaExpressoesBooleanas() {
+   const booleano1 = true
+   const booleano2 = false
+   const booleano3 = !booleano2 
+   const booleano4 = !booleano3 
+
+   let compararA = booleano1 && booleano2 && !booleano4
+   let comparaB = (booleano1 && booleano2) || !booleano3
+   let comparaC = (booleano2 || booleano3) && (booleano4 || booleano1)
+   let comparaD = !(booleano2 && booleano3) || !(booleano1 && booleano3)
+   let comparaE = !(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3)
+
+   const respostas = [compararA, comparaB, comparaC, comparaD, comparaE]
+
+   return respostas
 }
+
+retornaExpressoesBooleanas()
 
 //Exercício 7
 
