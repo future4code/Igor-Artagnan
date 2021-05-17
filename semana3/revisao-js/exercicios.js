@@ -15,15 +15,17 @@ inverteArray([0, 8, 23, 16, 10, 15, 41, 12, 13])
 //Escreva uma função que recebe um array de números e retorna um array com os números pares elevados a 2.
 
 function retornaNumerosParesElevadosADois(array) {
-   /*
-   const numerosPares = array.filter((numero) => {
-      numerosPares = numero % 2 === 0
-      let numerosParesElevados = numerosPares * numerosPares
-      return numerosParesElevados
+   const paresElevados = array.filter((num)=>{
+      return num % 2 === 0
+   }).map((num)=>{
+      return num*num
    })
 
- */
+   return paresElevados
+   
 
+
+   
 
 
 }
