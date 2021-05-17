@@ -92,7 +92,13 @@ retornaExpressoesBooleanas()
 //Escreva uma função que, recebendo um número N como parâmetro, retorne os N primeiros números pares (por exemplo, se N for 3, você deve imprimir 0, 2 e 4; se N for 5, deve retornar 0, 2, 4, 6 e 8). 
 
 function retornaNNumerosPares(n) {
-
+   const novoArray = [];
+   for(let number = 0; novoArray.length < n; number++) {
+    if(number % 2 === 0) {
+      novoArray.push(number)
+    }
+   }
+   return novoArray
 }
 
 // Exercício 8
@@ -111,6 +117,27 @@ function checaTriangulo(a, b, c) {
 // Exercício 9
 
 function comparaDoisNumeros(num1, num2) {
+   let maiorNumero;
+ let menorNumero;
+ let maiorDivisivelporMenor;
+
+ if(num1 > num2) {
+    maiorNumero = num1;
+    menorNumero = num2;
+ } else {
+    maiorNumero = num2;
+    menorNumero = num1;
+  }
+
+  maiorDivisivelporMenor = maiorNumero % menorNumero === 0;
+
+  const diferenca = maiorNumero - menorNumero;
+
+  return {
+    maiorNumero: maiorNumero,
+    maiorDivisivelporMenor: maiorDivisivelporMenor,
+    diferenca: diferenca
+  }
    
 
 }
@@ -118,13 +145,56 @@ function comparaDoisNumeros(num1, num2) {
 // Exercício 10
 
 function segundoMaiorEMenor(array) {
-   // implemente sua lógica aqui
+   let menor = Infinity
+ let maior = 0
+ let segundoMenor = Infinity
+ let segundoMaior = 0
+ let indiceMenor = 0
+ let indiceMaior = 0
+ let novoArray = []
+
+ for(let i of array) {
+  if(i < menor) {
+     menor = i
+     indiceMenor = array.indexOf(menor)
+  } 
+  if(i > maior) {
+     maior = i
+     indiceMaior = array.indexOf(maior)
+     }
+  }
+   array.splice(indiceMaior, 1)
+   array.splice(indiceMenor, 1)
+
+  for(let i of array) {
+   if(i < segundoMenor) {
+     segundoMenor = i
+  }
+  if(i > segundoMaior) {
+     segundoMaior = i
+  }
+ }
+  novoArray.push(segundoMaior)
+  novoArray.push(segundoMenor)
+
+  return novoArray
 }
 
 //Exercício 11
 
 function ordenaArray(array) {
-   // implemente sua lógica aqui
+   
+      const len = array.length;
+      for(let i = 0; i < len; i++) {
+       for(let j = 0; j < len; j++) {
+        if(array[j] > array[j + 1]) {
+         let tmp = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = tmp;
+         }
+        }
+       }
+     return array
 }
 
 // Exercício 12
@@ -143,7 +213,23 @@ function filmeFavorito() {
 // Exercício 13
 
 function imprimeChamada() {
-   // implemente sua lógica aqui
+   const filme = {
+      nome: 'O Diabo Veste Prada',
+      ano: 2006,
+      diretor: 'David Frankel',
+      atores: ['Meryl Streep', 'Anne Hathaway', 'Emily Blunt', 'Stanley Tucci']
+  }
+
+ let atoresConcat = ""
+ for(let i = 0; i < filme.atores.length; i++) {
+  if(i === filme.atores.length - 1) {
+    atoresConcat += filme.atores[i]
+  } else {
+     atoresConcat += filme.atores[i] + ", "
+    }
+  }
+
+  return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido pOr ${filme.diretor} e estrelado por ${atoresConcat}.`
 }
 
 // Exercício 14
