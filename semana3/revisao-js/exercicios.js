@@ -1,12 +1,12 @@
 //Exercício 1
 //Escreva uma função que recebe um array como parâmetro e retorne este array invertido. Obs: evite o uso da função reverse().
 function inverteArray(array) {
-   const arrayInvertida = array.map((item, index,array) => {
+   const arrayInvertida = array.map((item, index, array) => {
       return array[array.length - index - 1]
 
    })
    return arrayInvertida
-   
+
 }
 
 inverteArray([0, 8, 23, 16, 10, 15, 41, 12, 13])
@@ -15,6 +15,16 @@ inverteArray([0, 8, 23, 16, 10, 15, 41, 12, 13])
 //Escreva uma função que recebe um array de números e retorna um array com os números pares elevados a 2.
 
 function retornaNumerosParesElevadosADois(array) {
+   /*
+   const numerosPares = array.filter((numero) => {
+      numerosPares = numero % 2 === 0
+      let numerosParesElevados = numerosPares * numerosPares
+      return numerosParesElevados
+   })
+
+ */
+
+
 
 }
 
@@ -24,17 +34,11 @@ retornaNumerosParesElevadosADois([1, 2, 3, 4, 5, 6])
 //Escreva uma função que receba um array de números e retorne um novo array com apenas os números pares desse array de entrada.
 
 function retornaNumerosPares(array) {
-   let arrayPares = []
-   for (elemento of array){
-      if (elemento % 2 === 0){
-         arrayPares.push(array)
-             
-      }
-       
-   }
+   const numerosPares = array.filter((numero) => {
+      return numero % 2 === 0
+   })
 
-   return arrayPares 
-   
+   return numerosPares
 
 }
 retornaNumerosPares([1, 2, 3, 4, 5, 6])
@@ -43,8 +47,8 @@ retornaNumerosPares([1, 2, 3, 4, 5, 6])
 //Escreva uma função que receba um array de números e retorne o maior número dele.
 function retornaMaiorNumero(array) {
    let maior = 0
-   for (let num of array){
-      if (num > maior){
+   for (let num of array) {
+      if (num > maior) {
          maior = num
       }
    } return maior
@@ -52,15 +56,18 @@ function retornaMaiorNumero(array) {
 retornaMaiorNumero([1, 2, 3, 4, 5, 6])
 
 //Exercício 5
+//Escreva uma função que recebe um array como parâmetro e retorna a quantidade de elementos que há nele.
 
 function retornaQuantidadeElementos(array) {
-   // implemente sua lógica aqui
+   return array.length
 }
+
+retornaQuantidadeElementos([1, 2, 3, 4, 5, 6])
 
 //Exercício 6
 
 function retornaExpressoesBooleanas() {
-   // implemente sua lógica aqui
+
 }
 
 //Exercício 7
