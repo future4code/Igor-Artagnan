@@ -15,17 +15,17 @@ inverteArray([0, 8, 23, 16, 10, 15, 41, 12, 13])
 //Escreva uma função que recebe um array de números e retorna um array com os números pares elevados a 2.
 
 function retornaNumerosParesElevadosADois(array) {
-   const paresElevados = array.filter((num)=>{
+   const paresElevados = array.filter((num) => {
       return num % 2 === 0
-   }).map((num)=>{
-      return num*num
+   }).map((num) => {
+      return num * num
    })
 
    return paresElevados
-   
 
 
-   
+
+
 
 
 }
@@ -72,8 +72,8 @@ retornaQuantidadeElementos([1, 2, 3, 4, 5, 6])
 function retornaExpressoesBooleanas() {
    const booleano1 = true
    const booleano2 = false
-   const booleano3 = !booleano2 
-   const booleano4 = !booleano3 
+   const booleano3 = !booleano2
+   const booleano4 = !booleano3
 
    let compararA = booleano1 && booleano2 && !booleano4
    let comparaB = (booleano1 && booleano2) || !booleano3
@@ -92,18 +92,18 @@ retornaExpressoesBooleanas()
 //Escreva uma função que, recebendo um número N como parâmetro, retorne os N primeiros números pares (por exemplo, se N for 3, você deve imprimir 0, 2 e 4; se N for 5, deve retornar 0, 2, 4, 6 e 8). 
 
 function retornaNNumerosPares(n) {
-   
+
 }
 
 // Exercício 8
 //Faça uma função que receba como parâmetro os tamanhos dos três lados do triângulo: a, b, c e retorne se ele é equilátero, isósceles ou escaleno.
 
 function checaTriangulo(a, b, c) {
-   if ( a == b && b == c){
+   if (a == b && b == c) {
       return "Equilátero"
-   }else if( a == b || b == c || a == c){
+   } else if (a == b || b == c || a == c) {
       return "Isósceles"
-   } else{
+   } else {
       return "Escaleno"
    }
 }
@@ -111,7 +111,8 @@ function checaTriangulo(a, b, c) {
 // Exercício 9
 
 function comparaDoisNumeros(num1, num2) {
-   // implemente sua lógica aqui
+   
+
 }
 
 // Exercício 10
@@ -129,7 +130,14 @@ function ordenaArray(array) {
 // Exercício 12
 
 function filmeFavorito() {
-   // implemente sua lógica aqui
+   const filmeAstroDev = {
+      nome: `O Diabo Veste Prada`,
+      ano: 2006,
+      diretor: `David Frankel`,
+      atores: ['Meryl Streep', "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
+   }
+
+   return filmeAstroDev
 }
 
 // Exercício 13
