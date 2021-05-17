@@ -12,22 +12,44 @@ function inverteArray(array) {
 inverteArray([0, 8, 23, 16, 10, 15, 41, 12, 13])
 
 //Exercício 2
+//Escreva uma função que recebe um array de números e retorna um array com os números pares elevados a 2.
 
 function retornaNumerosParesElevadosADois(array) {
-   // implemente sua lógica aqui
+
 }
+
+retornaNumerosParesElevadosADois([1, 2, 3, 4, 5, 6])
 
 //Exercício 3
+//Escreva uma função que receba um array de números e retorne um novo array com apenas os números pares desse array de entrada.
 
 function retornaNumerosPares(array) {
-   // implemente sua lógica aqui
+   let arrayPares = []
+   for (elemento of array){
+      if (elemento % 2 === 0){
+         arrayPares.push(array)
+             
+      }
+       
+   }
+
+   return arrayPares 
+   
+
 }
+retornaNumerosPares([1, 2, 3, 4, 5, 6])
 
 //Exercício 4
-
+//Escreva uma função que receba um array de números e retorne o maior número dele.
 function retornaMaiorNumero(array) {
-   // implemente sua lógica aqui
+   let maior = 0
+   for (let num of array){
+      if (num > maior){
+         maior = num
+      }
+   } return maior
 }
+retornaMaiorNumero([1, 2, 3, 4, 5, 6])
 
 //Exercício 5
 
