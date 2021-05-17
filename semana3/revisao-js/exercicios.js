@@ -89,15 +89,23 @@ function retornaExpressoesBooleanas() {
 retornaExpressoesBooleanas()
 
 //Exercício 7
+//Escreva uma função que, recebendo um número N como parâmetro, retorne os N primeiros números pares (por exemplo, se N for 3, você deve imprimir 0, 2 e 4; se N for 5, deve retornar 0, 2, 4, 6 e 8). 
 
 function retornaNNumerosPares(n) {
-   // implemente sua lógica aqui
+   
 }
 
 // Exercício 8
+//Faça uma função que receba como parâmetro os tamanhos dos três lados do triângulo: a, b, c e retorne se ele é equilátero, isósceles ou escaleno.
 
 function checaTriangulo(a, b, c) {
-   // implemente sua lógica aqui
+   if ( a == b && b == c){
+      return "Equilátero"
+   }else if( a == b || b == c || a == c){
+      return "Isósceles"
+   } else{
+      return "Escaleno"
+   }
 }
 
 // Exercício 9
