@@ -1,0 +1,67 @@
+body {
+    background-color: black;
+
+}
+
+h2{
+    color: white;
+    font-size: 26px;
+    display: block;
+    font-family: fangsong;
+    margin-top: 36px;
+    margin-left: 541px;
+    margin-right: auto;
+    width: 10em;
+   
+
+}
+
+.navegacao{
+    padding: 7px;
+    border: 1px solid;
+    display: block;
+    font-size: 20px;
+    color: white;
+    margin-top: -14px;
+    margin-left: -5px;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+header .navegacao a{
+    color: whitesmoke;
+    padding: inherit;
+}
+
+
+img{
+    height: 250px;
+    width: 250px;
+}
+
+p{
+    display: block;
+    font-family: fangsong;
+    font-size: 39px;
+    color: white;
+    margin-top: 25px;
+    margin-left: 435px;
+    margin-right: 388px;
+    width: 12em;
+}
+
+
+td{
+    font-size: 21px;
+    border: 2px solid;
+    padding: 27px;
+    color: white;
+}
+
+ 
+table{
+    display: block;
+    margin-left: 3px;
+    margin-right: auto;
+}

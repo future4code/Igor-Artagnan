@@ -1,0 +1,97 @@
+body{
+    background-color: black;
+}
+
+
+.navegacao{
+    text-align: center;
+    padding: 7px;
+    border: 3px solid;
+    display: block;
+    font-size: 20px;
+    color: white;
+    margin-top: 8px;
+    margin-left: -8px;
+    margin-right: auto;
+}
+
+
+header .navegacao a{
+    color: whitesmoke;
+    padding: inherit;
+}
+
+.cabecalho{
+    margin-top: 15px;
+    padding: 13px;
+}
+
+
+
+body .cabecalho h1{
+    display: inline;
+    font-family: fangsong;
+    font-size: 39px;
+    color: white;
+    margin-top: 26px;
+    margin-left: 435px;
+    margin-right: 388px;
+    width: 9em;
+   
+}
+
+h2{
+    color: white;
+    font-size: 26px;
+    display: block;
+    font-family: fangsong;
+    margin-top: 36px;
+    margin-left: 541px;
+    margin-right: auto;
+    width: 10em;
+}
+
+main .sobrenos{
+    display: block;
+    border: 2px solid;
+    border-color: white;
+    padding: 34px;
+    margin-top: 33px;
+}
+
+
+
+main .sobrenos h2{
+    text-align: center;
+    font-size: 27px;
+}
+
+
+main .sobrenos p{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+footer .redes{
+    background-color: white;
+}
+
+footer .redes img{
+    height: 150px;
+    width: 150px;
+    display: inline;
+    padding: 39px;
+}
+
+footer .redes p{
+    font-family: fangsong;
+    font-size: 31px;
+    text-align: center;
+}
+
+footer .icones{
+    margin-left: 351px;
+    display: block;
+}
+
