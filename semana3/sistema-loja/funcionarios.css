@@ -2,8 +2,12 @@
 body{
     background-color: black;
 }
-
+header{
+    text-align: center;
+}
 .navegacao {
+    border-radius: 24px;
+
     text-align: center;
     padding: 7px;
     border: 3px solid;
@@ -16,7 +20,8 @@ body{
 
 }
 
-header .navegacao a{
+.navegacao a{
+    text-decoration: none;
     color: whitesmoke;
     padding: inherit;
 }
@@ -46,14 +51,22 @@ body .cabecalho h1{
 
 .funcionarios h2{
     color: white;
-    text-align: center;
+    text-align: -webkit-center;
 
 
 }
 
 .funcionarios ul li{
     color: white;
-    text-align: center;
+    text-align: -webkit-center;
     list-style-type: none;
+    font-size: 28px;
+    display: block;
 
 }
+
+.funcionarios img {
+    width: 386px;
+    height: 300px;
+}
+    
