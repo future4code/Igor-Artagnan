@@ -26,7 +26,7 @@ button:focus {
 }
 
 img {
-    width: 100px;
+    width: 73px;
 }
 
 .principal{
@@ -134,7 +134,12 @@ td button {
     border-radius: 5px;
     color: black;
 }
+td button:hover{
+    background-color: #c44f00;
+    color: white;
+    cursor: pointer;
 
+}
 .container-do-search {
     margin-top: 20px;
     height: 100px;
@@ -153,7 +158,9 @@ td button {
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    cursor: pointer;
+    background-color: #635a3d;
+    color:white
 }
 
 
