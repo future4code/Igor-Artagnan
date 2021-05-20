@@ -178,3 +178,9 @@ td button:hover{
 .botao{
     text-align: center;
 }
+
+.busca:hover{
+    opacity: 0.1;
+    cursor: pointer;
+
+}
