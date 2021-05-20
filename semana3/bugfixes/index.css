@@ -45,7 +45,7 @@ div img {
     margin: 0px auto;
     right: 0;
     left: 0;
-    bottom: 0px;
+    bottom: -135px;
     position: absolute;
     background-color: #ffaf43;
     width: 250px;
@@ -64,9 +64,7 @@ div img {
     height: 500px;
     text-align: center;
 }
-.container p {
-    
-}
+
 
 .icone {
     height: 15px;
@@ -84,22 +82,32 @@ div img {
     color: white;
 }
 
+.mensagem{
+    
+    line-height: 25px;
+    display: inline-grid;
+    padding: 94px;
 
+}
 
 #container-de-descricao>ol {
     padding: 15px 0px;
 }
 
 #container-para-comprar {
+    
     margin: 0 auto;
     background-color: #e7eb90;
 }
 
 #container-para-comprar>p {
+    position: relative;
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+    top: 76px;
 }
+
 
 
 /**
