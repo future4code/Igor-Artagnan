@@ -61,7 +61,7 @@ p{
 
 td{
     font-size: 21px;
-    border: 2px solid;
+    border: 1px solid;
     padding: 27px;
     color: white;
 }
@@ -81,5 +81,5 @@ table{
 }
 
 .tabela tr td {
-
+    text-align: center;
 }

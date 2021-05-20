@@ -58,6 +58,7 @@ main .formulario input{
 
 
 main .formulario h2{
+    padding-left: 124px;
     text-align: center;
     color: white;
 }
@@ -90,4 +91,23 @@ main .form-add button{
 .quantidade{
     margin-left: -7px;
 
+}
+
+.itens-vendidos{
+
+}
+
+.itens-vendidos tr th{
+    padding-bottom: 11px;
+    font-style: oblique;
+    color: white;
+    font-family: sans-serif;
+    padding-inline: 14px;
+}
+
+.itens-vendidos tr td{
+    text-align: center;
+    color: white;
+    text-align: center;
+    border: 1px solid;
 }

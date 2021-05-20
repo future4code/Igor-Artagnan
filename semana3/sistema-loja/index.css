@@ -87,15 +87,20 @@ main .sobrenos p{
     font-size: 20px;
 }
 
+footer{
+    text-align: center;
+}
+
 footer .redes{
     background-color: white;
 }
 
 footer .redes img{
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     display: inline;
     padding: 39px;
+    margin-right: 74px;
 }
 
 footer .redes p{
@@ -106,7 +111,8 @@ footer .redes p{
 }
 
 footer .icones{
-    margin-left: 351px;
+    text-align: -webkit-auto;
+    margin-left: 428px;
     display: block;
 }
 
