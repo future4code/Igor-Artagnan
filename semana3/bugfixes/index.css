@@ -1,0 +1,186 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    background-color: #fe7e02;
+    padding: 10px 5px 10px 5px;
+    color: white;
+    text-align: center;
+}
+
+input {
+    
+    height: 20px;
+    width: 500px;
+}
+
+button:focus {
+    color: white;
+}
+
+img {
+    width: 73px;
+}
+
+.principal{
+    text-align: center;
+}
+
+div>p {
+    display: inline;
+}
+
+div img {
+    width: 25px;
+
+}
+
+.botao-amarelo {
+    margin: 0px auto;
+    right: 0;
+    left: 0;
+    bottom: -135px;
+    position: absolute;
+    background-color: #ffaf43;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+.botao-amarelo:hover {
+    background-color: #c44f00;
+}
+
+.container {
+    margin: 0 auto;
+    height: 500px;
+    text-align: center;
+}
+
+
+.icone {
+    height: 15px;
+}
+
+.pesquisa{
+    border-left: none;
+    border-top: none;
+    height: 20px;
+    width: 500px;
+    border-right: none;
+}
+
+
+/** 
+  *
+  *  ESTILOS HOME 
+  *
+  **/
+
+#container-de-descricao {
+    background-color: #2274a5;
+    color: white;
+}
+
+.mensagem{
+    
+    line-height: 25px;
+    display: inline-grid;
+    padding: 94px;
+
+}
+
+#container-de-descricao>ol {
+    padding: 15px 0px;
+}
+
+#container-para-comprar {
+    
+    margin: 0 auto;
+    background-color: #e7eb90;
+}
+
+#container-para-comprar>p {
+    position: relative;
+    color: #c44f00;
+    padding: 100px 0;
+    font-size: 60px;
+    top: 76px;
+}
+
+
+
+/**
+  *
+  *  ESTILOS COMPRAR 
+  *
+  **/
+
+div>div{
+    text-align: center;
+}
+
+table {
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+}
+
+td button {
+    background-color: #fadf63;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    color: black;
+}
+td button:hover{
+    background-color: #c44f00;
+    color: white;
+    cursor: pointer;
+
+}
+.container-do-search {
+    margin-top: 20px;
+    height: 100px;
+}
+
+
+#back-button {
+    
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+    color: black;
+}
+
+#back-button:hover {
+    cursor: pointer;
+    background-color: #635a3d;
+    color:white
+}
+
+
+.botao{
+    text-align: center;
+}
+
+.busca:hover{
+    opacity: 0.1;
+    cursor: pointer;
+
+}
