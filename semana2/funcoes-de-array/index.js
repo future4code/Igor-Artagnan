@@ -125,7 +125,7 @@ const objetosYpe = produtos.filter((produto) => {
 console.log(objetosYpe) */
 
 //e)
-
+/*
 const novoArray = produtos.filter((produto) => {
     
     return produto.nome.includes("Ypê")
@@ -138,4 +138,41 @@ const novoArray = produtos.filter((produto) => {
    
     return `Compre ${produto.nome} por R$ ${produto.preco}`
 })
-console.log(novoArray)
+console.log(novoArray) */
+
+//DESAFIO 
+
+//1
+
+//a)
+
+const pokemons = [
+    { nome: "Bulbasaur", tipo: "grama" },
+    { nome: "Bellsprout", tipo: "grama" },
+    { nome: "Charmander", tipo: "fogo" },
+    { nome: "Vulpix", tipo: "fogo" },
+    { nome: "Squirtle", tipo: "água" },
+    { nome: "Psyduck", tipo: "água" },
+]
+
+const nomePokemons = pokemons.map((poke) => {
+    return poke.nome
+})
+
+const pokemonsOrdenados = nomePokemons.sort((a, b) => a.localeComapare(b))
+
+console.log(pokemonsOrdenados)
+
+//b)
+
+const tipos = pokemons.map((poke) => {
+    return poke.tipo
+
+})
+
+const tiposSemRepetir = tipos.filter((tipo, index, array) =>{
+    return array.indexOf(tipo) === index
+})
+console.log(tiposSemRepetir)
+
+
