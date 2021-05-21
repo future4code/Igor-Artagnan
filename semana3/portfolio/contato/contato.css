@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    text-align: center;
+}
+
+.corpo{
+    text-align: center;
+    width: 100%;
+}
+
+body{
+    font-family: monospace;
+    background-image: url(../img/fundo.jpg);
+}
+
+.navegacao{
+    background-color: #ccc5c5;
+    border: 3px solid;
+    border-radius: 22px;
+    position: revert;
+    padding: 14px;
+    display: block;
+    left: 528px;
+    right: auto;
+}
+
+.navegacao>a{
+    margin-left: 30px;
+    letter-spacing: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.contato{
+    margin: 148px;
+    background-color: #ccc5c5;
+    position: inherit;
+    text-align: center;
+    margin: 95px;
+    border: 2px solid black;
+    padding: 73px;
+}
+.contato>h2{
+    text-align: -webkit-match-parent;
+    font-size: 27px;
+    position: relative;
+    top: -45px;
+}
+    
+
+#nome-caixa{
+    position: revert;
+    width: 224px;
+    display: inline;
+    left: 401px;
+}
+
+
+
+.nome{
+
+}
+#nome{
+    position: inherit;
+    font-size: 19px;
+    display: block;
+    text-align: center;
+}
+
+.email{
+
+}
+
+#mail{
+    position: inherit;
+    font-size: 19px;
+    display: block;
+    text-align: center;
+}
+
+#mail-caixa{
+    position: revert;
+    width: 224px;
+    display: inline;
+    left: 401px;
+}
+
+
+#mensagem{
+    position: relative;
+    display: block;
+
+}
+
+.form-add{
+
+}
+
+#form{
+    text-align: center;
+}
+
+#name-caixa{
+    bottom: -9px;
+    position: relative;
+    width: 224px;
+    display: inline;
+    left: -1px;
+}
+
+#nome-mensagem{
+
+}
+
+#botao{
+    position: relative;
+    width: 71px;
+    text-align: center;
+    top: 22px;
+    left: -7px;
+}
