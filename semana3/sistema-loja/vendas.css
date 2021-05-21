@@ -1,0 +1,114 @@
+body{
+    background-color: black;
+}
+
+header {
+    text-align: center;
+}
+
+header .navegacao {
+    border-radius: 24px;
+
+    text-align: center;
+    padding: 7px;
+    border: 3px solid;
+    display: block;
+    font-size: 20px;
+    color: white;
+    margin-top: 8px;
+    margin-left: -8px;
+    margin-right: auto;
+
+}
+
+ .navegacao a{
+    text-decoration: none;
+    color: whitesmoke;
+    padding: inherit;
+}
+
+.cabecalho {
+    margin-top: 15px;
+    padding: 13px;
+}
+
+body .cabecalho h1{
+    display: inline;
+    font-family: fangsong;
+    font-size: 39px;
+    color: white;
+    margin-top: 26px;
+    margin-left: 435px;
+    margin-right: 388px;
+    width: 9em;
+   
+}
+
+main .formulario{
+    padding-bottom: 23px;
+    text-align: center;
+    border: 2px solid;
+    border-color: white;
+
+}
+
+main .formulario input{
+
+}
+
+
+main .formulario h2{
+    padding-left: 124px;
+    text-align: center;
+    color: white;
+}
+
+main .formulario label{
+    color: white;
+    margin-left: 23px;
+}
+
+main .form-add{
+    margin-left: 30px;
+
+}
+
+main .form-add button{
+    margin-left: 189px;
+
+}
+
+.link-foto{
+    margin-left: 46px;
+
+
+}
+
+.preco{
+    margin-left: 44px;
+}
+
+.quantidade{
+    margin-left: -7px;
+
+}
+
+.itens-vendidos{
+
+}
+
+.itens-vendidos tr th{
+    padding-bottom: 11px;
+    font-style: oblique;
+    color: white;
+    font-family: sans-serif;
+    padding-inline: 14px;
+}
+
+.itens-vendidos tr td{
+    text-align: center;
+    color: white;
+    text-align: center;
+    border: 1px solid;
+}
+
