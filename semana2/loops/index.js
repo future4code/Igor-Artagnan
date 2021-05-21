@@ -17,11 +17,11 @@ for (let numero of lista) {
     }
 }    */
 
-//3) O valor inserido no prompt será o que vai definir a quantidade de vezes que o loop irá funcionar. Cada vez que ele rodar, irá adicionar "0" a variável linha, entao se o valor inserido for 0 o resultado será:
-/* 0
-   00
-   000
-   0000
+//3) O valor inserido no prompt será o que vai definir a quantidade de vezes que o loop irá funcionar. Cada vez que ele rodar, irá adicionar "0" a variável linha, entao se o valor inserido for 4 o resultado será:
+/* *
+   **
+   ***
+   ****
 
 */
 
@@ -72,50 +72,94 @@ let imprimeValoresArray = () => {
 
     }
 }
+/* USANDO FOR OF
 
+let imprimeValoresArray = () =>{
+    for(let valor of arrayOriginal){
+        console.log(valor)
+    }
+}
+      A variável "valor" é um index da array "arrayOriginal", então o loop ira funcionar percorrendo toda a array, e só irá parar quando ler todos os seus elementos.
+*/
 //b
 
 let imprimeValoresArrayDivididos = () => {
     for (let i = 0; i < arrayOriginal.length; i++) {
-        console.log(arrayOriginal[i]/10)
+        console.log(arrayOriginal[i] / 10)
 
-}
+    }
 
 }
 
 //c)
 
 let imprimeArrayNumerosPares = () => {
-     for (let arrayPar of arrayOriginal){
-        
-      
-      if (arrayPar % 2 === 0){
-           arrayResultadoPar.push(arrayPar)
-           
-      }   
-      
-     }
-     console.log(arrayResultadoPar)
+    for (let arrayPar of arrayOriginal) {
+
+
+        if (arrayPar % 2 === 0) {
+            arrayResultadoPar.push(arrayPar)
+
+        }
+
+    }
+    console.log(arrayResultadoPar)
 
 }
 
 //d)
 
-let imprimeArrayComStrings = () =>{
+let imprimeArrayComStrings = () => {
     for (let i = 0; i < arrayOriginal.length; i++) {
         let resposta = `O elemento do índex ${i} é ${arrayOriginal[i]}`
-        
+
         arrayStrings.push(resposta)
-        
+
 
     }
 
     console.log(arrayStrings)
-    
+
+}
+/* USANDO FOR OF
+
+let imprimeArrayComStrings = () =>{
+let i = 0
+
+for(let valor of arrayOriginal){
+    arrayStrings.push(`O elemento do index ${i}` é ${valor})
+   
+    i++
+}
+
+console.log(arrayStrings)
+
 }
 
 
 
+*/
+
+//e
+
+/*
+let imprimeMaiorEMenorNumeroArray = (arrayOriginal) => {
+    let menorNumero = 0
+    let maiorNumero = Infinity
+
+    for (let i = 0; i < arrayOriginal.length; i++) {
+        if (arrayOriginal[i] < menorNumero) {
+            menorNumero = arrayOriginal[i]
+        } else if (arrayOriginal[i] > maiorNumero) {
+            maiorNumero = arrayOriginal[i]
+        }
+    }
+
+    console.log(`O maior número é ${maiorNumero}`)
+    console.log(`O menor número é ${menorNumero}`)
+}
+
+imprimeMaiorEMenorNumeroArray(arrayOriginal) */
 
 
 
@@ -126,3 +170,50 @@ let imprimeArrayComStrings = () =>{
 //imprimeArrayNumerosPares ()
 //imprimeValoresArray()
 //imprimeValoresArrayDivididos()
+
+
+
+
+//DESAFIO
+
+//1
+console.log("Vamos jogar!")
+const numeroEscolhido = Number(prompt("EScolha um número: "))
+
+let acertou = false
+let tentativas = 0
+
+let numertoChutado
+
+while (!acertou){
+    numeroChutado = Number(prompt("Chute um número"))
+    tentativas++
+    console.log("O numero chutado foi", numertoChutado)
+    if(numeroChutado === numeroEscolhido){
+        console.log(`Acertou!!`)
+        console.log(`O número de tentativas foi ${tentativas}`)
+        acertou = true
+
+    } else if (numeroEscolhido > numertoChutado){
+        console.log(`Errou. O número é maior`)
+    }else {
+        console.log(`Errou. O número escolhido é menor`)
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
