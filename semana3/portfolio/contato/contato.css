@@ -18,6 +18,8 @@ body{
 }
 
 .navegacao{
+    margin-top: 4px;
+
     background-color: #ccc5c5;
     border: 3px solid;
     border-radius: 22px;
@@ -36,14 +38,18 @@ body{
     color: black;
 }
 
+.navegacao>a:hover{
+    color: white;
+}
+
 .contato{
-    margin: 148px;
     background-color: #ccc5c5;
     position: inherit;
     text-align: center;
     margin: 95px;
     border: 2px solid black;
-    padding: 73px;
+    padding: 62px;
+    margin-top: 44px;
 }
 .contato>h2{
     text-align: -webkit-match-parent;
@@ -113,7 +119,11 @@ body{
     left: -1px;
 }
 
-#nome-mensagem{
+#mensagem{
+    text-align: center;
+    font-size: 19px;
+    position: relative;
+    display: block;
 
 }
 
@@ -123,4 +133,17 @@ body{
     text-align: center;
     top: 22px;
     left: -7px;
+}
+#botao:hover{
+    cursor: pointer;
+    color: greenyellow;
+}
+
+#img-botao{
+    display: block;
+    width: 68px;
+}
+
+#img-botao:hover{
+    opacity: 0.5;
 }

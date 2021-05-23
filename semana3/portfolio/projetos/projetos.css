@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    text-align: center;
+    font-family: monospace;
+    background-color:#ccc5c5
+
+}.principal{
+text-align: center;
+}
+
+header{
+    text-align: center;
+}
+
+.navegacao{
+    background-color: #ccc5c5;
+    border: 3px solid;
+    border-radius: 22px;
+    position: revert;
+    padding: 14px;
+    display: block;
+    left: 528px;
+    right: auto;
+}
+
+.navegacao>a{
+    margin-left: 30px;
+    letter-spacing: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+.navegacao>a:hover{
+    color: white;
+}
+
+.softskill{
+    padding-top: 10px;
+    margin-right: 27%;
+    right: 363px;
+    margin: 5px;
+    width: 600px;
+    background-color: rgb(248, 248, 248);
+    position: absolute;
+    border: 2px solid black;
+    display: block;
+    height: 571px;
+}
+
+.softskill>ul>li{
+    font-size: 30px;
+    list-style-type: none;
+    margin: 21px;
+    position: relative;
+    top: -22px;
+}
+.softskill>ul>p{
+    position: relative;
+    font-size: 18px;
+    top: -31px;
+}
+img{
+    width: 63px;
+    display: block;
+    position: absolute;
+    left: 265px;
+    top: 328px;
+}
+
+#estilo{
+    position: absolute;
+    top: 490px;
+    left: 216px;
+}
+
+#estilo2{
+    position: absolute;
+    top: 490px;
+    left: 314px;
+}
+
+
+#loja{
+    position: relative;
+    top: 8px;
+}
+
+#blackjack{
+    position: relative;
+    top: -44px;
+}
+
+#blackjackli{
+    position: relative;
+    top: -35px;
+}
+
+#loja-tec{
+    position: relative;
+    top: 4px;
+}
+
+#commerce{
+    position: relative;
+    top: 18px;
+}
+
+
+#javascript{
+    position: absolute;
+    top: 237px;
+}
+
+#projetos{
+    font-size: 31px;
+
+}
+#link-bj{
+    text-decoration-line: blink;
+    color: black;
+}
+
+#link-bj:hover{
+color: grey;
+}
+
+#link-e{
+    text-decoration-line: blink;
+    color: black;
+}
+#link-e:hover{
+    color: grey;
+}
