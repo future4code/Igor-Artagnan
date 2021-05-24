@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    display: grid;
+    grid-template-columns: 269px 1fr;
+    min-height: 100vh;
+
+}
+
+img{
+    height: 24px;
+}
+.container{
+    display: grid;
+    min-height: 100vh;
+
+}
+
+header{
+    align-items: center;
+    height: 48px;
+    grid-template-columns: 1fr 21fr 58px;
+    grid-template-rows: 1fr;
+    display: grid;
+    background-color: mediumvioletred;
+}
+
+header>h1{
+    font-size: 23px;
+
+}
+
+
+header>img{
+    height: 21px;
+}
+
+nav{
+    justify-content: inherit;
+    padding: 9px;
+    background-color: #f2d0e0;
+    display: grid;
+    grid-template-columns: 14px 189px 70px;
+    grid-template-rows: 1fr 1fr 1fr 12fr;
+    justify-items: center;
+}
+
+footer{
+    height: 30px;
+    align-items: end;
+    text-align: center;
+    display: grid;
+    background-color: mediumvioletred;
+}
+
+.container-bolos{
+    padding: 16px;
+    grid-gap: 24px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.bolo-1>p{
+    text-align: center;
+}
+
+.bolo-1{
+    box-shadow: 5px 5px 4px lightgrey;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 178px 51px 45px;
+    justify-items: center;
+}
+
+
+
+#bolo{
+    display: grid;
+    align-self: self-start;
+    width: 220px;
+    height: 170px;
+}
+
+
+
+
+.bolo-2>p{
+    text-align: center;
+}
+
+.bolo-2{
+    box-shadow: 5px 5px 4px lightgrey;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 178px 51px 45px;
+    justify-items: center;
+}
+
+
+.bolo-3>p{
+    text-align: center;
+}
+
+.bolo-3{
+    box-shadow: 5px 5px 4px lightgrey;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 178px 51px 45px;
+    justify-items: center;
+}
+
+
+.bolo-4>p{
+    text-align: center;
+}
+
+.bolo-4{
+    box-shadow: 5px 5px 4px lightgrey;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 178px 51px 45px;
+    justify-items: center;
+}
+
+
+
+.bolo-5>p{
+    text-align: center;
+}
+
+.bolo-5{
+    box-shadow: 5px 5px 4px lightgrey;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 178px 51px 45px;
+    justify-items: center;
+}
+
+
+
+.bolo-6>p{
+    text-align: center;
+}
+
+.bolo-6{
+    box-shadow: 5px 5px 4px lightgrey;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 178px 51px 45px;
+    justify-items: center;
+}
+
+
+
+.bolo-7>p{
+    text-align: center;
+}
+
+.bolo-7{
+    box-shadow: 5px 5px 4px lightgrey;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 178px 51px 45px;
+    justify-items: center;
+}
+
+
+
+
+
