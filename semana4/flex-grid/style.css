@@ -33,8 +33,11 @@ header>h1{
 }
 
 
-header>img{
+
+#bolo-head{
+    display: block;
     height: 21px;
+    margin-left: 7px;
 }
 
 nav{
