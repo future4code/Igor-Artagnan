@@ -96,12 +96,6 @@ main{
 
 
 
-
-
-
-
-
-
 footer{
     
     justify-content: space-around;
@@ -113,4 +107,30 @@ footer{
 
 footer>h4{
 color: #aaa
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .videos{    
+        grid-template-columns: 1fr; 
+    }
+
+    header{
+        gap: 0px;
+   
+    }
+    .search{
+        justify-content: center;
+
+    }
+
+    footer>h4{
+        margin-left: 6px;
+
+    }
+    
+    #pesquisa{
+        width: 74%;
+
+    }
 }

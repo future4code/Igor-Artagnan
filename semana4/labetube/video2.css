@@ -114,15 +114,6 @@ input:hover{
 }
 
 
-
-
-
-
-
-
-
-
-
 footer{
     margin-top: 191px;
 
@@ -139,5 +130,52 @@ color: #aaa
 
 #video2{
     height: 338px;
+
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .videos{    
+        grid-template-columns: 1fr; 
+    }
+
+    header{
+        gap: 0px;
+   
+    }
+    .search{
+        justify-content: center;
+
+    }
+
+    .search>a>img {
+        display: flex;
+        background-color: #565454;
+        height: 27px;
+        width: 34px;
+    }
+
+    footer>h4{
+        margin-left: 6px;
+
+    }
+    
+    #pesquisa{
+        width: 74%;
+
+    }
+
+    #video2{
+        height: 197px;
+
+    }
+
+    .video-play>h1{
+        margin-left: 32px;
+
+    }
+    .video-play {
+        padding-top: 56px;
+    }
 
 }
