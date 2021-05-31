@@ -1,0 +1,177 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #181818;
+}
+
+
+header{
+    
+    gap: 224px;
+    grid-template-columns: 1fr 7fr;
+    display: grid;
+    background-color: hsl(0deg 0% 19%);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+
+
+}
+
+.logo>img{
+    height: 29px;
+    width: 45px;
+    margin-left: 7px;
+
+}
+
+.logo>h2{
+    color: white;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+}
+
+.search>a>img{
+    display: flex;
+    background-color: #565454;
+    height: 27px;
+    width: 44px;
+}
+
+#pesquisa{
+    background-color: #1d1b1b;
+    width: 56%;
+    height: 22px;
+
+}
+main{
+    display: grid;
+    
+}
+.videos{
+    margin-top: 14px;
+    row-gap: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+.videos>video{
+    width: 100px;
+}
+
+
+
+.videos>p{
+    color: honeydew;
+    display: flex;
+}
+
+.card-video{
+    font-family: ui-monospace;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-video>p{
+    color:white
+}
+
+.video-play{
+    padding-top: 31px;
+    font-family: ui-monospace;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.video-play>h1{
+    font-family: ui-monospace;
+    font-size: 23px;
+    color: white;
+}
+
+.video-play>a{
+    text-decoration: none;
+}
+
+input:hover{
+    cursor: pointer;
+    color: grey;
+}
+
+
+
+footer{
+    margin-top: 168px;
+
+    justify-content: space-around;
+    display: flex;
+    background-color: #303030;
+    align-items: center;
+}
+
+
+footer>h4{
+color: #aaa
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .videos{    
+        grid-template-columns: 1fr; 
+    }
+
+    header{
+        gap: 0px;
+   
+    }
+    .search{
+        justify-content: center;
+
+    }
+
+    .search>a>img {
+        display: flex;
+        background-color: #565454;
+        height: 27px;
+        width: 34px;
+    }
+
+    footer{
+        margin-top: 127px;
+
+    }
+
+    footer>h4{
+        margin-left: 6px;
+
+    }
+    
+    #pesquisa{
+        width: 74%;
+
+    }
+
+    #video{
+        height: 258px;
+        display: flex;
+        align-self: center;
+    }
+
+    .video-play>h1{
+        margin-left: 32px;
+
+    }
+
+}
+
