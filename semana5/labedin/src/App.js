@@ -51,7 +51,7 @@ function App() {
         <CardGrande 
           imagem= {renault}
           nome="Renault" 
-          descricao="Auxiliar Mecânico, atuando em revisões, diagnósticos coreções." 
+          descricao="Auxiliar Mecânico, atuando em revisões, diagnósticos correções." 
         />
         
         <CardGrande 
