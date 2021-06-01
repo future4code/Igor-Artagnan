@@ -19,32 +19,32 @@ const DivComBorda = styled.div`
 
 
 
-const CardPequeno = (props) =>{
+const CardPequeno = (props) => {
 
-return (
-      <div>
-          <DivComBorda>
+  return (
+    <div>
+      <DivComBorda>
         <Icone img src={props.imagem} />
         <div>
-            <h4>Email:</h4>
-            <p>{props.email}</p>
+          <h4>Email:</h4>
+          <p>{props.email}</p>
         </div>
-        </DivComBorda>
+      </DivComBorda>
 
-        <DivComBorda>
-        <Icone img src={props.imagemDois}/>
+      <DivComBorda>
+        <Icone img src={props.imagemDois} />
         <div>
           <h4> Endereço:</h4>
           <p>{props.endereço}</p>
 
         </div>
 
-        </DivComBorda>
+      </DivComBorda>
 
-      </div>
+    </div>
 
 
-)
+  )
 
 
 }

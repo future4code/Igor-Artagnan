@@ -25,10 +25,10 @@ margin-bottom: 15px;
 function CardGrande(props) {
     return (
         <DivComBorda>
-            <Perfil img src={ props.imagem }  />
+            <Perfil img src={props.imagem} />
             <div>
-               <Nome> <h4>{ props.nome }</h4> </Nome>
-                <p>{ props.descricao }</p>
+                <Nome> <h4>{props.nome}</h4> </Nome>
+                <p>{props.descricao}</p>
             </div>
         </DivComBorda>
     )

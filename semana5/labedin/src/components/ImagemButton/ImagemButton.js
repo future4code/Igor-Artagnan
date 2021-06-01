@@ -19,8 +19,8 @@ const Imagem = styled.img`
 function ImagemButton(props) {
     return (
         <DivComBorda>
-            <Imagem src={ props.imagem }/>
-            <p>{ props.texto }</p>
+            <Imagem src={props.imagem} />
+            <p>{props.texto}</p>
         </DivComBorda>
 
     )
