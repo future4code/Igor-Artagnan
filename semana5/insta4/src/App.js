@@ -9,18 +9,20 @@ const MainContainer = styled.div`
   align-items: center;
 `
 
+{/* O componente App é pai do componente Post.js */}
+
 class App extends React.Component {
   render() {
     return (
       <MainContainer>
         <Post
-          nomeUsuario={'paulinha'}
+          nomeUsuario={'labenu'}
           fotoUsuario={'https://picsum.photos/50/50'}
           fotoPost={'https://picsum.photos/200/150'}
         />
 
 <Post
-          nomeUsuario={'igor'}
+          nomeUsuario={'catholiceducation'}
           fotoUsuario={'https://picsum.photos/50/60'}
           fotoPost={'https://picsum.photos/200/160'}
         />
