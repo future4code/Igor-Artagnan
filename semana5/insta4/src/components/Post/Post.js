@@ -9,7 +9,7 @@ import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 import marcacao from '../../img/marcacao.png'
 import marcacaoBlack from '../../img/marcacao-black.png'
-import compartilhar from '../../img/compartilhar.png'
+
 
 {/*Estilizações das div's e imagens*/ }
 
@@ -62,7 +62,7 @@ class Post extends React.Component {
     this.setState({
       curtido:true
 })
-   
+
 /*Ao clicar o valor de curtido se tornar TRUE, é setado a propriedade numeroCurtidas a soma de +1*/
 
 if (!this.state.curtido){
@@ -75,8 +75,8 @@ if (!this.state.curtido){
 /*Ao ser clicado novamente, o valor de curtido se torna TRUE (!curtido = oposto de seu valor), voltando novamente a somar 1 ao numeroCurtidas */
 this.setState({curtido: !this.state.curtido})
 
-    
- 
+
+
   }
 
   onClickComentario = () => {
@@ -91,7 +91,7 @@ this.setState({curtido: !this.state.curtido})
       comentando: false,
       numeroComentarios: this.state.numeroComentarios + 1
     })
-     
+
   }
 
   onClickMarcacao = () =>{
@@ -103,11 +103,11 @@ this.setState({curtido: !this.state.curtido})
         salvo : !this.state.salvo
      })
 
-     
+
   }
 
   render() {
-    
+
     let iconeMarcacao
 
     if(this.state.salvo){
@@ -151,17 +151,17 @@ this.setState({curtido: !this.state.curtido})
           valorContador={this.state.numeroComentarios}
         />
 
-        
+
 
         <IconeComContador
         icone={iconeMarcacao}
         onClickIcone={this.onClickMarcacao}
         />
-        
+
       </PostFooter>
       {componenteComentario}
     </PostContainer>
   }
 }
 
-export default Post
+export default Post 
