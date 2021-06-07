@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styled from "styled-components"
 import Pagina1 from './components/Pagina1'
@@ -17,7 +16,6 @@ const StyledButton = styled.button`
     margin-left: 128px;
     width: 72px;
     border-radius: 7px;
-
 `
 
 
@@ -35,7 +33,7 @@ export default class LabeForm extends React.Component {
     this.setState({etapa: this.state.etapa+ 1})
   }
 
-  
+
   render() {
 
     const RenderizaEtapa = () => {
@@ -54,11 +52,22 @@ export default class LabeForm extends React.Component {
       }
     }
 
+    const RenderizaBotao = () => {
+      if (this.state.etapa < 4){
+        return <StyledButton onClick={this.irParaProximaPagina}>Proxima etapa</StyledButton>
+      }
+    }
+
+
     return (
       <MainContainer>
-
+        
+        
         {RenderizaEtapa()}
-        <StyledButton onClick={this.irParaProximaPagina}>Proxima etapa</StyledButton>
+
+        {RenderizaBotao()}
+        
+        
 
       </MainContainer>
     )

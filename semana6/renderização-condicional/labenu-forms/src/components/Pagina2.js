@@ -15,6 +15,8 @@ export default class Pagina2 extends React.Component {
                 <h2>2. Qual a unidade de ensino?</h2>
                 <input/>
             </div>
+
+
         )
     }
 
