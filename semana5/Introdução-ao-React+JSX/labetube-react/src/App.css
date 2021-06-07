@@ -1,0 +1,153 @@
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+.tela-inteira {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.tela-inteira>header>h1{
+  color: white;
+}
+
+.tela-inteira>header>input{
+  background-color: #121212;
+  width: 407px;
+  margin-left: 306px;
+  height: 20px;
+
+
+}
+
+.logo{
+  width: 52px;
+  margin-left: -13px;
+}
+
+.tela-inteira>header>a>img{
+  margin-top: 4px;
+  border: 1px solid black;
+  height: 26px;
+  width: 56px;
+  background-color: #4c4a4a;
+}
+
+header {
+  background-color: hsl(0deg 0% 19%);
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  height: 10%;
+}
+
+main {
+  min-height: 80%;
+  display: flex;
+}
+
+.menu-vertical {
+  line-height: 64px;
+  background-color: hsl(0deg 0% 19%);
+  flex-basis: 200px;
+  border-right-style: solid;
+  border-right-width: thin;
+}
+
+.menu-vertical>ul>li{
+  color: white;
+}
+
+
+.botoes-meunu-vertical {
+  list-style-type: none;
+}
+
+.painel-de-videos {
+  background-color: #181818;
+  padding-left: 20px;
+  padding-top: 20px;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 24.8% 0.2%);
+  grid-template-rows: repeat(4, 270px 20px);
+}
+
+.painel-de-videos>h4{
+  color: white;
+}
+
+.media1 {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.media2 {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.media3 {
+  grid-column-start: 5;
+  grid-row-start: 1;
+}
+
+.media4 {
+  grid-column-start: 7;
+  grid-row-start: 1;
+}
+
+.media5 {
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.media6 {
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+
+.media7 {
+  grid-column-start: 5;
+  grid-row-start: 3;
+}
+
+.media8 {
+  grid-column-start: 7;
+  grid-row-start: 3;
+}
+
+
+.box-pagina-principal {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  grid-template-columns: 1fr;
+  border-style: solid;
+  border-width: thin; 
+  align-items: start;
+  justify-items: stretch;
+}
+
+
+footer {
+  height: 10%;
+  background-color: hsl(0deg 0% 19%);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.box-pagina-principal > img {
+  width: 100%;
+  height: 200px;
+}
+
+h4 {
+  color:#aaa;
+  margin-left: 80px;
+
+}
+
