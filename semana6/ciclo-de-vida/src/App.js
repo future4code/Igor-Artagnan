@@ -43,12 +43,17 @@ class App extends React.Component {
 
   componentDidUpdate() {
 
-  };
-
-  componentDidMount() {
+    localStorage.setItem('tarefas', JSON.stringify(this.state.inputValue))
 
   };
 
+   /* componentDidMount() {
+
+    const tarefasSalvas = localStorage.getItem('tarefas')
+    const arrayTarefas = JSON.parse(tarefasSalvas)
+      this.setState({tarefas: arrayTarefas})
+  };
+  */
 //Funções
 
 //Essa função seta para dentro do input tudo o que for digitado pelo usuário.
