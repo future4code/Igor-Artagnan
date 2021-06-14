@@ -39,21 +39,27 @@ class App extends React.Component {
       inputValue: '',
       filtro: ''
     }
+
 //Métodos de lifecycle    
 
   componentDidUpdate() {
 
-    localStorage.setItem('tarefas', JSON.stringify(this.state.inputValue))
+    
+   /*  localStorage.setItem('tarefas', JSON.stringify(this.state.inputValue)) */
+    
 
+    
   };
 
-   /* componentDidMount() {
+  
+
+  /*   componentDidMount() {
 
     const tarefasSalvas = localStorage.getItem('tarefas')
     const arrayTarefas = JSON.parse(tarefasSalvas)
       this.setState({tarefas: arrayTarefas})
-  };
-  */
+  }; */
+ 
 //Funções
 
 //Essa função seta para dentro do input tudo o que for digitado pelo usuário.
@@ -113,6 +119,8 @@ class App extends React.Component {
 //Caso o valor de filtro seja "pendentes", ele retorna que tarefa.completa será FALSE, o que irá mostrar as strings de tarefa normalmente.
 
 //Caso o valor de filtro seja 'completas', ele retorna que tarefa.completa será TRUE, o que irá mostrar as strings de tarefas riscadas.
+
+console.log("Tarefas", this.state.tarefas)
 
     const listaFiltrada = this.state.tarefas.filter(tarefa => {
       switch (this.state.filtro) {
