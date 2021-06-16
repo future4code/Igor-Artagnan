@@ -1,5 +1,26 @@
 import React from "react";
 import axios from "axios";
+import styled from "styled-components"
+
+const Container = styled.div`
+border: 1px solid black;
+display: flex;
+align-items: center;
+flex-direction: column;
+width: 50%;
+margin: auto;
+margin-top: 49px;
+
+`
+
+const BotaoUsuarios = styled.button`
+margin-top: 19px;
+
+`
+
+const BotaoAdicionar = styled.button`
+margin-top: 14px;
+`
 
 
 const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
@@ -18,7 +39,8 @@ export default class Home extends React.Component {
     usuarios: [],
 
     inputName: "",
-    inputEmail: ""
+    inputEmail: "",
+  
   };
 
  
@@ -46,6 +68,8 @@ export default class Home extends React.Component {
         alert("Usuário cadastrado com sucesso!")
     
         this.setState({inputName: "", inputEmail:"" })
+        
+        this.mostrausuarios()
       })
 
       .catch((error) => {
@@ -58,7 +82,7 @@ export default class Home extends React.Component {
     axios.get(url, header)
     .then((response)=>{
 
-      this.setState({usuarios: response.data.result.list})
+      this.setState({usuarios: response.data})
 
 
 
@@ -71,33 +95,49 @@ export default class Home extends React.Component {
   }
 
   
+  
 
   render() {
     
-    console.log(this.state.usuarios)
+    
 
-      /* const listaDeUsuarios = this.state.usuario.map((usuario)=>{
-        return <li>
+       const listaDeUsuarios = this.state.usuarios.map((usuario)=>{
+        return <p key={usuario.id}>
               
-              {usuario.nome}
-              {usuario.email}
+              {usuario.name}
               
-              </li>
+              </p>
 
-      }) */
+      }) 
+
+
+
+     
+
+      
 
       
     return (
-      <div>
+      <Container>
         <h3>Nome:</h3>
-        <input type="text" value={this.state.inputName} onChange={this.onChangeName} />
+        <input type="text" 
+        value={this.state.inputName} 
+        onChange={this.onChangeName} />
+
         <h3>Email:</h3>
-        <input type="text" value={this.state.inputEmail} onChange={this.onChangeEmail} />
-        <button onClick={this.criarUsuario}>Salvar</button>
+        <input type="text" 
+        value={this.state.inputEmail} 
+        onChange={this.onChangeEmail} />
+        
+        <BotaoAdicionar onClick={this.criarUsuario}>Registrar</BotaoAdicionar>
+        <BotaoUsuarios>Ver usuários cadastrados</BotaoUsuarios>
+          
+          
+          <h3>Usuários Cadastrados:</h3>
+          {listaDeUsuarios}
+         
 
-      {/*   {listaDeUsuarios} */}
-
-      </div>
+      </Container>
     );
   }
 }
