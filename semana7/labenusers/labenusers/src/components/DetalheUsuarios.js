@@ -11,7 +11,11 @@ export default class DetalheUsuarios extends React.Component {
 
         return(
             <div>
-                Detalhes
+                <button onClick={this.props.voltarParaLista}>Voltar para lista</button>
+                <h2>Detalhes do Usuario</h2>
+                
+                <p>Nome: {this.props.usuario.name}</p>
+                <p>Email: {this.props.usuario.email}</p>
             </div>
         )
     }

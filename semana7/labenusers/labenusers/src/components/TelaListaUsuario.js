@@ -1,9 +1,12 @@
 import axios from "axios";
 import React from "react";
+/* import DetalheUsuarios from "./components/DetalheUsuarios"; */
 
 export default class TelaListaUsuario extends React.Component {
   state = {
-    usuarios: []
+    usuarios: [],
+    detalheUsuario: false,
+    usuarioSelecionado: []
   };
 
   componentDidMount() {
@@ -55,23 +58,56 @@ export default class TelaListaUsuario extends React.Component {
       });
   }};
 
+  getUserById = (id) =>{
+
+    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`
+
+    axios.get(url,{
+        headers: {
+            Authorization: 'igor-molina'
+        }
+    }) .then((response) =>{
+        this.setState({usuarioSelecionado: response.data})
+    }) 
+    
+    
+    .catch(()=>{
+        alert('Ocorreu um erro, tente novamente!')
+    })
+  }
+
+
+  voltarParaLista = () => {
+      this.setState({detalheUsuario: false})
+  }
+  
+  
+  
   render() {
     const listaUsuarios = this.state.usuarios.map((usuario) => {
       return (
         <div key={usuario.id}>
           {usuario.name}
-          <button onClick={this.props.irParaDetalhe}>Detalhes</button>
+          <button onClick={() => this.getUserById(usuario.id)}>Detalhes</button>
           <button onClick={() => this.deleteUser(usuario.id)}>Apagar</button>
         </div>
       );
     });
 
     return (
+        <div>
+        
+      {/*   {this.state.detalheUsuario? <DetalheUsuarios 
+        usuario={this.state.usuarioSelecionado} 
+        voltarParaLista={this.voltarParaLista} />}: */}
+      
       <div>
         <button onClick={this.props.irParaCadastro}>Cadastrar Usuário</button>
         <h3>Lista de usuários</h3>
         {listaUsuarios}
       </div>
+
+        </div>
     );
   }
 }
