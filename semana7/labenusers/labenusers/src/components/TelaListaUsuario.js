@@ -33,16 +33,17 @@ export default class TelaListaUsuario extends React.Component {
 
   deleteUser = (id) => {
     const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`;
-//Toda a execução da função de requisição de deletar user depende se o confirm retornar TRUE.
-    if(window.confirm("Tem certeza que deseja deletar esse usuário?")){
 
-    axios
+    //Toda a execução da função de requisição de deletar user depende se o confirm retornar TRUE.
+    
+    if(window.confirm("Tem certeza que deseja deletar esse usuário?")){
+    
+        axios
       .delete(url, {
         headers: {
           Authorization: "igor-molina"
         }
       })
-      
 
       .then((response) => {
         alert("Usuário deletado com sucesso!");
@@ -54,14 +55,12 @@ export default class TelaListaUsuario extends React.Component {
       });
   }};
 
- 
-
-  
   render() {
     const listaUsuarios = this.state.usuarios.map((usuario) => {
       return (
         <div key={usuario.id}>
           {usuario.name}
+          <button onClick={this.props.irParaDetalhe}>Detalhes</button>
           <button onClick={() => this.deleteUser(usuario.id)}>Apagar</button>
         </div>
       );
