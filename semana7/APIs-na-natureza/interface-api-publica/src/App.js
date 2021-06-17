@@ -8,13 +8,18 @@ export default class App extends React.Component{
 
 
   state = {
-    footballTeam: {}
+    footballTeam: {},
+    teamName: ""
   }
 
+
+  onChangeTeamName = (event) => {
+    this.setState({teamName: event.target.value})
+  }
   
    findTeam= () => {
     
-    const url = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Corinthians`
+    const url = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${this.state.teamName}`
     
     axios.get(url) 
     
@@ -23,7 +28,7 @@ export default class App extends React.Component{
       
       this.setState({footballTeam: response.data.teams[0]})
 
-       console.log('TIME',this.state.footballTeam) 
+       this.setState({teamName: ''})
       
 
     }) 
@@ -37,7 +42,9 @@ export default class App extends React.Component{
 
   render(){
 
-   this.findTeam() 
+    console.log(this.state.footballTeam)
+
+   
 
   const {strAlternate, strCountry, strDescriptionEN, strStadium, intFormedYear} = this.state.footballTeam
     
@@ -45,19 +52,30 @@ export default class App extends React.Component{
     return (
 
       <div>
-        <h1>World Footbal Teams Library</h1>
+        <h1>World Footbal Teams Wiki</h1>
 
-        <input placeholder='team name'/>
+        <input 
+        placeholder='team name'
+        onChange={this.onChangeTeamName}
+        value={this.state.teamName}
+        
+        />
         
         
         
         <button onClick={this.findTeam}>Go</button>
-
-          <p>Name: {strAlternate}</p>
+    {strDescriptionEN && 
+      
+      <div>
+          <p>Name:   {strAlternate}</p>
           <p>Country: {strCountry}</p>
           <p>Stadium: {strStadium}</p>
           <p>Since: {intFormedYear}</p>
           <p>Description: {strDescriptionEN} </p>
+     
+     </div>
+    
+    }
 
 
       </div>
