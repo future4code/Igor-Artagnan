@@ -84,6 +84,19 @@ export default class CreatePlaylist extends React.Component {
     
 }
 
+    getPlaylistTracks = (id) => {
+        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`, headers)
+
+        .then((response)=>{
+            console.log(response)
+
+        })
+
+        .catch(()=>{
+
+        })
+}
+
 
 
     render() {
@@ -93,6 +106,8 @@ export default class CreatePlaylist extends React.Component {
 
                 {playlist.name}
                 <button onClick={() => this.deletePlaylist(playlist.id)}>Delete</button>
+                <button>Add song</button>
+                <button onClick={()=> this.getPlaylistTracks(playlist.id)}>Details</button>
 
             </li>
 
