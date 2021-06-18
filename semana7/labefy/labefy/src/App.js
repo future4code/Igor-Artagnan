@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import CreatePlaylist from './components/CreatePlaylist'
+import Labefy from './components/Labefy'
 
 const MainContainer = styled.div`
 display: flex;
@@ -11,20 +12,20 @@ align-items: center;
 `
 
 
-export default class Labefy extends React.Component {
+export default class App extends React.Component {
 
   state = {
 
-    page: 'playlist'
+    page: 'labefy'
 
   }
 
   changePage = () => {
     switch (this.state.page) {
       case "labefy":
-        return <Labefy />
+        return <Labefy renderCreatePlaylist={this.renderCreatePlaylist} />
       case "playlist":
-        return <CreatePlaylist />
+        return <CreatePlaylist renderLabefy={this.renderLabefy} />
       default:
         return <div>Page not found :/</div>
     }
@@ -34,17 +35,16 @@ export default class Labefy extends React.Component {
     this.setState({page: 'playlist'})
   }
 
+  renderLabefy = () => {
+    this.setState({page: 'labefy'})
+  }
+
   render() {
 
     return (
       <MainContainer>
 
-        <h1>Labefy</h1>
-        <button onClick={this.renderCreatePlaylist}>Create Playlist</button>
-        <button>Your Playlists</button>
-
-        {this.changePage}
-
+      {this.changePage()}
 
 
       </MainContainer>
