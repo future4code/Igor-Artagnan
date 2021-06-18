@@ -63,6 +63,28 @@ export default class CreatePlaylist extends React.Component {
     }
 
 
+    deletePlaylist = (id) => {
+
+        
+        
+            axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}`, headers) 
+        
+        .then((response)=>{
+
+
+            this.getAllPlaylists()
+
+        }) 
+        
+        .catch((error)=>{
+            alert(error.response.data)
+
+        })
+
+    
+}
+
+
 
     render() {
 
@@ -70,11 +92,11 @@ export default class CreatePlaylist extends React.Component {
             return <li key={playlist.id}>
 
                 {playlist.name}
+                <button onClick={() => this.deletePlaylist(playlist.id)}>Delete</button>
 
             </li>
 
         })
-
 
 
 
@@ -92,7 +114,7 @@ export default class CreatePlaylist extends React.Component {
 
                 />
                 <button onClick={this.createPlaylist}>Create!</button>
-
+                
                 <h2>Your playlists:</h2>
                 {mapedPlaylists}
             </div>
