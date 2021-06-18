@@ -13,25 +13,25 @@ align-items: center;
 
 export default class App extends React.Component {
 
- 
-  render() {
 
-    return (
-      <MainContainer>
+    render() {
 
-        <h1>Labefy</h1>
-        <button onClick={this.props.renderCreatePlaylist}>Create Playlist</button>
-        <button>Your Playlists</button>
+        return (
+            <MainContainer>
 
-        {this.changePage}
+                <h1>Labefy</h1>
+                <button onClick={this.props.renderCreatePlaylist}>Create Playlist</button>
+                <button>Your Playlists</button>
 
-
-
-      </MainContainer>
+                {this.changePage}
 
 
-    )
-  }
+
+            </MainContainer>
+
+
+        )
+    }
 
 
 
