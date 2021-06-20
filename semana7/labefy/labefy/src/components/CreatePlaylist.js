@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import PlaylistDetails from './PlaylistDetails'
 
 const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
 const headers = {
@@ -14,11 +15,12 @@ export default class CreatePlaylist extends React.Component {
 
     state = {
         playlistName: '',
-        playlists: []
+        playlists: [],
+        currentPage: 'allplaylists'
     }
 
     componentDidMount() {
-        this.getAllPlaylists();
+        
 
        
     }
@@ -31,7 +33,7 @@ export default class CreatePlaylist extends React.Component {
         axios.get(url, headers)
 
             .then((response) => {
-                console.log(response)
+                
                 this.setState({ playlists: response.data.result.list })
                 
 
@@ -87,7 +89,21 @@ export default class CreatePlaylist extends React.Component {
     
 }
 
+    renderCurrentPage = () => {
+        if (this.state.currentPage === 'playlistdetails'){
+            return <PlaylistDetails/>
+        }else if (this.state.currentPage === 'allplaylists') {
+            return  this.getAllPlaylists()
+        }
+    }
+
+    onClickRenderAllPlaylists = () => {
+        this.setState({currentPage: 'allplaylists'})
+    }
    
+    onClickRenderPlaylistDetail = () => {
+        this.setState({currentPage: "playlistdetails"})
+    }
 
 
 
@@ -95,9 +111,10 @@ export default class CreatePlaylist extends React.Component {
 
         const mapedPlaylists = this.state.playlists.map((playlist) => {
             return <li key={playlist.id}>
-
+                  
                 {playlist.name}
                 <button onClick={() => this.deletePlaylist(playlist.id)}>Delete</button>
+                <button key={playlist.id} onClick={this.onClickRenderPlaylistDetail}>Playlist Details</button>
                 
                 
 
@@ -122,9 +139,11 @@ export default class CreatePlaylist extends React.Component {
                 />
                 <button onClick={this.createPlaylist}>Create!</button>
                 
-                <h2>Your playlists:</h2>
+               {/*  <h2>Your playlists:</h2> */}
                 {mapedPlaylists}
-                <button>Playlist Details</button>
+                
+                <button onClick={this.onClickRenderAllPlaylists}>My Playlists</button>
+                {this.renderCurrentPage()}
             </div>
         )
     }
