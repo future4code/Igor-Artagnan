@@ -19,6 +19,8 @@ export default class CreatePlaylist extends React.Component {
 
     componentDidMount() {
         this.getAllPlaylists();
+
+       
     }
 
     onChangeInputPlaylist = (event) => {
@@ -31,6 +33,7 @@ export default class CreatePlaylist extends React.Component {
             .then((response) => {
                 console.log(response)
                 this.setState({ playlists: response.data.result.list })
+                
 
             })
 
@@ -84,18 +87,7 @@ export default class CreatePlaylist extends React.Component {
     
 }
 
-    getPlaylistTracks = (id) => {
-        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`, headers)
-
-        .then((response)=>{
-            console.log(response)
-
-        })
-
-        .catch(()=>{
-
-        })
-}
+   
 
 
 
@@ -106,8 +98,8 @@ export default class CreatePlaylist extends React.Component {
 
                 {playlist.name}
                 <button onClick={() => this.deletePlaylist(playlist.id)}>Delete</button>
-                <button>Add song</button>
-                <button onClick={()=> this.getPlaylistTracks(playlist.id)}>Details</button>
+                
+                
 
             </li>
 
@@ -132,6 +124,7 @@ export default class CreatePlaylist extends React.Component {
                 
                 <h2>Your playlists:</h2>
                 {mapedPlaylists}
+                <button>Playlist Details</button>
             </div>
         )
     }
