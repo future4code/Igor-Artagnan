@@ -51,12 +51,13 @@ const Post = (props) => {
 
     comentarios.map(comentario => {
       return (
-        <CommentContainer>
+        <CommentContainer key={comentario}>
           <p>{comentario}</p>
         </CommentContainer>
       )
     })
   )
+  console.log('COMENTARIOS', comentarios )
 
   return (
     <PostContainer>
