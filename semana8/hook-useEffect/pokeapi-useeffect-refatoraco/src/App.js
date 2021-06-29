@@ -3,7 +3,7 @@ import axios from "axios";
 import "./styles.css";
 import PokeCard from "./components/PokeCard";
 
-const App = (props) => {
+const App = () => {
   const [pokeList, setPokeList] = useState([]);
   const [pokeName, setPokeName] = useState("");
 
@@ -36,7 +36,7 @@ const App = (props) => {
         })}
       </select>
 
-      {pokeName && <PokeCard pokemon={props.pokeName} />}
+      {pokeName && <PokeCard pokemon={pokeName} />}
     </div>
   );
 };
