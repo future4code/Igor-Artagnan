@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { BASE_URL } from '../../constantes/url'
 import axios from 'axios'
 import ChoosePerson from '../ChoosePerson/ChoosePerson'
+import {Image} from './styled'
 
 function GetProfile() {
 
@@ -28,7 +29,8 @@ function GetProfile() {
 
     return (
         <div>
-             <p>{profile.name}</p>
+            <Image src={profile.photo}/>
+            <p>{profile.name}</p>
             <p>{profile.age}</p>
             <p>{profile.bio}</p> 
             <ChoosePerson
