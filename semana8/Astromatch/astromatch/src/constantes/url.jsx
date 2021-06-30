@@ -1,1 +1,1 @@
-export  const BASE_URL = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor-artagnan-molina`
+export  const BASE_URL = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor-molina`
