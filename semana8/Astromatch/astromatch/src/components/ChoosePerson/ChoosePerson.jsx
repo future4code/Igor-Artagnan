@@ -1,16 +1,35 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
+import { BASE_URL } from '../../constantes/url'
 import { Container } from './styled'
 
 
-function ChoosePerson() {
+function ChoosePerson(props) {
+    const [id, setId] = useState('')
 
-    
-   
+    axios.post(`${BASE_URL}/choose-person`)
+    .then(()=>{
+
+    })
+
+    .catch(()=>{
+        
+    })
+
+
+    const onClickTrue = () => {
+        console.log('true')
+    }
+
+    const onClickFalse = () => {
+        console.log('false')
+    }
+
     return (
         <Container>
-            <button>X</button>
-            <button>V</button>
-            
+            <button onClick={onClickFalse}>X</button>
+            <button onClick={onClickTrue}>V</button>
+
         </Container>
     )
 }
