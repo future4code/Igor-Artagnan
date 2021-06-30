@@ -1,12 +1,17 @@
 import React from 'react'
+import { Container } from './styled'
+
 
 function ChoosePerson() {
+
+    
+   
     return (
-        <div>
+        <Container>
             <button>X</button>
             <button>V</button>
-
-        </div>
+            
+        </Container>
     )
 }
 
