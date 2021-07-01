@@ -1,4 +1,4 @@
-import React from 'react'
+import React/* , {useState} */ from 'react'
 import Clear from '../components/Clear/Clear'
 import GetMatches from '../components/GetMatches/GetMatches'
 import GetProfile from '../components/GetProfile/GetProfile'
@@ -11,14 +11,21 @@ import {
 
 function App() {
 
- 
+ /* const [page, setPage] = useState('app')
 
+  const changePAge = () => {
+     switch (page){
+       
+     }
+  }
+ */
 
   return (
     <Container>
 
       <Clear />
-      <GetMatches />
+      <button>Matches</button>
+      {/* <GetMatches /> */}
       <GetProfile />
       
    

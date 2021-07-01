@@ -18,10 +18,11 @@ const getMatches = () =>{
         console.log(error)
     }) 
 }
-console.log('matches', arrayMatches)
+/* console.log('matches', arrayMatches) array ainda retornando vazio*/
     return (
         <div>
-            <button onClick={getMatches}>Visualizar Matches</button>
+            <h1>MATCHES</h1>
+            
         </div>
     )
 }

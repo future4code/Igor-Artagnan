@@ -13,6 +13,9 @@ function GetProfile() {
         getProfileToChoose()
     }, [choice])
 
+    useEffect(()=>{
+        choosePerson()
+    },[choice])
 
     const getProfileToChoose = () => {
 
@@ -38,9 +41,12 @@ function GetProfile() {
 
         axios.post(`${BASE_URL}/choose-person`, body)
             .then((response) => { 
+                console.log('CHOOSE', response) //response.data.isMatch retorna seo match é true ou false
                
             })
-            .catch((error) => { })
+            .catch((error) => { 
+                alert(error)
+            })
     }
 
     const onClickAccept = (id) => {
@@ -65,7 +71,7 @@ function GetProfile() {
             <p>{profile.age}</p>
             <p>{profile.bio}</p>
 
-            <button onClick={() => onClickDecline(profile.id)}>X</button>
+            <button  onClick={() => onClickDecline(profile.id)}>X</button>
             <button onClick={()=>onClickAccept(profile.id)}>V</button>
             
 
