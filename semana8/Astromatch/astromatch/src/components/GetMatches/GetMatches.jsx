@@ -15,21 +15,21 @@ const getMatches = () =>{
     axios(`${BASE_URL}/matches`) 
     
     .then((response)=>{
-        console.log(response)
+        /* console.log(response) */
         setArrayMatches(response.data.matches)
         
     }) 
     
     .catch((error)=>{
-        console.log(error)
+        alert(error)
     }) 
 }
 console.log(arrayMatches)
 
      const mapedMatches = arrayMatches.map((profile)=>{
-        return <div>
+        return <div key={profile.id}>
                 {profile.name}
-                {profile.bio}
+                {/* {profile.bio} */}
                 </div>
     }) 
 

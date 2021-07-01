@@ -5,23 +5,24 @@ import { BASE_URL } from '../../constantes/url'
 
 function Clear() {
   
-/*   const putClear = ()=>{
-      axios(`${BASE_URL}/clear`) 
+   const putClear = ()=>{
+      axios.put(`${BASE_URL}/clear`) 
       
       .then((response)=>{
-          console.log(response)
-          console.log('Clickei')
+          console.log('certo',response)
+          
+          
       }) 
       
       .catch((error)=>{
-          alert(error)
+          console.log('ERRO CLEAR',error.response)
       })
       
   }
- */
+ 
     return (
         <div>
-            <button /* onClick={putClear} */> Limpar Matches</button>
+            <button onClick={putClear}> Limpar Matches</button>
         </div>
     )
 }

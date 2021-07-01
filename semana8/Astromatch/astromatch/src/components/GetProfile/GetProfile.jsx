@@ -6,7 +6,7 @@ import { Image } from './styled'
 function GetProfile() {
 
     const [profile, setProfile] = useState({})
-    const [id, setId] = useState('')
+    
     
 
     useEffect(() => {
