@@ -23,6 +23,8 @@ function App() {
         return <GetMatches
           renderMain={renderMain}
         />
+      default:
+        return <div>Página não encontrada :/</div>  
 
     }
   }

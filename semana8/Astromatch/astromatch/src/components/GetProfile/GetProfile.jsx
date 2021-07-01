@@ -41,7 +41,7 @@ function GetProfile() {
 
         axios.post(`${BASE_URL}/choose-person`, body)
             .then((response) => { 
-                console.log('CHOOSE', response) //response.data.isMatch retorna seo match é true ou false
+                console.log('CHOOSE', response) //response.data.isMatch retorna se o match é true ou false
                
             })
             .catch((error) => { 
