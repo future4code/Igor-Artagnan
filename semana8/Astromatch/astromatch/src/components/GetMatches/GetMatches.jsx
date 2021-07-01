@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react'
 import { BASE_URL } from '../../constantes/url'
 
 
-function GetMatches() {
+function GetMatches(props) {
 
     const [arrayMatches, setArrayMatches] = useState([])
 
@@ -21,7 +21,8 @@ const getMatches = () =>{
 /* console.log('matches', arrayMatches) array ainda retornando vazio*/
     return (
         <div>
-            <h1>MATCHES</h1>
+            <button onClick={props.renderMain}>Voltar</button>
+            <h7>MATCHES</h7>
             
         </div>
     )
