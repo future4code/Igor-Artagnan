@@ -39,17 +39,17 @@ function GetProfile() {
         console.log('body',body)
         axios.post(`${BASE_URL}/choose-person`, body)
             .then((response) => { 
-                console.log('CHOOSE', response) //response.data.isMatch retorna se o match é true ou false
+               /* console.log('choose', response) */
                getProfileToChoose()
             })
             .catch((error) => { 
-                console.log(error.response)
+                alert(error.response)
                 
             })
     } 
 
   
-
+    
 
 
     return (

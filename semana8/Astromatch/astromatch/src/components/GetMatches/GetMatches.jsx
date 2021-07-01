@@ -7,22 +7,37 @@ function GetMatches(props) {
 
     const [arrayMatches, setArrayMatches] = useState([])
 
+ useEffect(()=>{
+    getMatches()
+ }, [])
+
 const getMatches = () =>{
     axios(`${BASE_URL}/matches`) 
     
     .then((response)=>{
-        setArrayMatches(response.data)
+        console.log(response)
+        setArrayMatches(response.data.matches)
+        
     }) 
     
     .catch((error)=>{
         console.log(error)
     }) 
 }
-/* console.log('matches', arrayMatches) array ainda retornando vazio*/
+console.log(arrayMatches)
+
+     const mapedMatches = arrayMatches.map((profile)=>{
+        return <div>
+                {profile.name}
+                {profile.bio}
+                </div>
+    }) 
+
     return (
         <div>
             <button onClick={props.renderMain}>Voltar</button>
-            <h7>MATCHES</h7>
+            <h4>MATCHES</h4>
+            { mapedMatches }
             
         </div>
     )
