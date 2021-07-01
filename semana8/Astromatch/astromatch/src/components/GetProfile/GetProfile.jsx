@@ -7,24 +7,22 @@ function GetProfile() {
 
     const [profile, setProfile] = useState({})
     const [id, setId] = useState('')
-    const [choice, setChoice] = useState()
+    
 
     useEffect(() => {
         getProfileToChoose()
-    }, [choice])
+    }, [])
 
-    useEffect(()=>{
-        choosePerson()
-    },[choice])
-
+    
+ 
     const getProfileToChoose = () => {
 
 
         axios.get(`${BASE_URL}/person`)
             .then((response) => {
                 setProfile(response.data.profile)
-                /* console.log('PESSOA', response.data.profile) */
-
+                 /* console.log('PESSOA', response.data.profile)  */
+                
             })
             .catch((error) => {
                 alert(error.data)
@@ -32,47 +30,37 @@ function GetProfile() {
             })
     }
 
-    const choosePerson = () => {
+     const choosePerson = (choice) => {
 
         const body = {
-            id: id,
+            id: profile.id,
             choice: choice
         }
-
+        console.log('body',body)
         axios.post(`${BASE_URL}/choose-person`, body)
             .then((response) => { 
                 console.log('CHOOSE', response) //response.data.isMatch retorna se o match é true ou false
-               
+               getProfileToChoose()
             })
             .catch((error) => { 
-                alert(error)
+                console.log(error.response)
+                
             })
-    }
+    } 
 
-    const onClickAccept = (id) => {
-         setChoice(true)
-         setId(id)  //está setando o ID correto do perfil que está renderizado na tela.
-         /* console.log('id onclick', id) */
-        
-    }
-
-    const onClickDecline = (id) => { 
-         setChoice(false) 
-        
-
-    }
+  
 
 
 
     return (
         <div>
-            <Image src={profile.photo} />
+             <Image src={profile.photo} />
             <p>{profile.name}</p>
             <p>{profile.age}</p>
-            <p>{profile.bio}</p>
+            <p>{profile.bio}</p> 
 
-            <button  onClick={() => onClickDecline(profile.id)}>X</button>
-            <button onClick={()=>onClickAccept(profile.id)}>V</button>
+            <button  onClick={() => choosePerson(false)}>X</button>
+            <button onClick={() => choosePerson(true)}>V</button>
             
 
         </div>
