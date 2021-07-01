@@ -1,4 +1,4 @@
-import axios from 'axios'
+/* import axios from 'axios'
 import React, { useState } from 'react'
 import { BASE_URL } from '../../constantes/url' 
 import { Container } from './styled'
@@ -16,7 +16,7 @@ function ChoosePerson(props) {
         .catch((error)=>{})
     } */
 
-    return (
+  /*   return (
         <Container>
             <button onClick={props.changeProfile}>X</button>
             <button onClick={props.changeProfile}>V</button>
@@ -28,3 +28,4 @@ function ChoosePerson(props) {
 
 
 export default ChoosePerson;
+ */ 
