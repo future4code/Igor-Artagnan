@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BASE_URL } from '../../constantes/url'
 import axios from 'axios'
-import ChoosePerson from '../ChoosePerson/ChoosePerson'
 import { Image } from './styled'
 
 function GetProfile() {
@@ -12,7 +11,7 @@ function GetProfile() {
 
     useEffect(() => {
         getProfileToChoose()
-    }, [])
+    }, [choice])
 
 
     const getProfileToChoose = () => {
@@ -21,7 +20,7 @@ function GetProfile() {
         axios.get(`${BASE_URL}/person`)
             .then((response) => {
                 setProfile(response.data.profile)
-
+                /* console.log('PESSOA', response.data.profile) */
 
             })
             .catch((error) => {
@@ -38,15 +37,24 @@ function GetProfile() {
         }
 
         axios.post(`${BASE_URL}/choose-person`, body)
-            .then((response) => { })
+            .then((response) => { 
+               
+            })
             .catch((error) => { })
     }
 
-    const onClickAccept = () => {
-
+    const onClickAccept = (id) => {
+         setChoice(true)
+         setId(id)  //está setando o ID correto do perfil que está renderizado na tela.
+         /* console.log('id onclick', id) */
+        
     }
 
-    const onClickDecline = () => { }
+    const onClickDecline = (id) => { 
+         setChoice(false) 
+        
+
+    }
 
 
 
@@ -57,8 +65,9 @@ function GetProfile() {
             <p>{profile.age}</p>
             <p>{profile.bio}</p>
 
-            <button onClick={getProfileToChoose}>X</button>
-            <button onClick={getProfileToChoose}>V</button>
+            <button onClick={() => onClickDecline(profile.id)}>X</button>
+            <button onClick={()=>onClickAccept(profile.id)}>V</button>
+            
 
         </div>
     )
