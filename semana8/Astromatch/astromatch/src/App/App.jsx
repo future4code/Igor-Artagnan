@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Clear from '../components/Clear/Clear'
 import GetMatches from '../components/GetMatches/GetMatches'
-import GetProfile from '../components/GetProfile/GetProfile'
 import MainPage from '../components/MainPage/MainPage'
 
 import {
@@ -41,7 +40,7 @@ function App() {
     <Container>
 
       {changePage()}
-
+      <Clear/>
     </Container>
   )
 }
