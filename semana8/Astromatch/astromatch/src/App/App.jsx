@@ -6,8 +6,6 @@ import {createGlobalStyle} from 'styled-components'
 import {
   Container,
   Logo,
- /*  MainContainerApp */
-
 } from './styled'
 
 
@@ -22,9 +20,7 @@ function App() {
   body{
     background-color: #fffafa;
   }
-
   `
-
   const [page, setPage] = useState('main')
 
   const changePage = () => {
@@ -52,18 +48,19 @@ function App() {
   }
 
   return (
+    
     <div>
-      <GlobalStyle/>
+      <Logo>Astromatch</Logo>
       <Container>
         
-        <Logo>Astromatch</Logo>
+        
         
         {changePage()}
-
+        
       </Container>
       
+     
       <Clear />
-    
     </div>
   )
 }

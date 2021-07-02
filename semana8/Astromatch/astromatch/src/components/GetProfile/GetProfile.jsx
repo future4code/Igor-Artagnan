@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BASE_URL } from '../../constantes/url'
 import axios from 'axios'
-import { Image, MainContainer, InfoDiv } from './styled'
+import { Image, MainContainer, InfoDiv, ImgContainer, ChooseButtonsDiv, StyledButton } from './styled'
 
 function GetProfile() {
 
@@ -45,17 +45,19 @@ function GetProfile() {
 
     return (
         <MainContainer>
-            <Image src={profile.photo} />
+            <ImgContainer>
+                <Image src={profile.photo} />
+            </ImgContainer>
             <InfoDiv>
                 <p>{profile.name}</p>
-                <p>{profile.age}</p>
+                <p>{profile.age} anos</p>
                 <p>{profile.bio}</p>
 
             </InfoDiv>
-            <div>
-                <button onClick={() => choosePerson(false)}>X</button>
-                <button onClick={() => choosePerson(true)}>V</button>
-            </div>
+            <ChooseButtonsDiv>
+                <StyledButton onClick={() => choosePerson(false)}>X</StyledButton>
+                <StyledButton onClick={() => choosePerson(true)}>V</StyledButton>
+            </ChooseButtonsDiv>
         </MainContainer>
 
     )

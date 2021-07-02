@@ -11,15 +11,16 @@ const MatchContainer = styled.div`
 display: flex;
 height: 60px;
 width: 100%;
+margin: 15px;
+
 `
-const Button = styled.button`
-position: absolute;
-margin-top: -76px;
-margin-left: 6px;
+const StyledName = styled.h3`
+font-size: 18px;
+margin-left: 22px;
 `
 
 export {
     Image,
     MatchContainer,
-    Button,
+    StyledName,
 }
