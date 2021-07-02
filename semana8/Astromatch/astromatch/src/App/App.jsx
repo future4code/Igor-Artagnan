@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Clear from '../components/Clear/Clear'
 import GetMatches from '../components/GetMatches/GetMatches'
 import MainPage from '../components/MainPage/MainPage'
-
 import {
   Container,
 
@@ -24,7 +23,7 @@ function App() {
           renderMain={renderMain}
         />
       default:
-        return <div>Página não encontrada :/</div>  
+        return <div>Página não encontrada :/</div>
 
     }
   }
@@ -37,16 +36,20 @@ function App() {
     setPage('main')
   }
 
-
   return (
-    <Container>
+    <div>
+      <Container>
+        
+        <h1>Astromatch</h1>
+        
+        {changePage()}
 
-      {changePage()}
-      <Clear/>
-    </Container>
+      </Container>
+      
+      <Clear />
+    
+    </div>
   )
 }
-
-
 
 export default App;

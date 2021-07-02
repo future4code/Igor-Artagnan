@@ -7,21 +7,16 @@ import {
 
 function MainPage(props) {
 
-
-
     return (
-        <Container>
-
-
+        <div>
             <button onClick={props.renderMatches}>Matches</button>
+            <Container>
 
-            <GetProfile />
+                <GetProfile />
 
-
-        </Container>
+            </Container>
+        </div>
     )
 }
-
-
 
 export default MainPage;
