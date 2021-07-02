@@ -2,13 +2,28 @@ import React, { useState } from 'react'
 import Clear from '../components/Clear/Clear'
 import GetMatches from '../components/GetMatches/GetMatches'
 import MainPage from '../components/MainPage/MainPage'
+import {createGlobalStyle} from 'styled-components'
 import {
   Container,
+  Logo,
+ /*  MainContainerApp */
 
 } from './styled'
 
 
 function App() {
+  const GlobalStyle = createGlobalStyle`
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    background-color: #fffafa;
+  }
+
+  `
 
   const [page, setPage] = useState('main')
 
@@ -38,9 +53,10 @@ function App() {
 
   return (
     <div>
+      <GlobalStyle/>
       <Container>
         
-        <h1>Astromatch</h1>
+        <Logo>Astromatch</Logo>
         
         {changePage()}
 

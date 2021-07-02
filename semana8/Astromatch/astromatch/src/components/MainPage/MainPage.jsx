@@ -1,21 +1,26 @@
 import React from 'react'
 import GetProfile from '../GetProfile/GetProfile'
 import {
-    Container,
+    Button,
+    ButtonDiv,
+    MainContainer
 
 } from './styled'
 
 function MainPage(props) {
 
     return (
-        <div>
-            <button onClick={props.renderMatches}>Matches</button>
-            <Container>
+        <MainContainer>
+            
+            <ButtonDiv>
+               
+                <Button onClick={props.renderMatches}>Matches</Button>
+            
+            </ButtonDiv>
+            
+            <GetProfile />
 
-                <GetProfile />
-
-            </Container>
-        </div>
+        </MainContainer>
     )
 }
 

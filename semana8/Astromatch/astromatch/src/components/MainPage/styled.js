@@ -1,16 +1,24 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
-border: 1px solid black;
-width: 400px;
-height: 500px;
-margin: auto;
 
+
+const Button = styled.button`
+position: absolute;
+margin-top: -76px;
+margin-left: 6px;
+`
+const ButtonDiv = styled.div`
+display: flex;
 `
 
+const MainContainer = styled.div`
+display: flex;
+flex-direction: column;
+`
 
-
-
-export {Container,
-       
+export {
+        MainContainer,
+        Button,
+        ButtonDiv,
+          
 }

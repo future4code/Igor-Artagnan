@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react'
 import { BASE_URL } from '../../constantes/url'
-import {Image, MatchContainer} from './styled'
+import {Image, MatchContainer, Button, HoverMatch} from './styled'
 
 function GetMatches(props) {
 
@@ -34,11 +34,10 @@ console.log(arrayMatches)
 
     return (
         <div>
-            <button onClick={props.renderMain}>Voltar</button>
-            <h4>MATCHES</h4>
-            { mapedMatches }
             
-            
+            <Button onClick={props.renderMain}>Voltar</Button>
+           <a> { mapedMatches } </a>
+                
         </div>
     )
 }

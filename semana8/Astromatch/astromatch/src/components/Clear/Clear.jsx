@@ -1,15 +1,14 @@
 import axios from 'axios';
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BASE_URL } from '../../constantes/url'
+import {ClearButton} from './styled'
 
 function Clear() {
   
    const putClear = ()=>{
       axios.put(`${BASE_URL}/clear`) 
       
-      .then((response)=>{
-            
-      }) 
+      .then((response)=>{}) 
       
       .catch((error)=>{
           alert(error.response)
@@ -19,7 +18,7 @@ function Clear() {
 
     return (
         <div>
-            <button onClick={putClear}> Limpar Matches</button>
+            <ClearButton onClick={putClear}> Limpar Matches</ClearButton>
         </div>
     )
 }
