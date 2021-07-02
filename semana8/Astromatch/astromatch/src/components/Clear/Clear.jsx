@@ -1,7 +1,6 @@
 import axios from 'axios';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BASE_URL } from '../../constantes/url'
-
 
 function Clear() {
   
@@ -9,24 +8,21 @@ function Clear() {
       axios.put(`${BASE_URL}/clear`) 
       
       .then((response)=>{
-          console.log('certo',response)
-          
-          
+            
       }) 
       
       .catch((error)=>{
-          console.log('ERRO CLEAR',error.response)
+          alert(error.response)
       })
       
   }
- 
+
     return (
         <div>
             <button onClick={putClear}> Limpar Matches</button>
         </div>
     )
 }
-
 
 
 export default Clear;

@@ -7,16 +7,12 @@ function GetProfile() {
 
     const [profile, setProfile] = useState({})
     
-    
-
     useEffect(() => {
         getProfileToChoose()
     }, [])
 
     
- 
     const getProfileToChoose = () => {
-
 
         axios.get(`${BASE_URL}/person`)
             .then((response) => {
@@ -38,8 +34,7 @@ function GetProfile() {
         }
         console.log('body',body)
         axios.post(`${BASE_URL}/choose-person`, body)
-            .then((response) => { 
-               /* console.log('choose', response) */
+            .then((response) => {
                getProfileToChoose()
             })
             .catch((error) => { 
@@ -47,10 +42,6 @@ function GetProfile() {
                 
             })
     } 
-
-  
-    
-
 
     return (
         <div>
@@ -61,12 +52,9 @@ function GetProfile() {
 
             <button  onClick={() => choosePerson(false)}>X</button>
             <button onClick={() => choosePerson(true)}>V</button>
-            
-
+           
         </div>
     )
 }
-
-
 
 export default GetProfile;

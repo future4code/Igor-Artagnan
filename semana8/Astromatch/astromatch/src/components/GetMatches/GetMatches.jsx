@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react'
 import { BASE_URL } from '../../constantes/url'
-
+import {Image, MatchContainer} from './styled'
 
 function GetMatches(props) {
 
@@ -15,7 +15,6 @@ const getMatches = () =>{
     axios(`${BASE_URL}/matches`) 
     
     .then((response)=>{
-        /* console.log(response) */
         setArrayMatches(response.data.matches)
         
     }) 
@@ -27,10 +26,10 @@ const getMatches = () =>{
 console.log(arrayMatches)
 
      const mapedMatches = arrayMatches.map((profile)=>{
-        return <div key={profile.id}>
+        return <MatchContainer key={profile.id}>
+                <Image src={profile.photo}/>
                 {profile.name}
-                {/* {profile.bio} */}
-                </div>
+                </MatchContainer>
     }) 
 
     return (
@@ -38,6 +37,7 @@ console.log(arrayMatches)
             <button onClick={props.renderMain}>Voltar</button>
             <h4>MATCHES</h4>
             { mapedMatches }
+            
             
         </div>
     )
