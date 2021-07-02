@@ -3,14 +3,14 @@ import GetProfile from '../GetProfile/GetProfile'
 import {
     Button,
     ButtonDiv,
-    MainContainer
+    
 
 } from './styled'
 
 function MainPage(props) {
 
     return (
-        <MainContainer>
+        <div>
             
             <ButtonDiv>
                
@@ -20,7 +20,7 @@ function MainPage(props) {
             
             <GetProfile />
 
-        </MainContainer>
+        </div>
     )
 }
 

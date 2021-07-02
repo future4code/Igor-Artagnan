@@ -1,9 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { BASE_URL } from '../../constantes/url'
 import axios from 'axios'
-import { Image, MainContainer, InfoDiv, ImgContainer, ChooseButtonsDiv, StyledButton } from './styled'
+import { MainContainer, InfoDiv, ChooseButtonsDiv, StyledButton, Name, Bio } from './styled'
+import styled from 'styled-components'
+
+const ImgContainer = styled.div`
+max-width: 400px;
+height: 400px;
+background-image: url(${({url})=>url});
+background-repeat: no-repeat;
+background-position: top center ;
+background-size: cover;
+display:flex;
+align-items: flex-end;
+
+`
 
 function GetProfile() {
+
+   
 
     const [profile, setProfile] = useState({})
 
@@ -45,15 +60,16 @@ function GetProfile() {
 
     return (
         <MainContainer>
-            <ImgContainer>
-                <Image src={profile.photo} />
-            </ImgContainer>
-            <InfoDiv>
-                <p>{profile.name}</p>
-                <p>{profile.age} anos</p>
-                <p>{profile.bio}</p>
+            <ImgContainer url={profile.photo}>
+                {/* <img src={profile.photo} /> */}
+            
+                <InfoDiv>
+                <Name>{profile.name}, {profile.age} anos</Name>
+                <Bio>{profile.bio}</Bio>
 
             </InfoDiv>
+            </ImgContainer>
+            
             <ChooseButtonsDiv>
                 <StyledButton onClick={() => choosePerson(false)}>X</StyledButton>
                 <StyledButton onClick={() => choosePerson(true)}>V</StyledButton>

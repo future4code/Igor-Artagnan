@@ -50,6 +50,7 @@ function App() {
   return (
     
     <div>
+      <GlobalStyle/>
       <Logo>Astromatch</Logo>
       <Container>
         
