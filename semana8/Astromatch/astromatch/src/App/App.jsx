@@ -8,13 +8,13 @@ import {
   Logo,
 } from './styled'
 
-
 function App() {
   const GlobalStyle = createGlobalStyle`
   *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    background-color:fffdd0;
   }
 
   body{
@@ -53,14 +53,11 @@ function App() {
       <GlobalStyle/>
       <Logo>Astromatch</Logo>
       <Container>
-        
-        
-        
+           
         {changePage()}
         
       </Container>
       
-     
       <Clear />
     </div>
   )

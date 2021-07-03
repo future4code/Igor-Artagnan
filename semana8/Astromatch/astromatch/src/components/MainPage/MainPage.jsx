@@ -4,7 +4,6 @@ import {
     Button,
     ButtonDiv,
     
-
 } from './styled'
 
 function MainPage(props) {

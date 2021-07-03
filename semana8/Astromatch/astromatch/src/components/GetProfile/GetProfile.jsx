@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BASE_URL } from '../../constantes/url'
 import axios from 'axios'
-import { MainContainer, InfoDiv, ChooseButtonsDiv, StyledButton, Name, Bio } from './styled'
+import { MainContainer, InfoDiv, ChooseButtonsDiv, StyledButtonAccept, StyledButtonDenit, Name, Bio } from './styled'
 import styled from 'styled-components'
 
 const ImgContainer = styled.div`
@@ -13,12 +13,9 @@ background-position: top center ;
 background-size: cover;
 display:flex;
 align-items: flex-end;
-
 `
 
 function GetProfile() {
-
-   
 
     const [profile, setProfile] = useState({})
 
@@ -26,18 +23,14 @@ function GetProfile() {
         getProfileToChoose()
     }, [])
 
-
     const getProfileToChoose = () => {
 
         axios.get(`${BASE_URL}/person`)
             .then((response) => {
                 setProfile(response.data.profile)
-
-
             })
             .catch((error) => {
                 alert(error.data)
-
             })
     }
 
@@ -54,15 +47,13 @@ function GetProfile() {
             })
             .catch((error) => {
                 alert(error.response)
-
             })
     }
 
     return (
         <MainContainer>
             <ImgContainer url={profile.photo}>
-                {/* <img src={profile.photo} /> */}
-            
+                
                 <InfoDiv>
                 <Name>{profile.name}, {profile.age} anos</Name>
                 <Bio>{profile.bio}</Bio>
@@ -71,8 +62,8 @@ function GetProfile() {
             </ImgContainer>
             
             <ChooseButtonsDiv>
-                <StyledButton onClick={() => choosePerson(false)}>X</StyledButton>
-                <StyledButton onClick={() => choosePerson(true)}>V</StyledButton>
+                <StyledButtonDenit onClick={() => choosePerson(false)}>X</StyledButtonDenit>
+                <StyledButtonAccept onClick={() => choosePerson(true)}>V</StyledButtonAccept>
             </ChooseButtonsDiv>
         </MainContainer>
 

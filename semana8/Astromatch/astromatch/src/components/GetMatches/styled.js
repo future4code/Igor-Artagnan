@@ -20,17 +20,23 @@ margin: 15px;
         width: 65px
     }
 }
-
 `
 const StyledName = styled.h3`
 font-size: 18px;
 margin-left: 22px;
 `
-
+const ClearButton = styled.button`
+position: absolute;
+margin-top: -31px;
+background: #62f7db;
+:hover{
+    cursor: pointer;
+}
+`
 
 export {
     Image,
     MatchContainer,
     StyledName,
-    
+    ClearButton  
 }
