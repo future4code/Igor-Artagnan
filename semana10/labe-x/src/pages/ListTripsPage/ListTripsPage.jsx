@@ -1,9 +1,10 @@
 import React from 'react'
+import {MainContainer} from './styled'
 
 export default function  ListTripsPage(){
 return (
-    <div>
+    <MainContainer>
         ListTripsPage
-    </div>
+    </MainContainer>
 )
 }

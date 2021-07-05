@@ -1,11 +1,23 @@
 import React from 'react'
-import AdminHomePage from './pages/AdminHomePage/AdminHomePage'
+import ApplicationFormPage from './pages/ApplicationFormPage/ApplicationFormPage'
+import {createGlobalStyle} from 'styled-components'
 
 
 function App() {
+
+  const GlobalStyle = createGlobalStyle`
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }`
+
   return (
     <div >
-      <AdminHomePage/>
+      <GlobalStyle/>
+      {/* <AdminHomePage/> */}
+      <ApplicationFormPage/>
       
     </div>
   );

@@ -1,9 +1,10 @@
 import React from 'react'
+import {MainContainer} from './styled'
 
 export default function  CreateTripPage(){
 return (
-    <div>
+    <MainContainer>
         CreateTripPage
-    </div>
+    </MainContainer>
 )
 }

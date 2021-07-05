@@ -1,20 +1,22 @@
 import React from 'react'
-import ApplicationFormPage from '../ApplicationFormPage/ApplicationFormPage'
+import {MainContainer, LogoDiv, Logo, ButtonsDiv, StyledButton} from './styled'
+/* import ApplicationFormPage from '../ApplicationFormPage/ApplicationFormPage'
 import CreateTripPage from '../CreateTripPage/CreateTripPage'
 import HomePage from '../HomePage/HomePage'
 import ListTripsPage from '../ListTripsPage/ListTripsPage'
 import LoginPage from '../LoginPage/LoginPage'
-import TripDetailsPage from '../TripDetailsPage/TripDetailsPage'
+import TripDetailsPage from '../TripDetailsPage/TripDetailsPage' */
 
 export default function  AdminHomePage(){
 return (
-    <div>
-       {/*  <ApplicationFormPage/>
-        <CreateTripPage/>
-        <HomePage/>
-        <ListTripsPage/>
-        <LoginPage/>
-        <TripDetailsPage/> */}
-    </div>
+    <MainContainer>
+       <LogoDiv>
+       <Logo>LabeX</Logo>
+       </LogoDiv>
+       <ButtonsDiv>
+       <StyledButton>Viagens</StyledButton>
+       <StyledButton>Login</StyledButton>
+       </ButtonsDiv>
+    </MainContainer>
 )
 }
