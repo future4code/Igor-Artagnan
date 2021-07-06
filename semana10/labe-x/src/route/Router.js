@@ -7,6 +7,7 @@ import CreateTripPage from '../pages/CreateTripPage/CreateTripPage'
 import ListTripsPage from '../pages/ListTripsPage/ListTripsPage'
 import LoginPage from '../pages/LoginPage/LoginPage'
 import TripDetailsPage from '../pages/TripDetailsPage/TripDetailsPage'
+import Error from '../pages/Error/Error'
 
 
 
@@ -44,6 +45,10 @@ export const Router = () => {
 
                 <Route exact path={"/TripDetailsPage"}>
                     <TripDetailsPage />
+                </Route>
+
+                <Route>
+                    <Error/>
                 </Route>
 
             </Switch>
