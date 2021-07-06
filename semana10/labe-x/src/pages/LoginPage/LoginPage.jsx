@@ -1,6 +1,14 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { MainContainer, InputsContainer, StyledInputs, ButtonDiv } from './styled'
+
 export default function LoginPage() {
+    
+    const history = useHistory()
+
+    const goBack = () => {
+        history.goBack()
+    }
     return (
         <MainContainer>
             <h1>Login</h1>
@@ -9,8 +17,8 @@ export default function LoginPage() {
                 <StyledInputs placeholder={'senha'} type={'password'} />
             </InputsContainer>
             <ButtonDiv>
-            <button>Voltar</button>
-            <button>Entrar</button>
+                <button onClick={goBack}>Voltar</button>
+                <button>Entrar</button>
             </ButtonDiv>
         </MainContainer>
     )

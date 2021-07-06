@@ -1,7 +1,14 @@
 import React from 'react'
 import { MainContainer, FormDiv } from './styled'
+import {useHistory} from 'react-router-dom'
 
 export default function ApplicationFormPage() {
+    const history = useHistory()
+
+    const goBack = () =>{
+        history.goBack()
+    }
+
     return (
         <MainContainer>
             <h1>Cadidate-se para uma viagem</h1>
@@ -22,7 +29,7 @@ export default function ApplicationFormPage() {
                 </select>
 
             </FormDiv>
-            <button>Voltar</button>
+            <button onClick={goBack}>Voltar</button>
             <button>Enviar</button>
 
 
