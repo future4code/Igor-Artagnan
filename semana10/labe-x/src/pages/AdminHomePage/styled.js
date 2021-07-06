@@ -7,7 +7,26 @@ background-repeat: no-repeat;
 background-position: top center ;
 background-size: cover;
 `
+const StyledButton = styled.button`
+width: 100px;
+color: white;
+height: 40px;
+border-radius: 30px;
+background-color: black;
+:hover{
+    cursor: pointer;
+    border-radius:0px;
+}
+`
 
+const ButtonsDiv = styled.div`
+width: 550px;
+display: flex;
+justify-content: space-between;
+margin: auto;
+`
 export {
-    MainContainer
+    MainContainer,
+    StyledButton,
+    ButtonsDiv
 }

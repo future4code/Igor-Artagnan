@@ -1,38 +1,41 @@
 import React from 'react'
-import { MainContainer, FormDiv } from './styled'
-import {useHistory} from 'react-router-dom'
+import { MainContainer, FormDiv, InfoDiv, StyledButton, ButtonsDiv, StyledInput, StyledSelect } from './styled'
+import { useHistory } from 'react-router-dom'
 
 export default function ApplicationFormPage() {
     const history = useHistory()
 
-    const goBack = () =>{
+    const goBack = () => {
         history.goBack()
     }
 
     return (
         <MainContainer>
-            <h1>Cadidate-se para uma viagem</h1>
-            <FormDiv>
-                <select>
-                    <option>exemplo</option>
-                    <option>exemplo</option>
-                    <option>exemplo</option>
-                </select>
-                <input placeholder={'Nome'} />
-                <input placeholder={'Idade'} />
-                <input placeholder={'Texto de candidatura'} />
-                <input placeholder={'Profissão'} />
-                <select>
-                    <option>exemplo</option>
-                    <option>exemplo</option>
-                    <option>exemplo</option>
-                </select>
+            <InfoDiv>
+                <h1>Cadidate-se para uma viagem</h1>
+                <FormDiv>
+                    <StyledSelect>
+                        <option>exemplo</option>
+                        <option>exemplo</option>
+                        <option>exemplo</option>
+                    </StyledSelect>
+                    <StyledInput placeholder={'Nome'} />
+                    <StyledInput placeholder={'Idade'} />
+                    <StyledInput placeholder={'Texto de candidatura'} />
+                    <StyledInput placeholder={'Profissão'} />
+                    <StyledSelect>
+                        <option>exemplo</option>
+                        <option>exemplo</option>
+                        <option>exemplo</option>
+                    </StyledSelect>
 
-            </FormDiv>
-            <button onClick={goBack}>Voltar</button>
-            <button>Enviar</button>
+                </FormDiv>
+                <ButtonsDiv>
+                    <StyledButton onClick={goBack}>Voltar</StyledButton>
+                    <StyledButton>Enviar</StyledButton>
+                </ButtonsDiv>
 
-
+            </InfoDiv>
         </MainContainer>
     )
 }

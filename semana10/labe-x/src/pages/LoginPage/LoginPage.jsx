@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { MainContainer, InputsContainer, StyledInputs, ButtonDiv } from './styled'
+import { MainContainer, InputsContainer, StyledInputs, ButtonDiv, InfoDiv, StyledButton } from './styled'
 
 export default function LoginPage() {
     
@@ -15,15 +15,17 @@ export default function LoginPage() {
     }
     return (
         <MainContainer>
+            <InfoDiv>
             <h1>Login</h1>
             <InputsContainer>
                 <StyledInputs placeholder={'email'} />
                 <StyledInputs placeholder={'senha'} type={'password'} />
             </InputsContainer>
             <ButtonDiv>
-                <button onClick={goBack}>Voltar</button>
-                <button onClick={renderAdminHomePage}>Entrar</button>
+                <StyledButton onClick={goBack}>Voltar</StyledButton>
+                <StyledButton onClick={renderAdminHomePage}>Entrar</StyledButton>
             </ButtonDiv>
+            </InfoDiv>
         </MainContainer>
     )
 }

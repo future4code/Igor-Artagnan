@@ -12,9 +12,59 @@ display: flex;
 flex-direction: column;
 width: 300px;
 margin:auto;
+align-items: center;
 `
+const InfoDiv = styled.div`
+flex-direction: column;
+justify-content: center;
+display: flex;
+margin: auto;
+-webkit-align-items: center;
+-webkit-box-align: center;
+h1{
+    color: white;
+}
+`
+const StyledButton = styled.button`
+width: 100px;
+color: white;
+height: 40px;
+border-radius: 30px;
+background-color: black;
+:hover{
+    cursor: pointer;
+    border-radius:0px;
+}
+`
+
+const ButtonsDiv = styled.div`
+width: 250px;
+display: flex;
+justify-content: space-between;
+margin: 30px;
+`
+
+const StyledInput = styled.input`
+margin-top: 10px;
+border-radius: 10px;
+height: 30px;
+width: 400px;
+`
+
+const StyledSelect = styled.select`
+margin-top: 10px;
+border-radius: 10px;
+height: 30px;
+width: 400px;
+`
+
 export {
     MainContainer,
-    FormDiv
+    FormDiv,
+    InfoDiv,
+    StyledButton,
+    ButtonsDiv,
+    StyledInput,
+    StyledSelect
 }
 

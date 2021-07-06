@@ -8,6 +8,40 @@ background-position: top center ;
 background-size: cover;
 `
 
+const StyledButton = styled.button`
+width: 100px;
+color: white;
+height: 40px;
+border-radius: 30px;
+background-color: black;
+:hover{
+    cursor: pointer;
+    border-radius:0px;
+}
+`
+
+const InfoDiv = styled.div`
+flex-direction: column-reverse;
+justify-content: center;
+display: flex;
+margin: auto;
+-webkit-align-items: center;
+-webkit-box-align: center;
+h1{
+    color: white;
+}
+`
+const ButtonsDiv = styled.div`
+width: 250px;
+display: flex;
+justify-content: space-between;
+margin: 30px;
+
+`
+
 export {
-    MainContainer
+    MainContainer,
+    StyledButton,
+    InfoDiv,
+    ButtonsDiv
 }
