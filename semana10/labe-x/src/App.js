@@ -1,6 +1,6 @@
 import React from 'react'
 import {createGlobalStyle} from 'styled-components'
-import HomePage from './pages/HomePage/HomePage'
+import {Router} from './route/Router'
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   return (
     <div >
       <GlobalStyle/>
-      <HomePage/>
+      <Router/>
       
     </div>
   );
