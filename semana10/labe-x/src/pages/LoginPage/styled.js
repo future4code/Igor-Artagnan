@@ -9,6 +9,8 @@ background-size: cover;
 display: flex;
 justify-content: center;
 flex-direction: column;
+text-align: center;
+
 `
 
 const InputsContainer = styled.div`
@@ -22,8 +24,19 @@ width: 200px;
 margin:auto;
 `
 
+const ButtonDiv = styled.div`
+width: 100px;
+display: flex;
+justify-content: space-between;
+margin: auto;
+margin-top: 3px;
+
+`
+
 export {
     MainContainer,
     InputsContainer,
-    StyledInputs
+    StyledInputs,
+    ButtonDiv
+    
 }

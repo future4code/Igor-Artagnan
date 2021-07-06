@@ -1,11 +1,17 @@
 import React from 'react'
-import {MainContainer} from './styled'
-import LoginPage from '../LoginPage/LoginPage'
+import {MainContainer, LogoDiv, Logo, ButtonsDiv, StyledButton} from './styled'
+
 
 export default function  HomePage(){
 return (
     <MainContainer>
-        <LoginPage/>
+       <LogoDiv>
+       <Logo>LabeX</Logo>
+       </LogoDiv>
+       <ButtonsDiv>
+       <StyledButton>Viagens</StyledButton>
+       <StyledButton>Login</StyledButton>
+       </ButtonsDiv>
     </MainContainer>
 )
 }

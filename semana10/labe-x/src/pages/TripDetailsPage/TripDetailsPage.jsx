@@ -5,6 +5,7 @@ export default function  TripDetailsPage(){
 return (
     <MainContainer>
         TripDetailsPage
+        <button>Voltar</button>
     </MainContainer>
 )
 }
