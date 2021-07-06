@@ -11,6 +11,7 @@ const FormDiv = styled.div`
 display: flex;
 flex-direction: column;
 width: 300px;
+margin:auto;
 `
 export {
     MainContainer,

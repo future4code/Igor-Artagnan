@@ -1,6 +1,6 @@
 import React from 'react'
-import ApplicationFormPage from './pages/ApplicationFormPage/ApplicationFormPage'
 import {createGlobalStyle} from 'styled-components'
+import HomePage from './pages/HomePage/HomePage'
 
 
 function App() {
@@ -16,8 +16,7 @@ function App() {
   return (
     <div >
       <GlobalStyle/>
-      {/* <AdminHomePage/> */}
-      <ApplicationFormPage/>
+      <HomePage/>
       
     </div>
   );

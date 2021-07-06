@@ -1,9 +1,13 @@
 import React from 'react'
-import { MainContainer } from './styled'
+import { MainContainer, InputsContainer, StyledInputs } from './styled'
 export default function LoginPage() {
     return (
         <MainContainer>
-            LoginPage
+            <h1>Login</h1>
+            <InputsContainer>
+                <StyledInputs placeholder={'email'} />
+                <StyledInputs placeholder={'senha'} type={'password'} />
+            </InputsContainer>
         </MainContainer>
     )
 }

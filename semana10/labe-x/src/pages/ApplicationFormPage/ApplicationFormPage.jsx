@@ -20,6 +20,7 @@ export default function ApplicationFormPage() {
                     <option>exemplo</option>
                     <option>exemplo</option>
                 </select>
+
             </FormDiv>
             <button>Voltar</button>
             <button>Enviar</button>
