@@ -9,6 +9,10 @@ export default function LoginPage() {
     const goBack = () => {
         history.goBack()
     }
+
+    const renderAdminHomePage = () => {
+        history.push("AdminHomePage")
+    }
     return (
         <MainContainer>
             <h1>Login</h1>
@@ -18,7 +22,7 @@ export default function LoginPage() {
             </InputsContainer>
             <ButtonDiv>
                 <button onClick={goBack}>Voltar</button>
-                <button>Entrar</button>
+                <button onClick={renderAdminHomePage}>Entrar</button>
             </ButtonDiv>
         </MainContainer>
     )
