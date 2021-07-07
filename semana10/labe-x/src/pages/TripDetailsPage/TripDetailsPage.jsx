@@ -5,7 +5,7 @@ import { MainContainer } from './styled'
 import { useHistory } from 'react-router'
 
 
- const useProtectedPage = () => {
+const useProtectedPage = () => {
     const history = useHistory()
 
     useEffect(() => {
@@ -15,11 +15,11 @@ import { useHistory } from 'react-router'
             history.push("/LoginPage")
         }
     }, [])
-} 
+}
 
 export default function TripDetailsPage() {
 
-     useProtectedPage() 
+    useProtectedPage()
 
 
     useEffect(() => {

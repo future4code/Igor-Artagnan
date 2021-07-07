@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { MainContainer, InputsContainer, StyledInputs, ButtonDiv, InfoDiv, StyledButton } from './styled'
-import {BASE_URL} from '../../constants/url'
+import { BASE_URL } from '../../constants/url'
 
 export default function LoginPage() {
 
@@ -27,21 +27,21 @@ export default function LoginPage() {
         setPassword(e.target.value)
     }
 
-    const postLogin = () =>{
+    const postLogin = () => {
 
         const body = {
             email: email,
             password: password
         }
 
-        axios.post(`${BASE_URL}/login`, body) 
-        .then((response)=>{
-            localStorage.setItem('token', response.data.token)
-            history.push("/AdminHomePage")
-        })
-        .catch((error)=>{
-            alert(error.response.data.message)
-        })
+        axios.post(`${BASE_URL}/login`, body)
+            .then((response) => {
+                localStorage.setItem('token', response.data.token)
+                history.push("/AdminHomePage")
+            })
+            .catch((error) => {
+                alert(error.response.data.message)
+            })
     }
 
     return (

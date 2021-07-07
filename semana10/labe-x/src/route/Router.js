@@ -1,4 +1,4 @@
-import React, {useEffect, useHistory} from 'react'
+import React, { useEffect, useHistory } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import HomePage from '../pages/HomePage/HomePage'
 import AdminHomePage from '../pages/AdminHomePage/AdminHomePage'
@@ -30,7 +30,7 @@ export const Router = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path={"/"}>
-                    <HomePage/>
+                    <HomePage />
                 </Route>
 
                 <Route exact path={"/ListTripsPage"}>
@@ -38,7 +38,7 @@ export const Router = () => {
                 </Route>
 
                 <Route exact path={"/AdminHomePage"}>
-                    <AdminHomePage/>
+                    <AdminHomePage />
                 </Route>
 
                 <Route exact path={"/ApplicationFormPage"}>
@@ -46,7 +46,7 @@ export const Router = () => {
                 </Route>
 
                 <Route exact path={"/CreateTripPage"}>
-                    <CreateTripPage/>
+                    <CreateTripPage />
                 </Route>
 
                 <Route exact path={"/LoginPage"}>
@@ -54,11 +54,11 @@ export const Router = () => {
                 </Route>
 
                 <Route exact path={"/TripDetailsPage"}>
-                    <TripDetailsPage/>
+                    <TripDetailsPage />
                 </Route>
 
                 <Route>
-                    <Error/>
+                    <Error />
                 </Route>
 
             </Switch>
