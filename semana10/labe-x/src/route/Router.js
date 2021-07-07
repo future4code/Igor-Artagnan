@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useHistory} from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import HomePage from '../pages/HomePage/HomePage'
 import AdminHomePage from '../pages/AdminHomePage/AdminHomePage'
@@ -9,8 +9,18 @@ import LoginPage from '../pages/LoginPage/LoginPage'
 import TripDetailsPage from '../pages/TripDetailsPage/TripDetailsPage'
 import Error from '../pages/Error/Error'
 
+/* const useProtectedPage = () => {
+    const history = useHistory()
 
-
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        if (token === null) {
+            console.log('Não está logado')
+            history.push("/LoginPage")
+        }
+    }, [])
+}
+ */
 
 
 
@@ -20,7 +30,7 @@ export const Router = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path={"/"}>
-                    <HomePage />
+                    <HomePage/>
                 </Route>
 
                 <Route exact path={"/ListTripsPage"}>
@@ -28,7 +38,7 @@ export const Router = () => {
                 </Route>
 
                 <Route exact path={"/AdminHomePage"}>
-                    <AdminHomePage />
+                    <AdminHomePage/>
                 </Route>
 
                 <Route exact path={"/ApplicationFormPage"}>
@@ -36,7 +46,7 @@ export const Router = () => {
                 </Route>
 
                 <Route exact path={"/CreateTripPage"}>
-                    <CreateTripPage />
+                    <CreateTripPage/>
                 </Route>
 
                 <Route exact path={"/LoginPage"}>
@@ -44,7 +54,7 @@ export const Router = () => {
                 </Route>
 
                 <Route exact path={"/TripDetailsPage"}>
-                    <TripDetailsPage />
+                    <TripDetailsPage/>
                 </Route>
 
                 <Route>
