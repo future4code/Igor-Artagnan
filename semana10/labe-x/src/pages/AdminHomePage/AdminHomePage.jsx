@@ -1,10 +1,13 @@
 import React from 'react'
-import { MainContainer, StyledButton, ButtonsDiv } from './styled'
 import { useHistory } from 'react-router-dom'
+import {useProtectedPage} from '../ProtectedPage/ProtectedPage'
+import { MainContainer, StyledButton, ButtonsDiv } from './styled'
 
 
 
 export default function AdminHomePage() {
+
+    useProtectedPage()
     
     
     const history = useHistory()

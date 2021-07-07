@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import {useProtectedPage} from '../ProtectedPage/ProtectedPage'
 import { MainContainer, ButtonsDiv, StyledButton, InfoDiv, FormDiv, StyledInput, StyledSelect } from './styled'
 
 export default function CreateTripPage() {
+    
+    useProtectedPage()
+    
     const history = useHistory()
 
     const goBack = () => {

@@ -12,12 +12,9 @@ export default function LoginPage() {
     const history = useHistory()
 
     const goBack = () => {
-        history.goBack()
+        history.push("/")
     }
 
-    const renderAdminHomePage = () => {
-        history.push("AdminHomePage")
-    }
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value)

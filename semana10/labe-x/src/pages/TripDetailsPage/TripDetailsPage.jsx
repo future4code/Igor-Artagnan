@@ -2,26 +2,13 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../../constants/url'
 import { MainContainer } from './styled'
-import { useHistory } from 'react-router'
+import {useProtectedPage} from '../ProtectedPage/ProtectedPage'
 
-
-const useProtectedPage = () => {
-    const history = useHistory()
-
-    useEffect(() => {
-        const token = localStorage.getItem('token')
-        if (token === null) {
-            console.log('Não está logado')
-            history.push("/LoginPage")
-        }
-    }, [])
-}
 
 export default function TripDetailsPage() {
 
-    useProtectedPage()
-
-
+     useProtectedPage()
+  
     useEffect(() => {
 
 
