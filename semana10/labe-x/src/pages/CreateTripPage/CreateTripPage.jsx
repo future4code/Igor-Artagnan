@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
-import {useProtectedPage} from '../../hooks/ProtectedPage'
+import { useProtectedPage } from '../../hooks/ProtectedPage'
+import { BASE_URL } from '../../constants/url'
+import useForm from '../../hooks/UseForm'
 import { MainContainer, ButtonsDiv, StyledButton, InfoDiv, FormDiv, StyledInput, StyledSelect } from './styled'
 
 export default function CreateTripPage() {
@@ -10,33 +13,34 @@ export default function CreateTripPage() {
     const history = useHistory()
 
     const goBack = () => {
-        history.goBack()
+        history.push("/AdminHomePage")
     }
 
-    const [name, setName] = useState("")
-    const [description, setDescription] = useState("")
-    const [planet, setPlanet] = useState("")
-    const [durationInDays, setDurationInDays] = useState("")
-    const [date, setDate] = useState("")
+    const { form, onChange, cleanFields } = useForm({ name: '', description: '', planet: '', durationInDays: '', date: '' })
 
-    const onChangeName = (e) => {
-        setName(e.target.value)
-    }
+    console.log(form)
 
-    const onChangeDescription = (e) => {
-        setDescription(e.target.value)
-    }
+    const CreateTrip = (event) => {
 
-    const onChangePlanet = (e) => {
-        setPlanet(e.target.value)
-    }
+        event.preventDefault()
+        
+        const token = localStorage.getItem('token')
+        
+        axios.post(`${BASE_URL}/trips`, {
+            headers: {
+                auth: token
+            }
+        }, form)
 
-    const onChangeDurationInDays = (e) => {
-        setDurationInDays(e.target.value)
-    }
+            .them((response) => {
+                console.log(response)
+                /* cleanFields() */
 
-    const onChangeDate = (e) => {
-        setDate(e.target.value)
+            })
+            .catch((error) => {
+                console.log(error.response)
+
+            })
     }
 
 
@@ -45,43 +49,68 @@ export default function CreateTripPage() {
         <MainContainer>
             <InfoDiv>
                 <h1>Cadastrar viagem</h1>
-                <FormDiv>
-                    <StyledInput
-                        placeholder={"Título"}
-                        onChange={onChangeName}
-                    />
-                    <StyledSelect
-                        onChange={onChangePlanet}
-                    >
-                        <option>Escolha um Planeta</option>
-                        <option>Mercúrio</option>
-                        <option>Vênus</option>
-                        <option>Marte</option>
-                        <option>Júpiter</option>
-                        <option>Saturno</option>
-                        <option>Urano</option>
-                        <option>Netuno</option>
-                        <option>Plutão</option>
+                <form>
+                    <FormDiv onSubmit={CreateTrip}>  {/* Não acontece nada no clicar do botão */}
 
-                    </StyledSelect>
-                    <StyledInput
-                        type="date"
-                        onChange={onChangeDate}
-                    />
-                    <StyledInput
-                        placeholder={"Descrição"}
-                        onChange={onChangeDescription}
-                    />
-                    <StyledInput
-                        placeholder={"Duração em dias"}
-                        onChange={onChangeDurationInDays}
-                    />
-                </FormDiv>
+                        <StyledInput
+                            name={'name'}
+                            value={form.name}
+                            placeholder={"Título"}
+                            onChange={onChange}
+                            pattern={"^.{5,}"}
+                            title={"O nome deve ter no mínimo 5 letras"}
+                            required
+                        />
+                        <StyledSelect
+                            name={'planet'}
+                            onChange={onChange}
+                            value={form.planet}
+                            required
+                        >
+                            <option>Escolha um Planeta</option>
+                            <option>Mercúrio</option>
+                            <option>Vênus</option>
+                            <option>Marte</option>
+                            <option>Júpiter</option>
+                            <option>Saturno</option>
+                            <option>Urano</option>
+                            <option>Netuno</option>
+                            <option>Plutão</option>
 
-                <ButtonsDiv>
-                    <StyledButton onClick={goBack}>Voltar</StyledButton>
-                    <StyledButton>Criar</StyledButton>
-                </ButtonsDiv>
+                        </StyledSelect>
+                        <StyledInput
+                            name={'date'}
+                            value={form.date}    //procurar regex que impede que a data do dia corrente seja escolhida
+                            type="date"
+                            onChange={onChange}
+                            required
+                        />
+                        <StyledInput
+                            name={'description'}
+                            value={form.description}
+                            placeholder={"Descrição"}
+                            onChange={onChange}
+                            pattern={"^.{30,}"}
+                            title={"A descrição deve conter no mínimo 30 caracteres"}
+                            required
+                        />
+                        <StyledInput
+                            name={'durationInDays'}
+                            value={form.durationInDays}
+                            placeholder={"Duração em dias"}
+                            onChange={onChange}
+                            type={'number'}
+                            min={50}
+                            required
+                        />
+
+                    </FormDiv>
+
+                    <ButtonsDiv>
+                        <StyledButton onClick={goBack}>Voltar</StyledButton>
+                        <StyledButton>Criar</StyledButton>
+                    </ButtonsDiv>
+                </form>
             </InfoDiv>
         </MainContainer>
     )

@@ -13,7 +13,7 @@ export default function AdminHomePage() {
     const history = useHistory()
 
     const goBack = () => {
-        history.goBack()
+        history.push('/')
     }
 
     const renderCreateTripPage = () => {
