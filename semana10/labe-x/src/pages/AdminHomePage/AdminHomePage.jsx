@@ -23,6 +23,27 @@ export default function AdminHomePage() {
             })
     }, [])
 
+    const deleteTrip = (id) =>{
+
+        const token = localStorage.getItem('token')
+        const header ={
+            headers: {
+                auth: token
+            }
+        }
+        
+           axios.delete(`${BASE_URL}/trips/${id}`, header)
+            .then((response)=>{
+                console.log(response)
+
+            })
+            .catch((error)=>{
+                console.log(error)
+
+            })
+        }
+        
+
     const history = useHistory()
 
     const goBack = () => {
@@ -47,7 +68,7 @@ export default function AdminHomePage() {
         onClick={()=>goToDetailPage(trip.id) }
         key={trip.id}>
             <h2>{trip.name}</h2>            {/* <= Estilizar cards*/}
-            <button>Deletar</button>
+            <button onClick={()=> deleteTrip(trip.id)}>Deletar</button>
 
         </CardDiv>
     })

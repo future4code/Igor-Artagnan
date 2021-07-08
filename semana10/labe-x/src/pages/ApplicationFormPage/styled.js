@@ -30,6 +30,7 @@ width: 100px;
 color: white;
 height: 40px;
 border-radius: 30px;
+border: none;
 background-color: black;
 :hover{
     cursor: pointer;
@@ -49,6 +50,7 @@ margin-top: 10px;
 border-radius: 10px;
 height: 30px;
 width: 400px;
+padding: 5px;
 `
 
 const StyledSelect = styled.select`

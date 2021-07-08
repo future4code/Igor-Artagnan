@@ -9,19 +9,6 @@ import LoginPage from '../pages/LoginPage/LoginPage'
 import TripDetailsPage from '../pages/TripDetailsPage/TripDetailsPage'
 import Error from '../pages/Error/Error'
 
-/* const useProtectedPage = () => {
-    const history = useHistory()
-
-    useEffect(() => {
-        const token = localStorage.getItem('token')
-        if (token === null) {
-            console.log('Não está logado')
-            history.push("/LoginPage")
-        }
-    }, [])
-}
- */
-
 
 
 
