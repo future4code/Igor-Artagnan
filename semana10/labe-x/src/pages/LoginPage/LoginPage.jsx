@@ -18,14 +18,15 @@ export default function LoginPage() {
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value)
+        
     }
 
     const onChangePassword = (e) => {
         setPassword(e.target.value)
     }
 
-    const postLogin = () => {
-
+    const postLogin = (event) => {
+        event.preventDefault();
         const body = {
             email: email,
             password: password
@@ -45,22 +46,28 @@ export default function LoginPage() {
         <MainContainer>
             <InfoDiv>
                 <h1>Login</h1>
+                <form onSubmit={postLogin}>
                 <InputsContainer>
                     <StyledInputs
                         placeholder={'email'}
                         value={email}
                         onChange={onChangeEmail}
+                        type={'email'}
+                        required
                     />
                     <StyledInputs
                         placeholder={'senha'}
                         value={password}
                         onChange={onChangePassword}
-                        type={'password'} />
+                        type={'password'} 
+                        required
+                        />
                 </InputsContainer>
                 <ButtonDiv>
                     <StyledButton onClick={goBack}>Voltar</StyledButton>
-                    <StyledButton onClick={postLogin}>Entrar</StyledButton>
+                    <StyledButton>Entrar</StyledButton>
                 </ButtonDiv>
+                </form>
             </InfoDiv>
         </MainContainer>
     )
