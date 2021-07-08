@@ -16,7 +16,7 @@ export default function CreateTripPage() {
         history.push("/AdminHomePage")
     }
 
-    const { form, onChange, cleanFields } = useForm({ name: '', description: '', planet: '', durationInDays: '', date: '' })
+    const { form, onChange, /* cleanFields */ } = useForm({ name: '', description: '', planet: '', durationInDays: '', date: '' })
 
     console.log(form)
 
@@ -33,7 +33,7 @@ export default function CreateTripPage() {
         }, form)
 
             .them((response) => {
-                console.log(response)
+                console.log(response.data)
                 /* cleanFields() */
 
             })
