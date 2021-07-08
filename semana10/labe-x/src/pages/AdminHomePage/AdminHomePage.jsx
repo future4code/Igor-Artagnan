@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import { useProtectedPage } from '../../hooks/ProtectedPage'
 import { BASE_URL } from '../../constants/url'
-import { MainContainer, StyledButton, ButtonsDiv } from './styled'
+import { MainContainer, StyledButton, ButtonsDiv, CardDiv } from './styled'
 
 
 
@@ -23,16 +23,6 @@ export default function AdminHomePage() {
             })
     }, [])
 
-
-
-    const mapedTrips = arrayOfTrips.map((trip) => {
-        return <div key={trip.id}>
-            <h2>{trip.name}</h2>            {/* <= Estilizar cards*/}
-            <button>Deletar</button>
-
-        </div>
-    })
-
     const history = useHistory()
 
     const goBack = () => {
@@ -46,6 +36,21 @@ export default function AdminHomePage() {
     const renderLoginPage = () => {
         history.push("LoginPage")
     }
+
+    const goToDetailPage = (id) => {
+        history.push(`/TripDetailsPage/${id}`)
+
+    }
+
+    const mapedTrips = arrayOfTrips.map((trip) => {
+        return <CardDiv 
+        onClick={()=>goToDetailPage(trip.id) }
+        key={trip.id}>
+            <h2>{trip.name}</h2>            {/* <= Estilizar cards*/}
+            <button>Deletar</button>
+
+        </CardDiv>
+    })
 
     return (
         <MainContainer>

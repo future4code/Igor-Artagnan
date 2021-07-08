@@ -25,8 +25,16 @@ display: flex;
 justify-content: space-between;
 margin: auto;
 `
+
+const CardDiv = styled.div`
+border: 2px solid blue;
+:hover{
+    cursor: pointer;
+}
+`
 export {
     MainContainer,
     StyledButton,
-    ButtonsDiv
+    ButtonsDiv,
+    CardDiv
 }

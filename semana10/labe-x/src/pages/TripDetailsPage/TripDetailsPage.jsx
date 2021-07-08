@@ -3,6 +3,8 @@ import axios from 'axios'
 import { BASE_URL } from '../../constants/url'
 import { MainContainer, StyledButton } from './styled'
 import {useProtectedPage} from '../../hooks/ProtectedPage'
+import { useHistory, useParams } from 'react-router-dom'
+
 
 
 
@@ -10,17 +12,24 @@ export default function TripDetailsPage() {
 
     const [arrayOfTrip, setTrip] = useState([])
 
+    const history = useHistory()
+    const params = useParams()
+
+    const goBack = () => {
+        history.goBack()
+    }
+
     useProtectedPage()
 
     useEffect(() => {
 
         const token = localStorage.getItem('token')
 
-        axios.get(`${BASE_URL}/trip/jn5pZd8l9WsXpUDHTn5o`, {
+        axios.get(`${BASE_URL}/trip/${params.id}`, {
             headers: {
                 auth: token
             }
-        }) // <= id fixo para teste
+        }) 
             .then((response) => {
                 setTrip(response.data.trip)
             })
@@ -28,6 +37,8 @@ export default function TripDetailsPage() {
                 console.log('Erro', error.response.data.message)
             })
     }, [])
+
+    
 
      const {name, description, planet, durationInDays, date} = arrayOfTrip
     return (
@@ -40,7 +51,7 @@ export default function TripDetailsPage() {
             <h3>Data: {date}</h3>
 
 
-            <StyledButton>Voltar</StyledButton>
+            <StyledButton onClick={goBack}>Voltar</StyledButton>
         </MainContainer>
     )
 }
