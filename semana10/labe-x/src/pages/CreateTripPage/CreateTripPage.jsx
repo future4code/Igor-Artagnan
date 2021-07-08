@@ -18,22 +18,27 @@ export default function CreateTripPage() {
 
     const { form, onChange, /* cleanFields */ } = useForm({ name: '', description: '', planet: '', durationInDays: '', date: '' })
 
-    console.log(form)
+  
 
-    const CreateTrip = (event) => {
+    const createTrip = (event) => {
+        const dateSplited = form.date.split('-')
+        
+        const newDate = `${dateSplited[2]}/${dateSplited[1]}/${dateSplited[0]}`
 
         event.preventDefault()
-        
+        const body = {...form, date: newDate} 
         const token = localStorage.getItem('token')
-        
         axios.post(`${BASE_URL}/trips`, {
             headers: {
                 auth: token
             }
-        }, form)
+        }, body)
 
-            .them((response) => {
-                console.log(response.data)
+        
+
+            .then((response) => {
+                
+                console.log(response)
                 /* cleanFields() */
 
             })
@@ -42,15 +47,17 @@ export default function CreateTripPage() {
 
             })
     }
+  console.log(form.date)
+  
 
-
-
+ 
+  
     return (
         <MainContainer>
             <InfoDiv>
                 <h1>Cadastrar viagem</h1>
-                <form>
-                    <FormDiv onSubmit={CreateTrip}>  {/* Não acontece nada no clicar do botão */}
+                <form onSubmit={createTrip}>
+                    <FormDiv>  
 
                         <StyledInput
                             name={'name'}
@@ -81,7 +88,7 @@ export default function CreateTripPage() {
                         <StyledInput
                             name={'date'}
                             value={form.date}    //procurar regex que impede que a data do dia corrente seja escolhida
-                            type="date"
+                            type="date"          
                             onChange={onChange}
                             required
                         />
@@ -108,7 +115,7 @@ export default function CreateTripPage() {
 
                     <ButtonsDiv>
                         <StyledButton onClick={goBack}>Voltar</StyledButton>
-                        <StyledButton>Criar</StyledButton>
+                        <StyledButton type={"submit"}>Criar</StyledButton>
                     </ButtonsDiv>
                 </form>
             </InfoDiv>
