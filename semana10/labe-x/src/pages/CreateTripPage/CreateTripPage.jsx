@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import {useProtectedPage} from '../ProtectedPage/ProtectedPage'
+import {useProtectedPage} from '../../hooks/ProtectedPage'
 import { MainContainer, ButtonsDiv, StyledButton, InfoDiv, FormDiv, StyledInput, StyledSelect } from './styled'
 
 export default function CreateTripPage() {
-    
+
     useProtectedPage()
-    
+
     const history = useHistory()
 
     const goBack = () => {
@@ -54,8 +54,15 @@ export default function CreateTripPage() {
                         onChange={onChangePlanet}
                     >
                         <option>Escolha um Planeta</option>
-                        <option>Exemplo</option>
-                        <option>Exemplo</option>
+                        <option>Mercúrio</option>
+                        <option>Vênus</option>
+                        <option>Marte</option>
+                        <option>Júpiter</option>
+                        <option>Saturno</option>
+                        <option>Urano</option>
+                        <option>Netuno</option>
+                        <option>Plutão</option>
+
                     </StyledSelect>
                     <StyledInput
                         type="date"

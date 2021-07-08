@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import {useProtectedPage} from '../ProtectedPage/ProtectedPage'
+import {useProtectedPage} from '../../hooks/ProtectedPage'
 import { MainContainer, StyledButton, ButtonsDiv } from './styled'
 
 
