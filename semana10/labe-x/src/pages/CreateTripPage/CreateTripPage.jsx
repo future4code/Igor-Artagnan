@@ -16,31 +16,30 @@ export default function CreateTripPage() {
         history.push("/AdminHomePage")
     }
 
-    const { form, onChange, /* cleanFields */ } = useForm({ name: '', description: '', planet: '', durationInDays: '', date: '' })
+    const { form, onChange, cleanFields } = useForm({ name: '', description: '', planet: '', durationInDays: '', date: '' })
 
-  
 
     const createTrip = (event) => {
         const dateSplited = form.date.split('-')
-        
+
         const newDate = `${dateSplited[2]}/${dateSplited[1]}/${dateSplited[0]}`
 
         event.preventDefault()
-        const body = {...form, date: newDate} 
+        const body = { ...form, date: newDate }
         const token = localStorage.getItem('token')
-        const header ={
+        const header = {
             headers: {
                 auth: token
             }
         }
-        axios.post(`${BASE_URL}/trips`, header, body)
-
-        
+        axios.post(`${BASE_URL}/trips`, body, header)
 
             .then((response) => {
-                
+
                 console.log(response)
-                /* cleanFields() */
+                alert("Viagem criada com sucesso!")
+                cleanFields()
+
 
             })
             .catch((error) => {
@@ -48,17 +47,13 @@ export default function CreateTripPage() {
 
             })
     }
-  console.log(form)
-  
 
- 
-  
     return (
         <MainContainer>
             <InfoDiv>
                 <h1>Cadastrar viagem</h1>
                 <form onSubmit={createTrip}>
-                    <FormDiv>  
+                    <FormDiv>
 
                         <StyledInput
                             name={'name'}
@@ -89,7 +84,7 @@ export default function CreateTripPage() {
                         <StyledInput
                             name={'date'}
                             value={form.date}    //procurar regex que impede que a data do dia corrente seja escolhida
-                            type="date"          
+                            type="date"
                             onChange={onChange}
                             required
                         />

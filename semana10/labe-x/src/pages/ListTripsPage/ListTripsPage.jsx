@@ -43,6 +43,7 @@ export default function ListTripsPage() {
         </div>
     })
     
+    /* console.log(arrayOfTrips) */
 
     return (
         <MainContainer>

@@ -24,6 +24,8 @@ export default function ApplicationFormPage() {
        .catch(()=>{})
    }
 
+   
+
     return (
         <MainContainer>
             <form /* onSubmit={applyToTrip} */>
