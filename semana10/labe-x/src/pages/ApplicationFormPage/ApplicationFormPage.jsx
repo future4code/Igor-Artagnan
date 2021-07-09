@@ -11,7 +11,7 @@ export default function ApplicationFormPage() {
     const goBack = () => {
         history.push("/ListTripsPage")
     }
-    const { form, onChange, cleanFields } = useForm({ name: "", age: "", applicationText: "", profession: "", country: "" })
+    const { form, onChange, cleanFields } = useForm({ name: "", age: "", applicationText: "", profession: "", country: "", trip: null })
 
     const [arrayOfTrips, setArrayOfTrips] = useState([])
 
@@ -19,7 +19,15 @@ export default function ApplicationFormPage() {
     const applyToTrip = (event) => {
         event.preventDefault()
 
-        axios.post(`${BASE_URL}/trips/${form.trip.id}apply`, form)
+        const body = {
+            name: form.name,
+            age: form.age,
+            applicationText: form.applicationText,
+            profession: form.profession,
+            country: form.country
+          }
+
+        axios.post(`${BASE_URL}/trips/${form.trip}/apply`, body)
             .then((response) => {
                 console.log('sucesso', response)
                 cleanFields()
@@ -33,7 +41,7 @@ export default function ApplicationFormPage() {
         axios.get(`${BASE_URL}/trips`)
         .then((response)=>{
             setArrayOfTrips(response.data.trips)
-            /* alert("Sucesso!") */
+            alert("Sucesso!") 
         })
         .catch((error)=>{
             alert(error.response) 
@@ -41,7 +49,7 @@ export default function ApplicationFormPage() {
     }, [])
    
 
-console.log('trips',arrayOfTrips)
+console.log('form', form.trip)
 
 const mapedTrips = arrayOfTrips.map((trip)=>{
     return <option value={trip.id} key={trip.id}>{trip.name}</option>
@@ -55,7 +63,11 @@ const mapedTrips = arrayOfTrips.map((trip)=>{
                 <InfoDiv>
                     <h1>Cadidate-se para uma viagem</h1>
                     <FormDiv>
-                        <StyledSelect>
+                        <StyledSelect 
+                        onChange={onChange}
+                        value={form['trip']}
+                        name={'trip'}
+                        >
                             {mapedTrips}
                         </StyledSelect>
                         
