@@ -29,7 +29,7 @@ export default function ApplicationFormPage() {
 
         axios.post(`${BASE_URL}/trips/${form.trip}/apply`, body)
             .then((response) => {
-                console.log('sucesso', response)
+                alert('Candidatura aplicada com sucesso!', response)
                 cleanFields()
             })
             .catch((error) => {
@@ -41,15 +41,13 @@ export default function ApplicationFormPage() {
         axios.get(`${BASE_URL}/trips`)
         .then((response)=>{
             setArrayOfTrips(response.data.trips)
-            alert("Sucesso!") 
+            
         })
         .catch((error)=>{
             alert(error.response) 
         })
     }, [])
    
-
-console.log('form', form.trip)
 
 const mapedTrips = arrayOfTrips.map((trip)=>{
     return <option value={trip.id} key={trip.id}>{trip.name}</option>
