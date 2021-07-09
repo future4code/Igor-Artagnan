@@ -11,11 +11,11 @@ export default function ListTripsPage() {
     const history = useHistory()
 
     const renderMainPage = () => {
-        history.goBack()
+        history.push('/')
     }
 
-    const renderApplicationFormPage = () => {
-        history.push("ApplicationFormPage")
+    const renderApplicationFormPage = (id) => {
+        history.push(`ApplicationFormPage/`)
     }
 
     useEffect(()=>{
@@ -28,9 +28,6 @@ export default function ListTripsPage() {
         })
     }, [])
 
-
-    
-
     const mapedTrips = arrayOfTrips.map((trip)=>{
         return <div key={trip.id}>
            <h1>{trip.name}</h1>
@@ -41,9 +38,8 @@ export default function ListTripsPage() {
             <h3>Data: {trip.date}</h3>
 
         </div>
-    })
-    
-    /* console.log(arrayOfTrips) */
+       
+    })   
 
     return (
         <MainContainer>
@@ -51,7 +47,7 @@ export default function ListTripsPage() {
             <h1>Viagens Disponíveis</h1>
             <ButtonsDiv>
             <StyledButton onClick={renderMainPage}>Voltar</StyledButton>
-            <StyledButton onClick={renderApplicationFormPage}>Inscreva-se</StyledButton>
+            <StyledButton onClick={renderApplicationFormPage}>Inscreva-se</StyledButton>                            
             </ButtonsDiv>
             </InfoDiv>
             {mapedTrips}

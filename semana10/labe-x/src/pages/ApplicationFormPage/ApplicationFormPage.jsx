@@ -1,42 +1,64 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import useForm from '../../hooks/UseForm'
-import { useHistory, /* useParams  */} from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 import { BASE_URL } from '../../constants/url'
+
 import { MainContainer, FormDiv, InfoDiv, StyledButton, ButtonsDiv, StyledInput, StyledSelect } from './styled'
 import axios from 'axios'
 
 export default function ApplicationFormPage() {
     const history = useHistory()
-    /* const params = useParams() */
-
     const goBack = () => {
-        history.goBack()
+        history.push("/ListTripsPage")
     }
-
     const { form, onChange, cleanFields } = useForm({ name: "", age: "", applicationText: "", profession: "", country: "" })
 
-    /* console.log(form) */
-   /*  console.log(params) */
+    const [arrayOfTrips, setArrayOfTrips] = useState([])
 
-   const applyToTrip = () =>{
-       axios.post(`${BASE_URL}/trips/${"aqui vai o id"}/apply`)
-       .then(()=>{})
-       .catch(()=>{})
-   }
 
+    const applyToTrip = (event) => {
+        event.preventDefault()
+
+        axios.post(`${BASE_URL}/trips/${form.trip.id}apply`, form)
+            .then((response) => {
+                console.log('sucesso', response)
+                cleanFields()
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    useEffect(()=>{
+        axios.get(`${BASE_URL}/trips`)
+        .then((response)=>{
+            setArrayOfTrips(response.data.trips)
+            /* alert("Sucesso!") */
+        })
+        .catch((error)=>{
+            alert(error.response) 
+        })
+    }, [])
    
+
+console.log('trips',arrayOfTrips)
+
+const mapedTrips = arrayOfTrips.map((trip)=>{
+    return <option value={trip.id} key={trip.id}>{trip.name}</option>
+})
+
+
 
     return (
         <MainContainer>
-            <form /* onSubmit={applyToTrip} */>
+            <form onSubmit={applyToTrip} >
                 <InfoDiv>
                     <h1>Cadidate-se para uma viagem</h1>
                     <FormDiv>
                         <StyledSelect>
-                            <option>exemplo</option>
-                            <option>exemplo</option>
-                            <option>exemplo</option>
+                            {mapedTrips}
                         </StyledSelect>
+                        
                         <StyledInput
                             name={"name"}
                             placeholder={'Nome'}
@@ -93,11 +115,12 @@ export default function ApplicationFormPage() {
                     </FormDiv>
                     <ButtonsDiv>
                         <StyledButton onClick={goBack}>Voltar</StyledButton>
-                        <StyledButton>Enviar</StyledButton>
+                        <StyledButton type={'submit'}>Enviar</StyledButton>
                     </ButtonsDiv>
 
                 </InfoDiv>
             </form>
+            
         </MainContainer>
     )
 }

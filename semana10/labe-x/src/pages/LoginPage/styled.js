@@ -29,6 +29,7 @@ width: 200px;
 margin:auto;
 border-radius: 20px;
 height: 30px;
+padding: 5px;
 `
 
 const ButtonDiv = styled.div`

@@ -28,7 +28,7 @@ export const Router = () => {
                     <AdminHomePage />
                 </Route>
 
-                <Route exact path={"/ApplicationFormPage"}>
+                <Route exact path={"/ApplicationFormPage/"}>
                     <ApplicationFormPage />
                 </Route>
 
