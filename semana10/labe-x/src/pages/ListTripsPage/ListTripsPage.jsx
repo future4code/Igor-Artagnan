@@ -28,6 +28,7 @@ export default function ListTripsPage() {
         })
     }, [])
 
+
     
 
     const mapedTrips = arrayOfTrips.map((trip)=>{
@@ -41,6 +42,7 @@ export default function ListTripsPage() {
 
         </div>
     })
+    
 
     return (
         <MainContainer>

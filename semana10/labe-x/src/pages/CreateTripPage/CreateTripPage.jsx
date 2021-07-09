@@ -28,11 +28,12 @@ export default function CreateTripPage() {
         event.preventDefault()
         const body = {...form, date: newDate} 
         const token = localStorage.getItem('token')
-        axios.post(`${BASE_URL}/trips`, {
+        const header ={
             headers: {
                 auth: token
             }
-        }, body)
+        }
+        axios.post(`${BASE_URL}/trips`, header, body)
 
         
 
@@ -47,7 +48,7 @@ export default function CreateTripPage() {
 
             })
     }
-  console.log(form.date)
+  console.log(form)
   
 
  

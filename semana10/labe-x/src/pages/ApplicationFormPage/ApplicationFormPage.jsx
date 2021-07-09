@@ -1,10 +1,13 @@
 import React from 'react'
 import useForm from '../../hooks/UseForm'
-import { useHistory } from 'react-router-dom'
+import { useHistory, /* useParams  */} from 'react-router-dom'
+import { BASE_URL } from '../../constants/url'
 import { MainContainer, FormDiv, InfoDiv, StyledButton, ButtonsDiv, StyledInput, StyledSelect } from './styled'
+import axios from 'axios'
 
 export default function ApplicationFormPage() {
     const history = useHistory()
+    /* const params = useParams() */
 
     const goBack = () => {
         history.goBack()
@@ -12,11 +15,18 @@ export default function ApplicationFormPage() {
 
     const { form, onChange, cleanFields } = useForm({ name: "", age: "", applicationText: "", profession: "", country: "" })
 
-    console.log(form)
+    /* console.log(form) */
+   /*  console.log(params) */
+
+   const applyToTrip = () =>{
+       axios.post(`${BASE_URL}/trips/${"aqui vai o id"}/apply`)
+       .then(()=>{})
+       .catch(()=>{})
+   }
 
     return (
         <MainContainer>
-            <form /* onSubmit={} */>
+            <form /* onSubmit={applyToTrip} */>
                 <InfoDiv>
                     <h1>Cadidate-se para uma viagem</h1>
                     <FormDiv>

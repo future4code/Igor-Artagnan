@@ -68,8 +68,9 @@ export default function AdminHomePage() {
         onClick={()=>goToDetailPage(trip.id) }
         key={trip.id}>
             <h2>{trip.name}</h2>            {/* <= Estilizar cards*/}
+            <div>
             <button onClick={()=> deleteTrip(trip.id)}>Deletar</button>
-
+            </div>
         </CardDiv>
     })
 
