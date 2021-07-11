@@ -11,6 +11,10 @@ export default function TripDetailsPage() {
 
     const [arrayOfTrip, setTrip] = useState([])
     const [arrayOfCandidates, setArrayOfCandidates] = useState([])
+    const [approvedCandidates, setApprovedCandidates] = useState([])
+    const [approve, setApprove] = useState(true)
+    const [reject, setReject] = useState(false)
+
     
     
 
@@ -35,20 +39,77 @@ export default function TripDetailsPage() {
             .then((response) => {
                 setTrip(response.data.trip)
                 setArrayOfCandidates(response.data.trip.candidates)
+                setApprovedCandidates(response.data.trip.approved)
             })
             .catch((error) => {
                 console.log('Erro', error)
             })
-    }, [])
+    }, [arrayOfCandidates])
 
-    console.log(arrayOfCandidates)
+   
 
-    const mapedCandidates = arrayOfCandidates.map((candi)=>{
-        return <div key={candi.id}>
-            {candi.name}
+    const decideCandidateApprove = (candiId) => {
+
+        const token = localStorage.getItem('token')
+
+        const body = {
+            approve: approve
+        }
+
+        axios.put(`${BASE_URL}/trips/${params.id}/candidates/${candiId}/decide`, body, {
+            headers: {
+                auth: token
+            }
+        }) .then((response)=>{
+            console.log(response)
+        })
+            .catch((error)=>{
+                console.log(error)
+            })
+    }
+
+    const decideCandidateReject = (candiId) => {
+
+        const token = localStorage.getItem('token')
+
+        const body = {
+            approve: reject
+        }
+
+        axios.put(`${BASE_URL}/trips/${params.id}/candidates/${candiId}/decide`, body, {
+            headers: {
+                auth: token
+            }
+        }) .then((response)=>{
+            console.log(response)
+        })
+            .catch((error)=>{
+                console.log(error)
+            })
+    }
+
+    console.log('APROVADOS',approvedCandidates)
+    
+   
+
+    const mapedCandidates = arrayOfCandidates.map((candidate)=>{
+        return <div key={candidate.id}>
+            {candidate.name}
+            <button  onClick={()=> decideCandidateApprove(candidate.id)}>Aceitar</button>
+            <button  onClick={()=> decideCandidateReject(candidate.id)}>Negar</button>
+
 
         </div>
     })
+
+    const mapedApprovedCandidates = approvedCandidates.map((candidate)=>{
+        return <div key={candidate.id}>
+            {candidate.name}
+        </div>
+
+    })
+
+    
 
      const {name, description, planet, durationInDays, date} = arrayOfTrip
     return (
@@ -64,6 +125,10 @@ export default function TripDetailsPage() {
              <h1>Candidatos Pendentes</h1> 
             
              {mapedCandidates}
+
+             <h1>Candidatos Aprovados</h1>
+
+             {mapedApprovedCandidates}
 
 
 

@@ -19,9 +19,9 @@ export default function AdminHomePage() {
                 setArrayOfTrips(response.data.trips)
             })
             .catch((error) => {
-                alert(error.response) // <= Alterar os alerts antes da versão final
+                alert(error.response) 
             })
-    }, [])
+    }, [arrayOfTrips])
 
     const deleteTrip = (id) =>{
 
