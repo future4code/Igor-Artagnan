@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../../constants/url'
-import { MainContainer, StyledButton } from './styled'
-import {useProtectedPage} from '../../hooks/ProtectedPage'
+import { MainContainer, StyledButton, DecisionButton, TripsDiv, CandidatesDiv, ApprovedDiv, ButtonDiv, GoBackDiv } from './styled'
+import { useProtectedPage } from '../../hooks/ProtectedPage'
 import { useHistory, useParams } from 'react-router-dom'
 
 
@@ -12,11 +12,8 @@ export default function TripDetailsPage() {
     const [arrayOfTrip, setTrip] = useState([])
     const [arrayOfCandidates, setArrayOfCandidates] = useState([])
     const [approvedCandidates, setApprovedCandidates] = useState([])
-    const [approve, setApprove] = useState(true)
-    const [reject, setReject] = useState(false)
-
-    
-    
+    const [approve] = useState(true)
+    const [reject] = useState(false)
 
     const history = useHistory()
     const params = useParams()
@@ -35,18 +32,17 @@ export default function TripDetailsPage() {
             headers: {
                 auth: token
             }
-        }) 
+        })
             .then((response) => {
                 setTrip(response.data.trip)
                 setArrayOfCandidates(response.data.trip.candidates)
                 setApprovedCandidates(response.data.trip.approved)
             })
             .catch((error) => {
-                console.log('Erro', error)
+                alert('Erro', error)
             })
     }, [arrayOfCandidates])
 
-   
 
     const decideCandidateApprove = (candiId) => {
 
@@ -60,11 +56,11 @@ export default function TripDetailsPage() {
             headers: {
                 auth: token
             }
-        }) .then((response)=>{
-            console.log(response)
+        }).then((response) => {
+            alert(response)
         })
-            .catch((error)=>{
-                console.log(error)
+            .catch((error) => {
+                alert(error)
             })
     }
 
@@ -80,59 +76,67 @@ export default function TripDetailsPage() {
             headers: {
                 auth: token
             }
-        }) .then((response)=>{
-            console.log(response)
+        }).then((response) => {
+            alert(response)
         })
-            .catch((error)=>{
-                console.log(error)
+            .catch((error) => {
+                alert(error)
             })
     }
 
-    console.log('APROVADOS',approvedCandidates)
-    
-   
-
-    const mapedCandidates = arrayOfCandidates.map((candidate)=>{
-        return <div key={candidate.id}>
-            {candidate.name}
-            <button  onClick={()=> decideCandidateApprove(candidate.id)}>Aceitar</button>
-            <button  onClick={()=> decideCandidateReject(candidate.id)}>Negar</button>
 
 
-        </div>
+    const mapedCandidates = arrayOfCandidates.map((candidate) => {
+        return <CandidatesDiv key={candidate.id}>
+
+            <h1>Candidatos Pendentes</h1>
+
+            <h2>{candidate.name}</h2>
+            <ButtonDiv>
+                <DecisionButton onClick={() => decideCandidateApprove(candidate.id)}>Aceitar</DecisionButton>
+                <DecisionButton onClick={() => decideCandidateReject(candidate.id)}>Negar</DecisionButton>
+            </ButtonDiv>
+
+
+        </CandidatesDiv>
     })
 
-    const mapedApprovedCandidates = approvedCandidates.map((candidate)=>{
-        return <div key={candidate.id}>
-            {candidate.name}
-        </div>
+    const mapedApprovedCandidates = approvedCandidates.map((candidate) => {
+        return <ApprovedDiv key={candidate.id}>
 
+            <h1>Candidatos Aprovados</h1>
+
+            <h2>{candidate.name}</h2>
+        </ApprovedDiv>
     })
 
-    
 
-     const {name, description, planet, durationInDays, date} = arrayOfTrip
+    const { name, description, planet, durationInDays, date } = arrayOfTrip
     return (
-       
-       <MainContainer>
-            <h1>{name}</h1>
-            <h3>Título: {name}</h3>
-            <h3>Descrição: {description}</h3>
-            <h3>Planeta: {planet}</h3>
-            <h3>Duração: {durationInDays}</h3>
-            <h3>Data: {date}</h3>
 
-             <h1>Candidatos Pendentes</h1> 
-            
-             {mapedCandidates}
-
-             <h1>Candidatos Aprovados</h1>
-
-             {mapedApprovedCandidates}
+        <MainContainer>
+            <TripsDiv>
+                <h1>{name}</h1>
+                <h3>Título: {name}</h3>
+                <h3>Descrição: {description}</h3>
+                <h3>Planeta: {planet}</h3>
+                <h3>Duração: {durationInDays}</h3>
+                <h3>Data: {date}</h3>
+            </TripsDiv>
 
 
 
-            <StyledButton onClick={goBack}>Voltar</StyledButton>
+            {mapedCandidates}
+
+
+
+            {mapedApprovedCandidates}
+
+
+            <GoBackDiv>
+                <StyledButton onClick={goBack}>Voltar</StyledButton>
+            </GoBackDiv>
+
         </MainContainer>
     )
 }

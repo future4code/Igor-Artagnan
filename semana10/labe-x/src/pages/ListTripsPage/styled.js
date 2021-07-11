@@ -13,6 +13,7 @@ width: 100px;
 color: white;
 height: 40px;
 border-radius: 30px;
+border: none;
 background-color: black;
 :hover{
     cursor: pointer;
@@ -36,6 +37,26 @@ width: 250px;
 display: flex;
 justify-content: space-between;
 margin: 30px;
+`
+
+const TripsDiv = styled.div`
+background: rgba( 244, 243, 243, 0.20 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 2.0px );
+-webkit-backdrop-filter: blur( 2.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 15px;
+h1{
+    font-size: 30px;
+}
+h3{
+    font-size: 20px;
+    
+}
 
 `
 
@@ -43,5 +64,6 @@ export {
     MainContainer,
     StyledButton,
     InfoDiv,
-    ButtonsDiv
+    ButtonsDiv,
+    TripsDiv
 }

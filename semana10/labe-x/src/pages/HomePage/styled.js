@@ -16,12 +16,16 @@ const Logo = styled.h1`
 font-weight: 100;
 font-size: 150px;
 color: cornsilk;
+margin-left: 160px;
+
 `
 const ButtonsDiv = styled.div`
 width: 250px;
 display: flex;
 justify-content: space-between;
-margin: 30px;
+ margin: 30px; 
+ margin-left: 228px;
+
 
 `
 const StyledButton = styled.button`
@@ -29,6 +33,7 @@ width: 100px;
 color: white;
 height: 40px;
 border-radius: 30px;
+border: none;
 background-color: black;
 :hover{
     cursor: pointer;

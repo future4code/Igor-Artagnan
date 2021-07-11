@@ -6,6 +6,16 @@ background-image: url("http://media.beam.usnews.com/25/cb/58ff212640e48425b1d692
 background-repeat: no-repeat;
 background-position: top center ;
 background-size: cover;
+display: flex;
+justify-content: center;
+
+h1{
+    
+    font-size: 80px;
+    color: black;
+    margin-top: 70px;
+}
+
 `
 
 export {

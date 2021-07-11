@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import { useProtectedPage } from '../../hooks/ProtectedPage'
 import { BASE_URL } from '../../constants/url'
-import { MainContainer, StyledButton, ButtonsDiv, CardDiv } from './styled'
+import { MainContainer, StyledButton, ButtonsDiv, CardDiv, DeleteButton } from './styled'
 
 
 
@@ -19,30 +19,30 @@ export default function AdminHomePage() {
                 setArrayOfTrips(response.data.trips)
             })
             .catch((error) => {
-                alert(error.response) 
+                alert(error.response)
             })
     }, [arrayOfTrips])
 
-    const deleteTrip = (id) =>{
+    const deleteTrip = (id) => {
 
         const token = localStorage.getItem('token')
-        const header ={
+        const header = {
             headers: {
                 auth: token
             }
         }
-        
-           axios.delete(`${BASE_URL}/trips/${id}`, header)
-            .then((response)=>{
-                console.log(response)
+
+        axios.delete(`${BASE_URL}/trips/${id}`, header)
+            .then((response) => {
+                alert(response)
 
             })
-            .catch((error)=>{
-                console.log(error)
+            .catch((error) => {
+                alert(error)
 
             })
-        }
-        
+    }
+
 
     const history = useHistory()
 
@@ -64,12 +64,12 @@ export default function AdminHomePage() {
     }
 
     const mapedTrips = arrayOfTrips.map((trip) => {
-        return <CardDiv 
-        onClick={()=>goToDetailPage(trip.id) }
-        key={trip.id}>
-            <h2>{trip.name}</h2>            {/* <= Estilizar cards*/}
+        return <CardDiv
+            onClick={() => goToDetailPage(trip.id)}
+            key={trip.id}>
+            <h2>{trip.name}</h2>
             <div>
-            <button onClick={()=> deleteTrip(trip.id)}>Deletar</button>
+                <DeleteButton onClick={() => deleteTrip(trip.id)}>Deletar</DeleteButton>
             </div>
         </CardDiv>
     })

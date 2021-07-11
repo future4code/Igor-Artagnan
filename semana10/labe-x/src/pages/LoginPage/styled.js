@@ -52,6 +52,7 @@ width: 100px;
 color: white;
 height: 40px;
 border-radius: 30px;
+border: none;
 background-color: black;
 :hover{
     cursor: pointer;
@@ -66,5 +67,5 @@ export {
     ButtonDiv,
     InfoDiv,
     StyledButton
-    
+
 }

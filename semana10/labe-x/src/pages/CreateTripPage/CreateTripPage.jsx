@@ -43,7 +43,7 @@ export default function CreateTripPage() {
 
             })
             .catch((error) => {
-                console.log(error.response)
+                alert(error.response)
 
             })
     }

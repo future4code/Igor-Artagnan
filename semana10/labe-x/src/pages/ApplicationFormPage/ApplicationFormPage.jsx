@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import useForm from '../../hooks/UseForm'
-import { useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { BASE_URL } from '../../constants/url'
 
 import { MainContainer, FormDiv, InfoDiv, StyledButton, ButtonsDiv, StyledInput, StyledSelect } from './styled'
@@ -25,7 +25,7 @@ export default function ApplicationFormPage() {
             applicationText: form.applicationText,
             profession: form.profession,
             country: form.country
-          }
+        }
 
         axios.post(`${BASE_URL}/trips/${form.trip}/apply`, body)
             .then((response) => {
@@ -33,25 +33,25 @@ export default function ApplicationFormPage() {
                 cleanFields()
             })
             .catch((error) => {
-                console.log(error)
+                alert(error)
             })
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         axios.get(`${BASE_URL}/trips`)
-        .then((response)=>{
-            setArrayOfTrips(response.data.trips)
-            
-        })
-        .catch((error)=>{
-            alert(error.response) 
-        })
-    }, [])
-   
+            .then((response) => {
+                setArrayOfTrips(response.data.trips)
 
-const mapedTrips = arrayOfTrips.map((trip)=>{
-    return <option value={trip.id} key={trip.id}>{trip.name}</option>
-})
+            })
+            .catch((error) => {
+                alert(error.response)
+            })
+    }, [])
+
+
+    const mapedTrips = arrayOfTrips.map((trip) => {
+        return <option value={trip.id} key={trip.id}>{trip.name}</option>
+    })
 
 
 
@@ -61,14 +61,14 @@ const mapedTrips = arrayOfTrips.map((trip)=>{
                 <InfoDiv>
                     <h1>Cadidate-se para uma viagem</h1>
                     <FormDiv>
-                        <StyledSelect 
-                        onChange={onChange}
-                        value={form['trip']}
-                        name={'trip'}
+                        <StyledSelect
+                            onChange={onChange}
+                            value={form['trip']}
+                            name={'trip'}
                         >
                             {mapedTrips}
                         </StyledSelect>
-                        
+
                         <StyledInput
                             name={"name"}
                             placeholder={'Nome'}
@@ -130,7 +130,7 @@ const mapedTrips = arrayOfTrips.map((trip)=>{
 
                 </InfoDiv>
             </form>
-            
+
         </MainContainer>
     )
 }
