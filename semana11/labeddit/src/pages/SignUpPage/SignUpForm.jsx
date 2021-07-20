@@ -4,10 +4,13 @@ import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm'
 
 import { MainContainer, InputsContainer } from './styled'
+import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 
 const SignUpForm = () => {
 
     const [form, onChange, clear] = useForm({ name: "", email: "", password: "" })
+
+    useUnprotectedPage()
 
 
     const onSubmitForm = (event) => {

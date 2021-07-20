@@ -5,9 +5,10 @@ import LoginForm from './LoginForm'
 import { goToSignUp } from '../../routes/coordinator'
 
 import { MainContainer, SignUpButtonContainer } from './styled'
+import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 
 const LoginPage = () => {
-
+  useUnprotectedPage()
   const history = useHistory()
 
 
