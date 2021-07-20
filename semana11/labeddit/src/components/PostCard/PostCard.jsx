@@ -1,8 +1,9 @@
 import React from 'react'
+import {CardDiv} from './styled'
 
 const PostCard = (props) => {
 
-    return <div>
+    return <CardDiv onClick={props.onClick}>
         <h2> {props.username} </h2>
         <div>
             <h3> {props.title} </h3>
@@ -12,7 +13,7 @@ const PostCard = (props) => {
             <h5> {props.userVote} </h5>
             <h6>Comentarios </h6> <h6> {props.commentCount} </h6>
         </div>
-    </div>
+    </CardDiv>
 }
 
 export default PostCard
