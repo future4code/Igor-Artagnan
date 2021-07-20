@@ -1,11 +1,13 @@
 import React from 'react';
+import { MainContainer } from './styled'
+import SignUpForm from './SignUpForm'
 
 
 const SignUpPage = () => {
 
-  return <div>
-    SignUpPage
-  </div>
+  return <MainContainer>
+    <SignUpForm />
+  </MainContainer>
 }
 
 export default SignUpPage
