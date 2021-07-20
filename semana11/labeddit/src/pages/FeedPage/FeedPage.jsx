@@ -12,13 +12,21 @@ const FeedPage = () => {
 
   console.log('POSTS', posts)
 
+  const postCards = posts.map((post)=>{
+    return   <PostCard
+    key={post.id}
+    username={post.username}
+    title={post.title}
+    body={post.body}
+    userVote={post.uservote}
+  />
+  })
+
   return <div>
     FeedPage
-  {/*   <PostCard
-      username={'Michale Graves'}
-      body={"Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead"}
-      userVote={'3'}
-    /> */}
+  
+
+    {postCards}
 
     
 
