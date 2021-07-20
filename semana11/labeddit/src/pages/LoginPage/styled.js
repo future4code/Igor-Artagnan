@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 
-const MainContainer = styled.div`
+export const MainContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
 width: 100vw;
 margin-top: 10vh;
 `
-const InputsContainer = styled.div`
+export const InputsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 80vw;
@@ -17,8 +17,8 @@ const InputsContainer = styled.div`
   margin-bottom: 20px;
 `
 
-export {
-  MainContainer,
-  InputsContainer,
-  
-}
+export const SignUpButtonContainer = styled.div`
+  width: 80vw;
+  max-width: 450px;
+  `
+

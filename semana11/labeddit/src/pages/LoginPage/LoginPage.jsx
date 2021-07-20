@@ -1,42 +1,33 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+import LoginForm from './LoginForm'
+import { goToSignUp } from '../../routes/coordinator'
 
-import { MainContainer, InputsContainer } from './styled'
+import { MainContainer, SignUpButtonContainer } from './styled'
 
 const LoginPage = () => {
 
+  const history = useHistory()
+
+
   return <MainContainer>
-    
-      <form>
-        <InputsContainer>
-          <TextField
-            id="standard-multiline-flexible"
-            label="Email"
-            multiline
-            maxRows={4}
-            required
-          />
 
-          <TextField
-            id="standard-multiline-flexible"
-            label="Senha"
-            type="password"
-            multiline
-            maxRows={4}
-            required
-          />
+    <LoginForm />
 
-        </InputsContainer>
-
-        <Button variant="contained" color="primary" disableElevation>
-          Login
+    <SignUpButtonContainer>
+      <Button
+        onClick={() => goToSignUp(history)}
+        variant="text"
+        color="primary"
+        disableElevation
+        fullWidth
+      >
+        Cadastre-se
     </Button>
-      </form>
-   
-    <Button variant="contained" color="primary" disableElevation>
-      Cadastre-se
-    </Button>
+
+
+    </SignUpButtonContainer>
   </MainContainer>
 }
 
