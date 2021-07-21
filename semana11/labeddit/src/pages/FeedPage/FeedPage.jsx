@@ -4,8 +4,9 @@ import useProtectedPage from '../../hooks/useProtectedPage'
 import useRequestData from '../../hooks/useRequestData';
 import { goToPostPage } from '../../routes/coordinator'
 import { BASE_URL } from '../../constants/url'
-import { useHistory } from 'react-router-dom'
+import { useHistory, /* useEffect */ } from 'react-router-dom'
 import { MainContainer } from './styled'
+import CreatePostForm from './CreatePostForm';
 
 
 const FeedPage = () => {
@@ -19,6 +20,7 @@ const FeedPage = () => {
     goToPostPage(history, id)
   }
 
+  console.log('POSTS', posts)
 
   const postCards = posts.map((post) => {
     return <PostCard
@@ -33,7 +35,7 @@ const FeedPage = () => {
 
   return <MainContainer>
 
-
+    <CreatePostForm/>
 
     {postCards}
 

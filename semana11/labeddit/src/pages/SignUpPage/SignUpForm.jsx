@@ -19,7 +19,6 @@ const SignUpForm = () => {
     const onSubmitForm = (event) => {
         event.preventDefault()
         signUp(form, clear, history)
-        console.log(form)
 
     }
 

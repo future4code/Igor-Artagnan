@@ -1,15 +1,20 @@
 import axios from 'axios'
 import { BASE_URL } from '../constants/url'
 
+
 export const createPost = (body, clear) => {
-    axios.post(`${BASE_URL}/posts`, body)
+    axios.post(`${BASE_URL}/posts`, body, {
+        headers: {
+            Authorization: localStorage.getItem('token')
+        }
+    })
         .then((res) => {
-            localStorage.setItem("token", res.data.token)
             clear()
+            console.log('Post criado com sucesso', res)
         })
         .catch((err) => {
-            console.log('erro', err)
+            console.log('ERRO', err.response)
 
         })
 
-}
+}   //ESTÁ ENTRANDO NO CONSOLE LOG DE ERRO MESMO COM A REQUISIÇÃO SENDO FEITA COM SUCESSO
