@@ -5,13 +5,15 @@ import useRequestData from '../../hooks/useRequestData';
 import { BASE_URL } from '../../constants/url';
 import CommentsCard from '../../components/ComentsCard/ComentsCard';
 import PostCard from '../../components/PostCard/PostCard';
+import useForm from '../../hooks/useForm'
+import { createComment } from '../../services/create';
 
 
 const PostPage = () => {
   useProtectedPage()
 
   const params = useParams()
-
+  const [form, onChange, clear] = useForm({ body: "" })
   const postComments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
   const post = useRequestData([], `${BASE_URL}/posts`)
 
@@ -39,9 +41,10 @@ const PostPage = () => {
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    console.log('CLICADO')
+    createComment(params.id, form, clear)
 
   }
+
 
   return <div>
 
@@ -49,7 +52,14 @@ const PostPage = () => {
 
     <form onSubmit={onSubmitForm}>
 
-
+      <input
+        name={'body'}
+        value={form.body}
+        onChange={onChange}
+        label={"Titulo"}
+        placeholder={'Título'}
+        required
+      />
 
       <button type={'submit'}>Comentar</button>
 

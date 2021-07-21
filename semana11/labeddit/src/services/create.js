@@ -19,17 +19,17 @@ export const createPost = (body, clear) => {
 
 }   //ESTÁ ENTRANDO NO CONSOLE LOG DE ERRO MESMO COM A REQUISIÇÃO SENDO FEITA COM SUCESSO
 
-export const creatComment = (id, body, clear) => {
+export const createComment = (id, body, clear) => {
     axios.post(`${BASE_URL}/posts/${id}/comments`, body, {
         headers: {
             Authorization: localStorage.getItem('token')
         }
     })
-        .then((res)=>{
+        .then((res) => {
             clear()
             console.log('Comentário adicionado com sucesso', res)
         })
-        .catch((err)=>{
+        .catch((err) => {
             console.log('ERRO', err)
         })
 }
