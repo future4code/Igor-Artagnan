@@ -15,8 +15,6 @@ const PostPage = () => {
   const postComments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
   const post = useRequestData([], `${BASE_URL}/posts`)
 
-
-
   const thisPost = post.filter((post) => {
     return post.id === params.id
   }).map((post) => {
@@ -27,7 +25,6 @@ const PostPage = () => {
       userVote={post.uservote}
     />
   })
-
 
   const mapedComments = postComments.map((comment) => {
     return <CommentsCard
@@ -40,8 +37,10 @@ const PostPage = () => {
   })
 
   return <div>
+    
     {thisPost}
     {mapedComments}
+  
   </div>
 }
 
