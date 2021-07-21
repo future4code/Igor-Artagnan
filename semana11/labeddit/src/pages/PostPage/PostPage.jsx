@@ -19,6 +19,7 @@ const PostPage = () => {
     return post.id === params.id
   }).map((post) => {
     return <PostCard
+      key={post.id}
       username={post.username}
       title={post.title}
       body={post.body}
@@ -36,11 +37,25 @@ const PostPage = () => {
 
   })
 
+  const onSubmitForm = (event) => {
+    event.preventDefault()
+    console.log('CLICADO')
+
+  }
+
   return <div>
-    
+
     {thisPost}
+
+    <form onSubmit={onSubmitForm}>
+
+
+
+      <button type={'submit'}>Comentar</button>
+
+    </form>
     {mapedComments}
-  
+
   </div>
 }
 

@@ -20,7 +20,7 @@ const FeedPage = () => {
     goToPostPage(history, id)
   }
 
-  console.log('POSTS', posts)
+  /* console.log('POSTS', posts) */
 
   const postCards = posts.map((post) => {
     return <PostCard
