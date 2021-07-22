@@ -10,7 +10,7 @@ export const login = (body, clear, history) => {
             goToFeedPage(history)
         })
         .catch((err) => {
-            console.log('ERRO')
+            console.log('ERRO', err.response.data)
         })
 }
 
@@ -23,6 +23,6 @@ export const signUp = (body, clear, history) => {
 
 
         })
-        .catch((err) => { alert("Erro no cadastro") })
+        .catch((err) => { alert("Erro no cadastro", err.response.data) })
 
 }

@@ -13,7 +13,7 @@ export const createPost = (body, clear) => {
             console.log('Post criado com sucesso', res)
         })
         .catch((err) => {
-            console.log('ERRO', err.response)
+            console.log('ERRO', err.response.data)
 
         })
 
@@ -30,6 +30,35 @@ export const createComment = (id, body, clear) => {
             console.log('Comentário adicionado com sucesso', res)
         })
         .catch((err) => {
-            console.log('ERRO', err)
+            console.log('ERRO', err.response.data)
         })
 }
+
+export const createPostVote = (id, body) => {
+    axios.post(`${BASE_URL}/posts/${id}/votes`, body, {
+        headers: {
+            Authorization: localStorage.getItem('token')
+        }
+    })
+        .then((res) => {
+            console.log('Sucesso', res)
+        })
+        .catch((err) => {
+            console.log('Erro', err.response.data)
+        })
+}
+
+export const createCommentVote = (id, body) => {
+    axios.post(`${BASE_URL}/comments/${id}/votes`, body, {
+        headers: {
+            Authorization: localStorage.getItem('token')
+        }
+    })
+        .then((res) => {
+            console.log('Sucesso', res)
+        })
+        .catch((err) => {
+            console.log('Erro', err.response.data)
+        })
+}
+
