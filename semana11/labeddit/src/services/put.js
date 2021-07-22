@@ -11,7 +11,7 @@ export const changePostVote = (id, body) => {
             console.log('Sucesso', res)
         })
         .catch((err) => {
-            console.log('Erro', err.response.data)
+            console.log('Erro', err.response.data.message)
         })
 
 }
@@ -26,6 +26,6 @@ export const changeCommentVote = (id, body) => {
             console.log('Sucesso', res)
         })
         .catch((err) => {
-            console.log('Erro', err.response.data)
+            console.log('Erro', err.response.data.message)
         })
 }
