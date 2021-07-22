@@ -7,6 +7,10 @@ import CommentsCard from '../../components/ComentsCard/ComentsCard';
 import PostCard from '../../components/PostCard/PostCard';
 import useForm from '../../hooks/useForm'
 import { createComment } from '../../services/create';
+import { changeCommentVote } from '../../services/put'
+import { createCommentVote } from '../../services/create'
+
+
 
 
 const PostPage = () => {
@@ -15,7 +19,7 @@ const PostPage = () => {
   const params = useParams()
   const [form, onChange, clear] = useForm({ body: "" })
   const postComments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
-  const post = useRequestData([], `${BASE_URL}/posts`)
+  const post  = useRequestData([], `${BASE_URL}/posts`)
 
   const thisPost = post.filter((post) => {
     return post.id === params.id
@@ -29,12 +33,26 @@ const PostPage = () => {
     />
   })
 
+  const onClickCreate = (id) => {
+    console.log('UPVOTE')
+    createCommentVote(id, { direction: 1 })
+  }
+
+  const onClickChange = (id) => {
+    console.log('DOWNVOTE')
+    changeCommentVote(id, { direction: -1 })
+
+  }
+
+
   const mapedComments = postComments.map((comment) => {
     return <CommentsCard
       key={comment.id}
       username={comment.username}
       body={comment.body}
       voteSum={comment.voteSum}
+      onClickCreate={() => onClickCreate(comment.id)}
+      onClickChange={() => onClickChange(comment.id)}
     />
 
   })
@@ -44,6 +62,7 @@ const PostPage = () => {
     createComment(params.id, form, clear)
 
   }
+
 
 
   return <div>

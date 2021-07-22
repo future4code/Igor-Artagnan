@@ -9,10 +9,12 @@ export const changePostVote = (id, body) => {
     })
         .then((res) => {
             console.log('Sucesso', res)
+            console.log(body)
         })
         .catch((err) => {
             console.log('Erro', err.response.data.message)
         })
+        console.log('body fora', body)
 
 }
 

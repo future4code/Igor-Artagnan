@@ -17,7 +17,7 @@ const FeedPage = () => {
 
   const posts = useRequestData([], `${BASE_URL}/posts`)
   const history = useHistory()
-  const [form] = useForm({direction: "" })
+  /* const [form] = useForm({direction: "" }) */
 
 
   const onClickCard = (id) => {
@@ -26,16 +26,16 @@ const FeedPage = () => {
 
   const onClickCreate = (id) => {
     console.log('UPVOTE')
-    createPostVote(id, form)
+    createPostVote(id,  { direction: 1 })
   }
 
   const onClickChange = (id) => {
     console.log('DOWNVOTE')
-    changePostVote(id, form)
+    changePostVote(id, { direction: -1 })
 
   }
 
-  
+
   const postCards = posts.map((post) => {
     return <PostCard
       onClick={() => onClickCard(post.id)}
@@ -60,4 +60,4 @@ const FeedPage = () => {
   </MainContainer>
 }
 
-export default FeedPage
+export default FeedPage 

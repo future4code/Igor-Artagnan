@@ -10,9 +10,9 @@ const PostCard = (props) => {
             <p> {props.body} </p>
         </div>
         <div>
-            <button onClick={props.onClickCreate}>Upvote</button>
-            <h5> {props.voteSum} </h5>
-            <button onClick={props.onClickChange}>DownVote</button>
+            <button onClick={props.onClickCreate}>Up</button>
+            <h5> {props.voteSum ? props.voteSum : '0' } </h5>
+            <button onClick={props.onClickChange}>Down</button>
 
             <h6>Comentarios </h6> <h6> {props.commentCount} </h6>
         </div>

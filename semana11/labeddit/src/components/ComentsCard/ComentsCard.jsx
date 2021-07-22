@@ -9,7 +9,9 @@ const CommentsCard = (props) => {
             <p> {props.body} </p>
         </div>
         <div>
+            <button onClick={props.onClickCreate}> Up</button>
             <h5> {props.voteSum} </h5>
+            <button onClick={props.onClickChange}>Down</button>
 
         </div>
     </CardDiv>
