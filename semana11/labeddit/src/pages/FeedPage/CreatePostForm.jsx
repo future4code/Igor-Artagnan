@@ -1,6 +1,9 @@
 import React from 'react';
 import useForm from '../../hooks/useForm'
 import { createPost } from '../../services/create'
+import { FormContainer } from './styled'
+import TextField from '@material-ui/core/TextField';
+
 
 
 const CreatePostForm = () => {
@@ -17,23 +20,26 @@ const CreatePostForm = () => {
     }
 
 
-    return <form onSubmit={onSubmitForm}>
+    return <FormContainer>
+    <form onSubmit={onSubmitForm}>
 
-        <input
+        <TextField
             name={'title'}
             value={form.title}
             onChange={onChange}
             label={"Titulo"}
             placeholder={'Título'}
+            multiline
             required
         />
 
-        <input
+        <TextField
             name={'body'}
             value={form.body}
             onChange={onChange}
             label={"Post"}
             placeholder={'Post'}
+            margin={'dense'}
             required
 
         />
@@ -41,6 +47,7 @@ const CreatePostForm = () => {
         <button type={'submit'}>Criar post</button>
 
     </form>
+    </FormContainer>
 }
 
 export default CreatePostForm

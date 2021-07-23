@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import LoginForm from './LoginForm'
 import { goToSignUp } from '../../routes/coordinator'
-
-import { MainContainer, SignUpButtonContainer } from './styled'
+import Labeddit from '../../assets/img/labeddit.png'
+import { MainContainer, SignUpButtonContainer, LoginContainer } from './styled'
 import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 
 const LoginPage = () => {
@@ -13,7 +13,7 @@ const LoginPage = () => {
 
 
   return <MainContainer>
-
+    {/* <img src={Labeddit}/> */}
     <LoginForm />
 
     <SignUpButtonContainer>

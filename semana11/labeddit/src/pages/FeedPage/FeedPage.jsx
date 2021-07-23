@@ -4,11 +4,11 @@ import useProtectedPage from '../../hooks/useProtectedPage'
 import useRequestData from '../../hooks/useRequestData';
 import { goToPostPage } from '../../routes/coordinator'
 import { BASE_URL } from '../../constants/url'
-import { useHistory, /* useEffect */ } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { MainContainer } from './styled'
 import {postVote} from '../../services/postVote'
 import CreatePostForm from './CreatePostForm';
-/* import useForm from '../../hooks/useForm' */
+
 
 const FeedPage = () => {
 
@@ -16,18 +16,14 @@ const FeedPage = () => {
 
   const posts = useRequestData([], `${BASE_URL}/posts`)
   const history = useHistory()
-  /* const [form] = useForm({direction: "" }) */
+  
 
 
   const onClickCard = (id) => {
     goToPostPage(history, id)
   }
 
-  /* /* const onClickCreate = (id) => {
-    console.log('UPVOTE')
-    createPostVote(id,  { direction: 1 })
-  }
- */
+
   const onClickVote = (id, direction, userVote) => {
     postVote(id, direction, userVote)
     

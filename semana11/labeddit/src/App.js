@@ -8,12 +8,17 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
   body{
-    background-color: white;
+    background-color: #2b2b2c;
   }
   li{
     list-style: none;
+  }
+
+  h2, h3, h5, h6, p{
+    color: white;
   }
 `
 const App = () => {
