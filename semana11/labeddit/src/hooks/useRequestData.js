@@ -19,7 +19,7 @@ const useRequestData = (initialData, url) => {
             }).catch((err) => {
                 console.log(err)
                 alert('Ocorreu um erro')
-                console.log(`ERRO REQUEST DATA`, err.response.data)
+                console.log(`ERRO REQUEST DATA`, err)
             })
     }
 

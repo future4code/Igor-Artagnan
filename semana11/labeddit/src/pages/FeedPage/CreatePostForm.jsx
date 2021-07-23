@@ -18,7 +18,7 @@ const CreatePostForm = () => {
         clear()
 
     }
-
+     /* console.log(form) */
 
     return <FormContainer>
     <form onSubmit={onSubmitForm}>
@@ -50,4 +50,4 @@ const CreatePostForm = () => {
     </FormContainer>
 }
 
-export default CreatePostForm
+export default CreatePostForm 

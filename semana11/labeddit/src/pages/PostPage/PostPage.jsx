@@ -8,6 +8,8 @@ import PostCard from '../../components/PostCard/PostCard';
 import useForm from '../../hooks/useForm'
 import { createComment } from '../../services/create';
 import { commentVote } from '../../services/commentVote'
+import {postVote} from '../../services/postVote'
+
 
 
 
@@ -20,6 +22,12 @@ const PostPage = () => {
   const postComments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
   const post = useRequestData([], `${BASE_URL}/posts`)
 
+  const onClickPostVote = (id, direction, userVote) => {
+    postVote(id, direction, userVote)
+    
+    
+  }
+
   const thisPost = post.filter((post) => {
     return post.id === params.id
   }).map((post) => {
@@ -28,7 +36,10 @@ const PostPage = () => {
       username={post.username}
       title={post.title}
       body={post.body}
+      voteSum={post.voteSum}
       userVote={post.uservote}
+      onClickUp={() => onClickPostVote( post.id, 1, post.userVote ) }
+      onClickDown={() => onClickPostVote( post.id, -1, post.userVote )}
     />
   })
 
@@ -37,6 +48,8 @@ const PostPage = () => {
 
 
   }
+
+  
 
 
 

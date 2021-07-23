@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const CardDiv = styled.div`
-border: 1px solid red;
+border: 1px solid green;
 width: 150vh;
 margin: 10px;
 display: flex;

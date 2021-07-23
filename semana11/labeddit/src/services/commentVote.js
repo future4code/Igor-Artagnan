@@ -1,3 +1,4 @@
+import { ErrorRounded } from '@material-ui/icons'
 import axios from 'axios'
 import { BASE_URL } from '../constants/url'
 
@@ -16,7 +17,7 @@ export const commentVote = (id, direction, userVote) => {
         }) .then((res) => {
                 console.log('Sucesso', res)
             }) .catch((err) => {
-                console.log('Erro', err.response.data)
+                console.log('Erro', ErrorRounded)
             })
 
     } else  {
@@ -28,7 +29,7 @@ export const commentVote = (id, direction, userVote) => {
         }).then((res) => {
                 console.log('Sucesso', res)
             }).catch((err) => {
-                console.log('Erro', err.response.data.message)
+                console.log('Erro', err)
             })
 
 }}

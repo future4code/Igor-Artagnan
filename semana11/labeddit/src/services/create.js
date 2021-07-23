@@ -13,7 +13,7 @@ export const createPost = (body, clear) => {
             console.log('Post criado com sucesso', res)
         })
         .catch((err) => {
-            console.log('ERRO', err.response.data)
+            console.log('ERRO', err)
 
         })
 
@@ -30,7 +30,7 @@ export const createComment = (id, body, clear) => {
             console.log('Comentário adicionado com sucesso', res)
         })
         .catch((err) => {
-            console.log('ERRO', err.response.data)
+            console.log('ERRO', err)
         })
 }
 
