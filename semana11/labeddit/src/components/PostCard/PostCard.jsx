@@ -1,14 +1,20 @@
 import React from 'react'
-import { CardDiv, IconsDiv, VoteDiv, CommentDiv } from './styled'
+import { CardDiv, IconsDiv, VoteDiv, CommentDiv, UserDiv, TitleDiv, BodyDiv } from './styled'
 import { BiUpArrow, BiDownArrow, BiCommentDots } from 'react-icons/bi'
 
 const PostCard = (props) => {
 
     return <CardDiv>
-        <h2> {props.username} </h2>
+        <UserDiv>
+            <h3> {props.username} </h3>
+        </UserDiv>
         <div onClick={props.onClick}>
-            <h3> {props.title} </h3>
-            <p> {props.body} </p>
+            <TitleDiv>
+                <h1> {props.title} </h1>
+            </TitleDiv>
+            <BodyDiv>
+                <h2> {props.body} </h2>
+            </BodyDiv>
         </div>
         <IconsDiv>
             <VoteDiv>

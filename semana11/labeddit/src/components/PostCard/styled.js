@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const CardDiv = styled.div`
+export const CardDiv = styled.div`
 background-color: grey;
 width: 900px;
 height: 200px;
@@ -17,25 +17,45 @@ padding: 5px;
 
 `
 
-const IconsDiv = styled.div`
+export const IconsDiv = styled.div`
 border: 1px solid red;
 display:flex;
 width: 100%;
-justify-content: space-evenly;
-`
-const VoteDiv = styled.div`
+justify-content: space-around;
+/* margin-top: 50px;
+ */`
+export const VoteDiv = styled.div`
 display: flex;
+width: 50%;
+justify-content: center;
 `
 
-const CommentDiv = styled.div`
+export const CommentDiv = styled.div`
 display: flex;
 align-items: center;
+width: 50%;
+justify-content: center;
+`
+
+export const UserDiv = styled.div`
+display: flex;
+align-items: center;
+width: 100%;
+
+`
+
+export const TitleDiv = styled.div`
+display: flex;
+align-items: center;
+width: 100%;
+
+`
+
+export const BodyDiv = styled.div`
+display: flex;
+align-items: center;
+width: 100%;
+
 `
 
 
-export {
-    CardDiv,
-    IconsDiv,
-    VoteDiv,
-    CommentDiv
-}

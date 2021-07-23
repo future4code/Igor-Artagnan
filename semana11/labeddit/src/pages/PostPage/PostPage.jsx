@@ -8,10 +8,10 @@ import PostCard from '../../components/PostCard/PostCard';
 import useForm from '../../hooks/useForm'
 import { createComment } from '../../services/create';
 import { commentVote } from '../../services/commentVote'
-import {postVote} from '../../services/postVote'
-
-
-
+import { postVote } from '../../services/postVote'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { MainContainer, InputsContainer } from './styled'
 
 
 const PostPage = () => {
@@ -24,8 +24,8 @@ const PostPage = () => {
 
   const onClickPostVote = (id, direction, userVote) => {
     postVote(id, direction, userVote)
-    
-    
+
+
   }
 
   const thisPost = post.filter((post) => {
@@ -38,8 +38,8 @@ const PostPage = () => {
       body={post.body}
       voteSum={post.voteSum}
       userVote={post.uservote}
-      onClickUp={() => onClickPostVote( post.id, 1, post.userVote ) }
-      onClickDown={() => onClickPostVote( post.id, -1, post.userVote )}
+      onClickUp={() => onClickPostVote(post.id, 1, post.userVote)}
+      onClickDown={() => onClickPostVote(post.id, -1, post.userVote)}
     />
   })
 
@@ -49,7 +49,7 @@ const PostPage = () => {
 
   }
 
-  
+
 
 
 
@@ -73,27 +73,36 @@ const PostPage = () => {
 
 
 
-  return <div>
+  return <MainContainer>
 
     {thisPost}
+    <InputsContainer>
+      <form onSubmit={onSubmitForm}>
 
-    <form onSubmit={onSubmitForm}>
+        <TextField
+          name={'body'}
+          value={form.body}
+          onChange={onChange}
+          label={"Titulo"}
+          placeholder={'Título'}
+          fullWidth
+          margin={'dense'}
+          required
+        />
 
-      <input
-        name={'body'}
-        value={form.body}
-        onChange={onChange}
-        label={"Titulo"}
-        placeholder={'Título'}
-        required
-      />
+        <Button
+          type={'submit'}
+          variant="contained"
+          color="primary"
+          disableElevation
+          fullWidth
+        >Comentar</Button>
 
-      <button type={'submit'}>Comentar</button>
-
-    </form>
+      </form>
+    </InputsContainer>
     {mapedComments}
 
-  </div>
+  </MainContainer>
 }
 
 export default PostPage

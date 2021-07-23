@@ -1,8 +1,10 @@
 import React from 'react';
 import useForm from '../../hooks/useForm'
 import { createPost } from '../../services/create'
-import { FormContainer } from './styled'
+import { MainContainer, InputsContainer } from './styled'
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
 
 
 
@@ -18,36 +20,47 @@ const CreatePostForm = () => {
         clear()
 
     }
-     /* console.log(form) */
+    /* console.log(form) */
 
-    return <FormContainer>
-    <form onSubmit={onSubmitForm}>
+    return <MainContainer>
+        <InputsContainer>
+            <form onSubmit={onSubmitForm}>
 
-        <TextField
-            name={'title'}
-            value={form.title}
-            onChange={onChange}
-            label={"Titulo"}
-            placeholder={'Título'}
-            multiline
-            required
-        />
+                <TextField
+                    name={'title'}
+                    value={form.title}
+                    onChange={onChange}
+                    label={"Titulo"}
+                    placeholder={'Título'}
+                    multiline
+                    fullWidth
+                    required
+                />
 
-        <TextField
-            name={'body'}
-            value={form.body}
-            onChange={onChange}
-            label={"Post"}
-            placeholder={'Post'}
-            margin={'dense'}
-            required
+                <TextField
+                    name={'body'}
+                    value={form.body}
+                    onChange={onChange}
+                    label={"Post"}
+                    placeholder={'Post'}
+                    margin={'dense'}
+                    fullWidth
+                    required
 
-        />
+                />
 
-        <button type={'submit'}>Criar post</button>
+                <Button
+                    type={'submit'}
+                    variant="contained"
+                    color="primary"
+                    disableElevation
+                    fullWidth
+                >Postar</Button>
 
-    </form>
-    </FormContainer>
+
+            </form>
+        </InputsContainer>
+    </MainContainer>
 }
 
-export default CreatePostForm 
+export default CreatePostForm
