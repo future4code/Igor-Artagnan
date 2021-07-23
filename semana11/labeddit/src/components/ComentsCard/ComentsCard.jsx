@@ -1,5 +1,7 @@
 import React from 'react'
 import { CardDiv } from './styled'
+import { BiUpArrow, BiDownArrow } from 'react-icons/bi'
+
 
 const CommentsCard = (props) => {
 
@@ -9,9 +11,9 @@ const CommentsCard = (props) => {
             <p> {props.body} </p>
         </div>
         <div>
-            <button onClick={props.onClickUp}> Up</button>
+            <BiUpArrow onClick={props.onClickUp} />
             <h5> {props.voteSum ? props.voteSum : '0'} </h5>
-            <button onClick={props.onClickDown}>Down</button>
+            <BiDownArrow onClick={props.onClickDown} />
 
         </div>
     </CardDiv>

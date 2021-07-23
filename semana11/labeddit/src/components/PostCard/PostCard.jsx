@@ -1,5 +1,6 @@
 import React from 'react'
-import {CardDiv} from './styled'
+import { CardDiv, IconsDiv, VoteDiv, CommentDiv } from './styled'
+import { BiUpArrow, BiDownArrow, BiCommentDots } from 'react-icons/bi'
 
 const PostCard = (props) => {
 
@@ -9,13 +10,16 @@ const PostCard = (props) => {
             <h3> {props.title} </h3>
             <p> {props.body} </p>
         </div>
-        <div>
-            <button onClick={props.onClickUp}>Up</button>
-            <h5> {props.voteSum ? props.voteSum : '0' } </h5>
-            <button onClick={props.onClickDown}>Down</button>
-
-            <h6>Comentarios </h6> <h6> {props.commentCount} </h6>
-        </div>
+        <IconsDiv>
+            <VoteDiv>
+                <BiUpArrow onClick={props.onClickUp} />
+                <h5> {props.voteSum ? props.voteSum : '0'} </h5>
+                <BiDownArrow onClick={props.onClickDown} />
+            </VoteDiv>
+            <CommentDiv>
+                <BiCommentDots /> Comentários <h6> {props.commentCount} </h6>
+            </CommentDiv>
+        </IconsDiv>
     </CardDiv>
 }
 
