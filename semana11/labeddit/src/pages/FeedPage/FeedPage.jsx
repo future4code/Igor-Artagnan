@@ -6,10 +6,9 @@ import { goToPostPage } from '../../routes/coordinator'
 import { BASE_URL } from '../../constants/url'
 import { useHistory, /* useEffect */ } from 'react-router-dom'
 import { MainContainer } from './styled'
-import { changePostVote } from '../../services/put'
-import { createPostVote } from '../../services/create'
+import {postVote} from '../../services/postVote'
 import CreatePostForm from './CreatePostForm';
-import useForm from '../../hooks/useForm'
+/* import useForm from '../../hooks/useForm' */
 
 const FeedPage = () => {
 
@@ -24,17 +23,17 @@ const FeedPage = () => {
     goToPostPage(history, id)
   }
 
-  const onClickCreate = (id) => {
+  /* /* const onClickCreate = (id) => {
     console.log('UPVOTE')
     createPostVote(id,  { direction: 1 })
   }
-
-  const onClickChange = (id) => {
-    console.log('DOWNVOTE')
-    changePostVote(id, { direction: -1 })
+ */
+  const onClickVote = (id, direction, userVote) => {
+    postVote(id, direction, userVote)
+    
 
   }
-
+ 
 
   const postCards = posts.map((post) => {
     return <PostCard
@@ -45,8 +44,8 @@ const FeedPage = () => {
       body={post.body}
       voteSum={post.voteSum}
       commentCount={post.commentCount}
-      onClickCreate={() => onClickCreate(post.id)}
-      onClickChange={() => onClickChange(post.id)}
+      onClickUp={() => onClickVote(post.id, 1, post.userVote ) }
+      onClickDown={() => onClickVote(post.id, -1, post.userVote) }
     />
   })
 

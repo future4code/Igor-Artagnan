@@ -7,8 +7,8 @@ import CommentsCard from '../../components/ComentsCard/ComentsCard';
 import PostCard from '../../components/PostCard/PostCard';
 import useForm from '../../hooks/useForm'
 import { createComment } from '../../services/create';
-import { changeCommentVote } from '../../services/put'
-import { createCommentVote } from '../../services/create'
+/* import { changeCommentVote } from '../../services/put'
+import { createCommentVote } from '../../services/create' */
 
 
 
@@ -33,7 +33,7 @@ const PostPage = () => {
     />
   })
 
-  const onClickCreate = (id) => {
+  /* const onClickCreate = (id) => {
     console.log('UPVOTE')
     createCommentVote(id, { direction: 1 })
   }
@@ -42,7 +42,7 @@ const PostPage = () => {
     console.log('DOWNVOTE')
     changeCommentVote(id, { direction: -1 })
 
-  }
+  } */
 
 
   const mapedComments = postComments.map((comment) => {
@@ -51,8 +51,8 @@ const PostPage = () => {
       username={comment.username}
       body={comment.body}
       voteSum={comment.voteSum}
-      onClickCreate={() => onClickCreate(comment.id)}
-      onClickChange={() => onClickChange(comment.id)}
+    /*   onClickCreate={() => onClickCreate(comment.id)}
+      onClickChange={() => onClickChange(comment.id)} */
     />
 
   })

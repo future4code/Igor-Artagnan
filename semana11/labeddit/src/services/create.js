@@ -34,34 +34,5 @@ export const createComment = (id, body, clear) => {
         })
 }
 
-export const createPostVote = (id, body) => {
-    
 
-    axios.post(`${BASE_URL}/posts/${id}/votes`, body, {
-        headers: {
-            Authorization: localStorage.getItem('token')
-        }
-    })
-        .then((res) => {
-            console.log('Sucesso', res)
-            console.log('body', body)
-        })
-        .catch((err) => {
-            console.log('Erro', err.response.data)
-        })
-        console.log('body fora', body)
-}
 
-export const createCommentVote = (id, body) => {
-    axios.post(`${BASE_URL}/comments/${id}/votes`, body, {
-        headers: {
-            Authorization: localStorage.getItem('token')
-        }
-    })
-        .then((res) => {
-            console.log('Sucesso', res)
-        })
-        .catch((err) => {
-            console.log('Erro', err.response.data)
-        })
-}
