@@ -50,9 +50,6 @@ const PostPage = () => {
   }
 
 
-
-
-
   const mapedComments = postComments.map((comment) => {
     return <CommentsCard
       key={comment.id}

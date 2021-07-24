@@ -3,16 +3,20 @@ import styled from 'styled-components'
 export const MainContainer = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
+/* justify-content: center; */
 align-items: center;
+width: 900px;
+max-width: 100%;
+margin: auto;
 `
 export const FormContainer = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
-align-items: center;
+/* justify-content: center;
+align-items: center; */
 height: 200px;
 border: 1px solid white;
+margin: auto;
 
 `
 export const InputsContainer = styled.div`
