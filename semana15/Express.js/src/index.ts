@@ -18,10 +18,19 @@ app.listen(3003, () => { console.log("Servidor funcionando em http://localhost:3
 //Endpoint que retorna todos os países
 
 const result = countries.map(country => ({
-    id: country.id,
-    name: country.name
-  }))
+  id: country.id,
+  name: country.name
+}))
 
 app.get('/countries', (req: Request, res: Response) => [
-    res.send(result).status(200)
+  res.send(result).status(200)
 ])
+
+app.get('countries/:id', (req: Request, res: Response) => {
+  const result = countries.find(
+    (country) => {
+    return country.id === Number(req.params.id)}
+    )
+  
+ res.status(200).send(result)
+})
