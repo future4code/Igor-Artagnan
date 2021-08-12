@@ -73,6 +73,24 @@ app.get('/users', (req: Request, res: Response) => {
     }
 })
 
+//Exercício 3
+
+app.get('/users', (req: Request, res: Response) => {
+    let codeError: number = 400
+    try {
+      const name: string = req.query.name as string
+      const user: user | undefined = users.find((user) => user.name === name)
+  
+      if (!user) {
+        codeError = 404
+        throw new Error('User not found')
+  
+      }
+      res.status(200).send(user)
+    } catch (error) {
+      res.status(codeError).send({ message: error.message })
+    }
+  })
 
 
 
