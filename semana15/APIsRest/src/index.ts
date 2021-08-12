@@ -74,6 +74,7 @@ app.get('/users', (req: Request, res: Response) => {
 })
 
 //Exercício 3
+//a) query parameters
 
 app.get('/users', (req: Request, res: Response) => {
     let codeError: number = 400
