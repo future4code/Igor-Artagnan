@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express'
 import cors from 'cors'
-import { countries } from './data'
+import { countries, country } from './data'
 
 const app = express()
 
@@ -15,7 +15,7 @@ app.use(cors())
 //Função que faz o servidor escutar alguma porta da nossa máquina
 app.listen(3003, () => { console.log("Servidor funcionando em http://localhost:3003") })
 
-//Endpoint que retorna todos os países
+//Endpoint 1 que retorna todos os países
 
 const result = countries.map(country => ({
   id: country.id,
@@ -26,11 +26,19 @@ app.get('/countries', (req: Request, res: Response) => [
   res.send(result).status(200)
 ])
 
-app.get('countries/:id', (req: Request, res: Response) => {
+//Endpoint 2
+
+app.get('/countries/:id', (req: Request, res: Response) => {
   const result = countries.find(
     (country) => {
     return country.id === Number(req.params.id)}
     )
   
  res.status(200).send(result)
+})
+
+//Endpoint 3
+
+app.get("/countries/search", (req: Request, res: Response) => {
+  let result: country[] = countries;
 })
