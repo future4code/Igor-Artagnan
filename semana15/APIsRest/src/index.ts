@@ -93,6 +93,34 @@ app.get('/users', (req: Request, res: Response) => {
     }
   })
 
+  //EXERCÍCIO 4
+  //a) Não muda nada.
+  //b) O método PUT não é apropriado pois ele atualiza algo já existente.
+
+  app.post('/users', (req: Request, res: Response) => {
+      let codeError: number = 400
+
+      try{
+          const {id, name, email, type, age } = req.body
+
+          if(!id || !name || !email || !type || !age ){
+              codeError = 442
+              throw new Error('Please check the fields')
+          }
+
+          const newUser: user = {
+              id, name, email, type, age
+          }
+
+          users.push(newUser)
+          res.status(201).send({ menssage: 'User created succesfully' })
+
+      } catch (error){
+        res.status(codeError).send({ message: error.message})
+      }
+  })
+
+
 
 
 
