@@ -60,6 +60,10 @@ const app: Express = express()
 app.use(express.json())
 app.use(cors())
 
+//Exercício 1
+//a) O método a ser utilizado será o GET.
+//b) A entidade a ser manipulada será indicada com '/users'
+
 app.get('/users', (req: Request, res: Response) => {
     let codeError: number = 404
     try {
