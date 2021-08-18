@@ -65,3 +65,30 @@ avgSalaryByGender("female")
 
 ---------------------------------------------------------------------------------------------------------------
 Exercício 3
+
+a) app.get("/actor/:id", async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id
+        const actor = await getActorById(id)
+        res.status(200).send(actor)
+    } catch (err) {
+        res.status(400).send({message: err.message})
+    }
+})
+
+b) app.get("/actor", async (req: Request, res: Response) => {
+    try {
+      const count = await countActors(req.query.gender as string);
+      res.status(200).send({
+        quantity: count,
+      });
+    } catch (err) {
+      res.status(400).send({
+        message: err.message,
+      });
+    }
+  });
+
+  -------------------------------------------------------------------------------------------------------------
+
+  Exercício 4 

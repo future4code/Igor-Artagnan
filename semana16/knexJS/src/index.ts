@@ -49,16 +49,15 @@ app.get("/users/:id", async (req: Request, res: Response) => {
     .then(result =>{ console.log(result)})
     .catch(err => {console.log(err)}) */
  
-const getActorsByGender = async (gender: string): Promise<any> =>{
-    const result = await connection.raw(`
-    SELECT COUNT (*) as count FROM Actor WHERE gender = '${gender}'
-    `)
+    const countActors = async (gender: string): Promise<any> => {
+        const result = await connection.raw(`
+          SELECT COUNT(*) as count FROM Actor WHERE gender = "${gender}"
+        `);
+        const count = result[0][0].count;
+        return count;
+      };
 
-    const count = result[0][0].count;
-    return count;
-}
-
-/* getActorsByGender("female")
+/* countActors("female")
     .then(result =>{ console.log(result)})
     .catch(err => {console.log(err)}) */
 
@@ -94,6 +93,32 @@ const avgSalaryByGender = async (gender: string): Promise<any> => {
 /* avgSalaryByGender("female")
 .then(result => {console.log(result);})
 .catch(err => {console.log(err);}) */
+
+app.get("/actor/:id", async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id
+        const actor = await getActorById(id)
+        res.status(200).send(actor)
+    } catch (err) {
+        res.status(400).send({message: err.message})
+    }
+})
+
+app.get("/actor", async (req: Request, res: Response) => {
+    try {
+      const count = await countActors(req.query.gender as string);
+      res.status(200).send({
+        quantity: count,
+      });
+    } catch (err) {
+      res.status(400).send({
+        message: err.message,
+      });
+    }
+  });
+
+
+
 
 
 
