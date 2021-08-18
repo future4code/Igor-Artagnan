@@ -58,13 +58,42 @@ const getActorsByGender = async (gender: string): Promise<any> =>{
     return count;
 }
 
-getActorsByGender("female")
+/* getActorsByGender("female")
     .then(result =>{ console.log(result)})
-    .catch(err => {console.log(err)})
+    .catch(err => {console.log(err)}) */
 
+const updateActorInfo = async (id: string, salary: number): Promise<any> =>{
+    const result = await connection("Actor")
+    .update({salary: salary})
+    .where("id", id)
+}
 
+/* updateActorInfo('002', 30000)
+.then(result => {console.log(result);
+})
+.catch(err => {console.log(err);
+}) */
 
+const deleteActor = async (id: string): Promise<any> => {
+    const result = await connection("Actor")
+    .delete()
+    .where("id", id)
+}
 
+/* deleteActor("004")
+.then(result => {console.log(result);})
+.catch(err => {console.log(err);}) */
+
+const avgSalaryByGender = async (gender: string): Promise<any> => {
+    const result = await connection("Actor")
+    .avg("Salary as average")
+    .where({gender})
+    return result[0].average
+}
+
+/* avgSalaryByGender("female")
+.then(result => {console.log(result);})
+.catch(err => {console.log(err);}) */
 
 
 
