@@ -92,3 +92,28 @@ b) app.get("/actor", async (req: Request, res: Response) => {
   -------------------------------------------------------------------------------------------------------------
 
   Exercício 4 
+
+  a) app.put("/actor", async (req: Request, res: Response) =>{
+    try {
+        await updateActorInfo(req.body.id, req.body.salary)
+        res.status(200).send({message: "Success!"})
+    } catch (err) {
+        res.status(400).send({message: err.message})
+    }
+})
+
+b) app.delete("/actor/:id", async (req:Request, res: Response) => {
+    try {
+        await deleteActor(req.params.id)
+    } catch(err) {
+        res.status(400).send({
+            message: err.message
+        })
+    }
+})
+
+---------------------------------------------------------------------------------------------------------------
+
+Exercício 5
+
+a)
