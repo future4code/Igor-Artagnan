@@ -95,3 +95,12 @@ d) "Error Code: 1175. You are using safe update mode and you tried to update a t
 ---------------------------------------------------------------------------------------------------------------
 
 Exercício 3
+
+a) A query "SELECT * FROM Movies INNER JOIN Rating ON Movies.id = Rating.movie_id;" mostra todas as informações dos filmes que tem seu ID também presente na tabela de Rating. O operador ON define os parâmetros que vão ser usados para buscar as informações que serão mostradas pela query.
+
+b) SELECT m.id as movie_id, r.rate as rating FROM Movie m
+INNER JOIN Rating r ON m.id = r.movie_id;
+
+---------------------------------------------------------------------------------------------------------------
+
+Exercício 4
