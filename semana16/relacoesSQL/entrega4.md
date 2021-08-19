@@ -43,3 +43,55 @@ c) "Error Code: 1452. Cannot add or update a child row: a foreign key constraint
 d) ALTER TABLE Movies DROP COLUMN rate;
 
 e) "Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column.  To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect." O SQL não permite deletar uma informação que esteja sendo usada em outra tabela relacionada, para isso ocorrer devemos apagar o dado na segunda tabela.
+
+---------------------------------------------------------------------------------------------------------------
+
+Exercício 2
+
+a) Essa tabela cria uma relação entre outras duas tabelas existentes: Actor e Movies. A foreign key liga o id de um ator ao id de um filme.
+
+b) 
+
+INSERT INTO MovieCast (movie_id, actor_id)
+VALUES (
+"001",
+"002"
+);
+
+INSERT INTO MovieCast (movie_id, actor_id)
+VALUES (
+"003",
+"005"
+);
+
+INSERT INTO MovieCast (movie_id, actor_id)
+VALUES (
+"004",
+"006"
+);
+
+INSERT INTO MovieCast (movie_id, actor_id)
+VALUES (
+"001",
+"007"
+);
+
+INSERT INTO MovieCast (movie_id, actor_id)
+VALUES (
+"003",
+"005"
+);
+
+INSERT INTO MovieCast (movie_id, actor_id)
+VALUES (
+"004",
+"003"
+);
+
+c) "Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails" - Retorna erro pois o id inserido não existe em outra tabela para ser lido pela foreign key.
+
+d) "Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column.  To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect." - Para ser possível apagar esse dado nós devemos primeiro apagar a linha da segunda tabela onde ele também está sendo usado.
+
+---------------------------------------------------------------------------------------------------------------
+
+Exercício 3
