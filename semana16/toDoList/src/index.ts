@@ -10,13 +10,12 @@ app.use(express.json());
 app.use(cors());
 
 const createUser = async (
-   id: string,
    name: string,
    nickname: string,
    email: string
 ) => {
    await connection
-      .insert({ id: id, name: name, nickname: nickname, email: email })
+      .insert({ name: name, nickname: nickname, email: email })
 
       .into("TodoListUser")
 }
@@ -24,7 +23,7 @@ const createUser = async (
 app.post("/user", async (req: Request, res: Response) => {
    try {
       await createUser(
-         req.body.id,
+         
          req.body.name,
          req.body.nickname,
          req.body.email
