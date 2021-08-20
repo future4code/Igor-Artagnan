@@ -35,6 +35,28 @@ app.post("/user", async (req: Request, res: Response) => {
    }
 })
 
+const getUserById = async (id: string): Promise<any> => {
+   const result = await connection.raw(`
+   SELECT * FROM TodoListUser WHERE id = '${id}'
+   `)
+
+   return result[0][0]
+
+}
+
+app.get("/user/:id", async (req: Request, res: Response) => {
+   try {
+
+      const id = req.params.id
+      const user = await getUserById(id)
+      res.status(200).send(user)
+
+   } catch (err){
+      res.status(400).send({message: err.message})
+
+   }
+})
+
 
 
 
