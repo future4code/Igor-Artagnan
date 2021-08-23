@@ -1,6 +1,5 @@
 import { Request, Response } from "express"
-import { connection } from "../data/connection"
-import selectAllUsers from "../data/migrations"
+import {selectAllUsers} from "../data/migrations"
 
 
 export const getAllUsers = async(req: Request,res: Response): Promise<void> =>{
