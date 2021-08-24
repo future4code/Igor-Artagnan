@@ -2,7 +2,6 @@ import { Request, Response } from "express"
 import { connection } from "../data/connection"
 import { selectOrderedUsers } from "../data/migrations"
 
-
 export const getOrderedUsers = async (req: Request, res: Response): Promise<void> => {
     try {
 
@@ -22,13 +21,11 @@ export const getOrderedUsers = async (req: Request, res: Response): Promise<void
         const result = await connection("aula48_exercicio")
             .orderBy(sort, order)
 
-
         if (result.length <= 0) {
             res.status(201).send("Usuário não encontrado.")
         }
 
         res.status(200).send(result)
-
 
     } catch (error) {
         if (res.statusCode === 200) {
@@ -36,7 +33,6 @@ export const getOrderedUsers = async (req: Request, res: Response): Promise<void
         } else {
             res.send(error.message)
         }
-
 
     }
 }
