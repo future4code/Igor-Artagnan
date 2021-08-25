@@ -1,4 +1,6 @@
 import app from "./app"
-import createUser from './endpoints/createUser'
+import { getAddressInfo } from "./endpoints/getAddressInfo"
 
-app.post('/users/signup', createUser)
+
+getAddressInfo("38073011")
+    .then(console.log)

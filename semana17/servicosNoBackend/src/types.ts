@@ -5,3 +5,10 @@ export type user = {
    email: string
    address: string
 }
+
+export type addressInfo = {
+   logradouro: string,
+   bairro: string,
+   cidade: string,
+   estado: string
+}
