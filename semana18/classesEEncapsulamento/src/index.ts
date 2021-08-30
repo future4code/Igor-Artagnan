@@ -100,6 +100,24 @@ const newTransaction = new Transaction("lorem ipsun", 3000, "30/08/2021")
 
 console.log(newTransaction)
 
+//Exercício 3
+
+class Bank {
+    private accounts: UserAccount[];
+  
+    constructor(inputAccounts: UserAccount[]) {
+      this.accounts = inputAccounts;
+    }
+  
+    getAccounts(){
+        return this.accounts
+
+  }
+
+  setAccounts(newAccount: UserAccount[] ){
+      this.accounts = newAccount
+  }
+
 
 
 
