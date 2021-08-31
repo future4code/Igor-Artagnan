@@ -105,11 +105,20 @@ class User {
     }
   }
 
-  console.log('Nome', client.name);
+  /* console.log('Nome', client.name);
   console.log('Número de registro', client.registrationNumber);
   console.log('Energia consumida', client.consumedEnergy);
-  console.log('Cálculo da conta', client.calculateBill());
+  console.log('Cálculo da conta', client.calculateBill()); */
   
+  export abstract class Place {
+    constructor(protected cep: string) {}
+  
+      public getCep(): string {
+          return this.cep;
+    }
+  }
+
+ /* const newPlace = new Place() */
   
   
   

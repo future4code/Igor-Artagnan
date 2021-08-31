@@ -27,3 +27,9 @@ Exercício 1
 
 a. Quais propriedades você conseguiu imprimir? Teve alguma que não foi possível? Por que isso aconteceu?
 R: Foi possível imprimir todas as propriedades pois elas são nativamente públicas.
+
+a. Mesmo sabendo que não é possível, tente criar uma instância dessa classe (ou seja: new Place(...)). Qual foi o erro que o Typescript gerou?
+R: A mensagem de erro do ts foi "Cannot create an instance of an abstract class."
+
+b. Pense e responda: o que precisaríamos fazer para conseguir efetivamente criar uma instância dessa classe?
+R: Teriamos que transformar a classe de abstrata para interface.
