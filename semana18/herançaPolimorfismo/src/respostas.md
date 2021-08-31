@@ -32,4 +32,4 @@ a. Mesmo sabendo que não é possível, tente criar uma instância dessa classe 
 R: A mensagem de erro do ts foi "Cannot create an instance of an abstract class."
 
 b. Pense e responda: o que precisaríamos fazer para conseguir efetivamente criar uma instância dessa classe?
-R: Teriamos que transformar a classe de abstrata para interface.
+R: Teriamos que transformar a classe de abstrata para interface. // Correção: "para criar uma instância de uma classe abstrata precisamos declarar uma classe filha e criar uma instância dessa última."

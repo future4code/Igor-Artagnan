@@ -119,6 +119,89 @@ class User {
   }
 
  /* const newPlace = new Place() */
+
+ /* export class Residence extends Place {
+    constructor(
+      protected residentsQuantity: number,
+      // Refere-se ao número de moradores da casa
+      cep: string
+    ) {
+      super(cep);
+    }
+  }
+  
+  export class Commerce extends Place {
+    constructor(
+      protected floorsQuantity: number,
+      // Refere-se à quantidade de andares do lugar
+      cep: string
+    ) {
+      super(cep);
+    }
+  }
+
+  export class Industry extends Place {
+    constructor(
+      protected machinesQuantity: number, 
+      // Refere-se à quantidade de máquinas do local      
+      cep: string
+          ) {
+          super(cep);
+    }
+  } */
+  
+  /* const newResidence = new Residence(2, '14256')
+  console.log('CEP residência:', newResidence.getCep());
+
+  const newCommerce = new Commerce(5, "789789")
+  console.log('CEP comércio:', newCommerce.getCep());
+
+  const newIndustry = new Industry(45, '55566-8')
+  console.log('CEP indústria', newIndustry.getCep()); */
+
+  export class Residence extends Place {
+    constructor(
+      private dwellersQuantity: number,
+  
+      cep: string
+    ) {
+      super(cep);
+    }
+    
+    public getDwellersQuantity(): number {
+      return this.dwellersQuantity
+    }
+  }
+
+  export class Commerce extends Place {
+    constructor(
+      private floorsQuantity: number,
+      // Refere-se à quantidade de andares do lugar
+  
+      cep: string
+    ) {
+      super(cep);
+    }
+  
+    public getFloorsQuantity(): number {
+      return this.floorsQuantity;
+    }
+  }
+
+  export class Industry extends Place {
+    constructor(
+      private machinesQuantity: number,
+      // Refere-se à quantidade de máquinas do local
+  
+      cep: string
+    ) {
+      super(cep);
+    }
+  
+    public getMachinesQuantity(): number {
+      return this.machinesQuantity;
+    }
+  }
   
   
   
