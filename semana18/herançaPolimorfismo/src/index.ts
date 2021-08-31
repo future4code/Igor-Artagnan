@@ -5,18 +5,23 @@ class User {
     private email: string;
     private name: string;
     private password: string;
+    public introduceYourself(): string {
+        return "Olá, bom dia!"
+     }
   
     constructor(
           id: string,
           email: string,
           name: string,
-          password: string
+          password: string,
+       
       ){
           console.log("Chamando o construtor da classe User")
           this.id = id
           this.email = email
           this.name = name 
           this.password = password
+          
       }
   
       public getId(): string {
@@ -72,6 +77,11 @@ class User {
   console.log('Senha:', newCustomer.getPassword())
   console.log('Email:', newCustomer.getEmail())
   console.log('Cartão de crédito:', newCustomer.getCreditCard())
+  console.log('Total de compra:', newCustomer.purchaseTotal)
+  
+  //Exercício 4
+
+  console.log(newCustomer.introduceYourself())
 
 
 
