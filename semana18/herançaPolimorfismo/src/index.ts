@@ -62,4 +62,19 @@ class User {
   }
 
   const newCustomer = new Customer("1", "bertoroberto@berto.com", "Berto Roberto", "456812", "Nubank visa")
-  console.log(newCustomer)
+  /* console.log(newCustomer) */
+
+  //Exercício 3
+
+  console.log('ID:', newCustomer.getId())
+  console.log('Email:', newCustomer.getEmail())
+  console.log('Nome:', newCustomer.getName())
+  console.log('Senha:', newCustomer.getPassword())
+  console.log('Email:', newCustomer.getEmail())
+  console.log('Cartão de crédito:', newCustomer.getCreditCard())
+
+
+
+  
+
+

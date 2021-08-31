@@ -13,3 +13,8 @@ R: Apenas uma vez.
 
 b. Quantas vezes a mensagem "Chamando o construtor da classe User" foi impressa no terminal? Por quê?
 R: O construtor da classe User aparece uma vez pois o User é uma subclasse do Customer.
+
+Exercício 3
+
+a. Seria possível imprimir a senha (password) atrelada a essa instância? Por quê?
+R: Sim, da mesma forma em que imprimimos o password do Customer, usando o método get que foi herdado dele.
