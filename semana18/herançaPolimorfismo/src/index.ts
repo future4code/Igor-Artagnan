@@ -71,19 +71,48 @@ class User {
 
   //Exercício 3
 
-  console.log('ID:', newCustomer.getId())
+ /* console.log('ID:', newCustomer.getId())
   console.log('Email:', newCustomer.getEmail())
   console.log('Nome:', newCustomer.getName())
   console.log('Senha:', newCustomer.getPassword())
   console.log('Email:', newCustomer.getEmail())
   console.log('Cartão de crédito:', newCustomer.getCreditCard())
-  console.log('Total de compra:', newCustomer.purchaseTotal)
+  console.log('Total de compra:', newCustomer.purchaseTotal) */
   
   //Exercício 4
 
-  console.log(newCustomer.introduceYourself())
+  /* console.log(newCustomer.introduceYourself()) */
 
+ //Polimorfismo
+ 
+ //Exercício 1
 
+ export interface Client {
+    name: string;
+    registrationNumber: number;
+    consumedEnergy: number;
+    calculateBill(): number;
+    
+  }
+
+  const client: Client = {
+    name: "Teste Cliente",
+    registrationNumber: 1,
+    consumedEnergy: 100,
+  
+    calculateBill: () => {
+      return 2;
+    }
+  }
+
+  console.log('Nome', client.name);
+  console.log('Número de registro', client.registrationNumber);
+  console.log('Energia consumida', client.consumedEnergy);
+  console.log('Cálculo da conta', client.calculateBill());
+  
+  
+  
+  
 
   
 

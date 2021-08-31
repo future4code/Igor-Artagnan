@@ -1,3 +1,5 @@
+                                        Herança
+
 Exercício 1
 
 a. Seria possível imprimir a senha (password) atrelada a essa instância?
@@ -18,3 +20,10 @@ Exercício 3
 
 a. Seria possível imprimir a senha (password) atrelada a essa instância? Por quê?
 R: Sim, da mesma forma em que imprimimos o password do Customer, usando o método get que foi herdado dele.
+
+                                        Polimorfismo
+
+Exercício 1
+
+a. Quais propriedades você conseguiu imprimir? Teve alguma que não foi possível? Por que isso aconteceu?
+R: Foi possível imprimir todas as propriedades pois elas são nativamente públicas.
