@@ -6,7 +6,7 @@ class User {
     private name: string;
     private password: string;
     public introduceYourself(): string {
-        return "Olá, bom dia!"
+        return `Olá eu sou o ${this.name}. Bom dia!`
      }
   
     constructor(
