@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { connection } from "../data/connection";
 
 
-export default async function createUser(
+export default async function createProduct(
    req: Request,
    res: Response
 ): Promise<void> {
