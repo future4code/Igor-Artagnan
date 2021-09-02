@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { connection } from "../data/connection";
+import { User } from "../entities/user";
 
 
 export default async function createUser(
@@ -8,6 +9,14 @@ export default async function createUser(
 ): Promise<void> {
    try {
 
+      const { name, email, age } = req.body
+
+      const id: string = Date.now() + Math.random().toString()
+
+      const newUser = new User(name, email, Number(age), id)
+
+      await connection('User')
+      .insert(newUser)
 
    } catch (error) {
 
