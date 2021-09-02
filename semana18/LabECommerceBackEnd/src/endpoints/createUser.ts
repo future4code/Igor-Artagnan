@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { connection } from "../data/connection";
 import { User } from "../entities/user";
 
-
 export default async function createUser(
    req: Request,
    res: Response
@@ -11,23 +10,21 @@ export default async function createUser(
 
       const { name, email, age } = req.body
 
+      if ( !name || !email || !age ){
+         res.statusCode = 422
+         throw "'name', 'email' e 'age' são campos obrigátorios!"
+     }
+
       const id: string = Date.now() + Math.random().toString()
 
       const newUser = new User(name, email, Number(age), id)
 
-      await connection('User')
+      await connection("User")
       .insert(newUser)
 
-   } catch (error) {
+      res.status(201).end()
 
-      if (typeof error === "string") {
-
-         res.send(error)
-      } else {
-
-         console.log(error.sqlMessage || error.message);
-         res.status(500).send("Ops! Um erro inesperado ocorreu =/")
-      }
-
-   }
+   }catch (error) {
+      res.status(500).end()
+  }
 }

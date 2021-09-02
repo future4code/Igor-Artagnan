@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+/* import { Request, Response } from "express";
 import { connection } from "../data/connection";
 
 
@@ -21,4 +21,4 @@ export default async function getUsers(
       }
 
    }
-}
+} */
