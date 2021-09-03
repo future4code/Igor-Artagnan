@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
-import { connection } from "../data/connection";
+import { ProductDatabase } from "../database/productDatabase";
 import { Product } from "../entities/product";
+
 
 export default async function createProduct(
    req: Request,
@@ -19,12 +20,13 @@ export default async function createProduct(
 
       const newProduct = new Product(name, description, Number(price), id)
 
-      await connection("Product")
-      .insert(newProduct)
+      const productDatabase = new ProductDatabase()
+    await productDatabase.create(newProduct)
+
 
       res.status(201).end()
 
    } catch (error) {
       res.status(500).end()
   }
-}
+} 

@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
-import { connection } from "../data/connection";
+import { ProductDatabase } from "../database/productDatabase";
+
 import { Product } from "../entities/product";
+import { ProductsDb } from "../types";
 
 
 export default async function getProducts(
@@ -9,9 +11,10 @@ export default async function getProducts(
 ): Promise<void> {
    try {
 
-      const productsDb = await connection("Product").select()
+      const productDatabase = new ProductDatabase()
+      const productsDb: ProductsDb[] = await productDatabase.getAll()
 
-      const products = productsDb.map(product =>{
+      const products = await productsDb.map(product =>{
          return new Product (    
             product.name,
             product.description,
@@ -26,4 +29,4 @@ export default async function getProducts(
    } catch (error) {
       res.status(500).end()
   }
-} 
+}  

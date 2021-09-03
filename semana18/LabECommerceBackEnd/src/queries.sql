@@ -1,12 +1,4 @@
-/* import { connection } from "./connection"
-
-
-const printError = (error: any) => { console.log(error.sqlMessage || error.message) }
-
-const createTables = () => connection
-   .raw(`
-      
-      CREATE TABLE IF NOT EXISTS User(
+CREATE TABLE IF NOT EXISTS User(
       id VARCHAR(255) PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
       email VARCHAR(255) NOT NULL,
@@ -38,15 +30,3 @@ const createTables = () => connection
       FOREIGN KEY(user_id) REFERENCES User(id),
       FOREIGN KEY(product_id) REFERENCES Product(id)
       )
-      
-   `)
-   .then(() => { console.log("Tabelas criadas") })
-   .catch(printError)
-
-
-
-const closeConnection = () => { connection.destroy() }
-
-createTables()
-   
-   .finally(closeConnection) */

@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
-import { connection } from "../data/connection";
+import { UserDatabase } from "../database/userDatabase";
+
+
 import { User } from "../entities/user";
 
 export default async function createUser(
@@ -19,8 +21,8 @@ export default async function createUser(
 
       const newUser = new User(name, email, Number(age), id)
 
-      await connection("User")
-      .insert(newUser)
+     const userDatabase = new UserDatabase()
+    await userDatabase.create(newUser)
 
       res.status(201).end()
 
