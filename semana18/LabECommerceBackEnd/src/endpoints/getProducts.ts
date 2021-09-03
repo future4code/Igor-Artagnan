@@ -1,5 +1,6 @@
-/* import { Request, Response } from "express";
+import { Request, Response } from "express";
 import { connection } from "../data/connection";
+import { Product } from "../entities/product";
 
 
 export default async function getProducts(
@@ -8,17 +9,21 @@ export default async function getProducts(
 ): Promise<void> {
    try {
 
+      const productsDb = await connection("Product").select()
+
+      const products = productsDb.map(product =>{
+         return new Product (    
+            product.name,
+            product.description,
+            product.price,
+            product.id
+         )
+      })
+
+      res.send(products)
+
 
    } catch (error) {
-
-      if (typeof error === "string") {
-
-         res.send(error)
-      } else {
-
-         console.log(error.sqlMessage || error.message);
-         res.status(500).send("Ops! Um erro inesperado ocorreu =/")
-      }
-
-   }
-} */
+      res.status(500).end()
+  }
+} 
