@@ -1,43 +1,41 @@
+/* import { generateId } from "../services/generateId";
+import createUser from "./editUser";
 import { Request, Response } from "express";
-import {connection} from "../data/connection";
-import { user } from "../types";
 
-export default async function createUser(
-   req: Request,
-   res: Response
-): Promise<void> {
-   try {
 
-      const { name, nickname, email } = req.body
+export default async function signup (req: Request, res: Response) => {
+  try {
+    
+    if (!req.body.email || req.body.email.indexOf("@") === -1) {
+      throw new Error("Invalid email");
+    }
 
-      if (!name || !nickname || !email ) {
-         res.statusCode = 422
-         throw new Error("Preencha os campos 'name', 'nickname' e 'email'")
-      }
+   
+    if (!req.body.password || req.body.password.length < 6) {
+      throw new Error("Invalid password");
+    }
 
-      const [user] = await connection('to_do_list_users')
-         .where({ email })
+    const userData = {
+      email: req.body.email,
+      password: req.body.password,
+    };
 
-      if (user) {
-         res.statusCode = 409
-         throw new Error('Email já cadastrado')
-      }
+    const id = generateId();
 
-      const id: string = Date.now().toString()
+  
+    await createUser(id, userData.email, userData.password);
 
-      const newUser: user = { id, name, nickname, email }
+    const token = generateToken({
+      id,
+    });
 
-      await connection('to_do_list_users')
-         .insert(newUser)
-
-      res.status(201).send({ newUser })
-
-   } catch (error) {
-
-      if (res.statusCode === 200) {
-         res.status(500).send({ message: "Internal server error" })
-      } else {
-         res.send({ message: error.sqlMessage || error.message })
-      }
-   }
-}
+    res.status(200).send({
+      token,
+    });
+  } catch (err) {
+    res.status(400).send({
+      message: err.message,
+    });
+  }
+});
+ */
