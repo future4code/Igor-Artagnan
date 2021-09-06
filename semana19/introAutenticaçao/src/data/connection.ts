@@ -14,3 +14,18 @@ export const connection = knex({
         multipleStatements: true
     }
 })
+
+const userTableName = "User_55";
+
+	 const createUser = async (
+		id: string, 
+		email: string, 
+		password: string) => {
+	  await connection
+	    .insert({
+	      id,
+	      email,
+	      password,
+	    })
+	    .into(userTableName);
+	};
