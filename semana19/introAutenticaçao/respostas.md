@@ -28,3 +28,12 @@ c- Feito.
 
 EXERCÍCIO 3
 
+a- "as String" está tipando o dado que vem do arquivo .env, essa tipagem permite a liberdade de criar uma chave mais segura.
+
+----------------------------------------------------------------------------------------------------------------
+
+b- Feito.
+
+----------------------------------------------------------------------------------------------------------------
+
+EXERCÌCIO 4
