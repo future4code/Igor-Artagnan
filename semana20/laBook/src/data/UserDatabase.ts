@@ -1,43 +1,22 @@
-import { User } from "../entities/User";
-import { BaseDatabase } from "./BaseDatabase";
+import { User } from "../model/User";
+import { connection } from "./connection";
 
-export class UserDatabase extends BaseDatabase {
-  public async createUser(user: User) {
-    try {
-      await BaseDatabase.connection("lbn_user").insert({
-        id: user.getId(),
-        name: user.getName(),
-        email: user.getEmail(),
-        password: user.getPassword(),
-        role: user.geRole(),
-      });
-    } catch (error) {
-      throw new Error(error.sqlMessage || error.message);
-    }
-  }
+interface UserDBModel {
+    id: string
+    email: string
+    name: string
+    password_hash: string
+}
 
-  public async findUserByEmail(email: string): Promise<User> {
-    try {
-      const user = await BaseDatabase.connection("lbn_user")
-        .select("*")
-        .where({ email });
-      return user[0] && User.toUserModel(user[0]);
-    } catch (error) {
-      throw new Error(error.sqlMessage || error.message);
+export class UserDatabase {
+    async save(user: User) {
+        const userDB = {
+            id: user.id,
+            email: user.email,
+            name: user.name,
+            password_hash: user.passwordHash
+        }
+        await connection('Labook_user').insert(userDB)
     }
-  }
 
-  public async getAllUsers(): Promise<User[]> {
-    try {
-      const users = await BaseDatabase.connection("lbn_user").select(
-        "id",
-        "name",
-        "email",
-        "role"
-      );
-      return users.map((user) => User.toUserModel(user));
-    } catch (error) {
-      throw new Error(error.sqlMessage || error.message);
-    }
-  }
 }
