@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import { SignupDTO, UserBusiness } from '../business/UserBusiness'
 
 export class UserController {
+
     signup(request: Request, response: Response) {
 
         try {
@@ -11,10 +12,12 @@ export class UserController {
                 email: request.body.email,
                 password: request.body.password,
             }
-            if (!signupDTO.name || !signupDTO.email || signupDTO.password) {
+
+            if (!signupDTO.name || !signupDTO.email || !signupDTO.password) {
                 throw new Error('Preencha todos os campos!')
-            }
-            const userBusiness = new UserBusiness()
+            } 
+
+            const userBusiness = new UserBusiness();
 
             userBusiness.signup(signupDTO)
             response.send('Sucesso')

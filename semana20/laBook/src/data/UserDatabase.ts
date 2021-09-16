@@ -1,13 +1,13 @@
 import { User } from "../model/User";
 import { connection } from "./connection";
 
-interface UserDBModel {
+/* interface UserDBModel {
     id: string
     email: string
     name: string
     password_hash: string
 }
-
+ */
 export class UserDatabase {
     async save(user: User) {
         const userDB = {
