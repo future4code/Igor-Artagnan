@@ -38,7 +38,11 @@ export class UserBusiness {
             user: savedUser.name,
             token: token
         }
+    }
 
+    async login(email: string, password: string){
+        const userDatabase = new UserDatabase();
 
+        
     }
 }

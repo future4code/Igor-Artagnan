@@ -11,3 +11,7 @@ app.post('/users/signup', (request, response) => {
     userController.signup(request, response)
 })
 
+app.post('/users/login', (request, response) => {
+    userController.login(request, response)
+})
+
