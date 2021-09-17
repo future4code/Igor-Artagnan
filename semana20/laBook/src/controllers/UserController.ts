@@ -3,7 +3,7 @@ import { SignupDTO, UserBusiness } from '../business/UserBusiness'
 
 export class UserController {
 
-    signup(request: Request, response: Response) {
+    async signup(request: Request, response: Response) {
 
         try {
 
@@ -15,12 +15,13 @@ export class UserController {
 
             if (!signupDTO.name || !signupDTO.email || !signupDTO.password) {
                 throw new Error('Preencha todos os campos!')
-            } 
+            }
 
             const userBusiness = new UserBusiness();
 
-            userBusiness.signup(signupDTO)
-            response.send('Sucesso')
+            const output = await userBusiness.signup(signupDTO)
+            response.send({token: output.token})
+
 
         } catch (error: any) {
             response.status(500).send(error.message)

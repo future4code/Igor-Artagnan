@@ -1,13 +1,7 @@
 import { User } from "../model/User";
 import { connection } from "./connection";
 
-/* interface UserDBModel {
-    id: string
-    email: string
-    name: string
-    password_hash: string
-}
- */
+
 export class UserDatabase {
     async save(user: User) {
         const userDB = {
@@ -17,6 +11,9 @@ export class UserDatabase {
             password_hash: user.passwordHash
         }
         await connection('Labook_user').insert(userDB)
+
+        return user
+
     }
 
 }

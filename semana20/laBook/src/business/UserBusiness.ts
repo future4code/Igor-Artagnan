@@ -1,5 +1,6 @@
 import { UserDatabase } from "../data/UserDatabase"
 import { User } from "../model/User"
+import { Authenticator } from "../services/Auhtenticator"
 import { HashManager } from "../services/HashManager"
 import { IdGenerator } from "../services/IdGenerator"
 
@@ -28,7 +29,15 @@ export class UserBusiness {
         const userDatabase = new UserDatabase();
         
 
-        await userDatabase.save(userModel)
+        const savedUser = await userDatabase.save(userModel)
+
+        const authenticator = new Authenticator()
+        const token =authenticator.generate({id: savedUser.id})
+
+        return {
+            user: savedUser.name,
+            token: token
+        }
 
 
     }
