@@ -16,4 +16,23 @@ export class UserDatabase {
 
     }
 
+    async findUserByMail(email: string) {
+        const queryResponse = await connection('Labook_user').select('*').where({ email: email })
+
+        const userDB = queryResponse[0]
+
+        if (!userDB) {
+            return null
+        }
+
+        const user: User = {
+            id: userDB.id,
+            email: userDB.email,
+            name: userDB.name,
+            passwordHash: userDB.password_hash,
+        }
+
+        return user
+    }
+
 }
