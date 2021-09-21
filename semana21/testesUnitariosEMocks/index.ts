@@ -19,7 +19,7 @@ export const validateCharacter = (input: Character): boolean => {
     return true
 }
 
-export const performAttack = (attacker: Character, defender: Character) => {
+/* export const performAttack = (attacker: Character, defender: Character) => {
     if (!validateCharacter(attacker) || !validateCharacter(defender)) {
         throw new Error("Invalid character");
     }
@@ -27,11 +27,11 @@ export const performAttack = (attacker: Character, defender: Character) => {
     if (attacker.strength > defender.defense) {
         defender.life -= attacker.strength - defender.defense;
     }
-};
+}; */
 
 //inversão de dependências
 
-/* export const performAttack = (
+ export const performAttack = (
     attacker: Character,
     defender: Character,
     validator: (input: Character) => boolean
@@ -43,4 +43,4 @@ export const performAttack = (attacker: Character, defender: Character) => {
     if (attacker.strength > defender.defense) {
       defender.life -= attacker.strength - defender.defense;
     }
-  }; */
+  }; 
