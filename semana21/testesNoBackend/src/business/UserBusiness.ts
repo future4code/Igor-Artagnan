@@ -10,7 +10,7 @@ export class UserBusiness {
     private userDatabase: UserDatabase,
     private idGenerator: IdGenerator,
     private hashGenerator: HashGenerator
-  ) {}
+  ) { }
 
   private isEmail(email: string) {
     const emailRegexp =
@@ -35,8 +35,8 @@ export class UserBusiness {
       }
 
       if (!name || !password || !role) {
-         throw new CustomError(422, "Nome faltando");
-       }
+        throw new CustomError(422, "Nome faltando");
+      }
 
       if (!this.isEmail(email)) {
         throw new CustomError(422, "Email inválido");
@@ -99,4 +99,21 @@ export class UserBusiness {
       throw new CustomError(error.statusCode, error.message);
     }
   }
+
+  public async getUserById(id: string) {
+    const user = await this.userDatabase.getUserById(id)
+
+    if (!user) {
+      throw new CustomError(404, 'Usuário não encontrado')
+    }
+
+    return {
+      id: user.getId(),
+      name: user.getName(),
+      email: user.getEmail(),
+      role: user.getRole()
+    }
+
+  }
+
 }

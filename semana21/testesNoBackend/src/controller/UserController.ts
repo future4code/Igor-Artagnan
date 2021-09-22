@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import {UserBusiness} from "../business/UserBusiness";
+import { UserBusiness } from "../business/UserBusiness";
 import { UserDatabase } from "../data/UserDatabase";
 import { HashGenerator } from "../services/hashGenerator";
 import { IdGenerator } from "../services/idGenerator";
@@ -32,6 +32,14 @@ export class UserController {
       } catch (error) {
          const { statusCode, message } = error
          res.status(statusCode || 400).send({ message });
+      }
+   }
+
+   public async getUserById(req: Request, res: Response) {
+      try {
+
+      } catch (error) {
+
       }
    }
 }
