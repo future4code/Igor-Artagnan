@@ -1,1 +1,1 @@
-export const URL_BASE = `https://www.googleapis.com/youtube/v3/`
+export const BASE_URL = `https://www.googleapis.com/youtube/v3/`
