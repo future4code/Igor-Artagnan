@@ -15,7 +15,7 @@ const Router = () => {
             </Switch>
 
             <Switch>
-                <Route exact path={'/detail'}>
+                <Route exact path={'/detail/:id'}>
                     <DetailsPage />
                 </Route>
             </Switch>
