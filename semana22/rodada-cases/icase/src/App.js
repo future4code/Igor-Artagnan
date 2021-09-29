@@ -1,9 +1,10 @@
+import { GlobalStyle } from './assets/styles/globalStyles';
 import Router from './routes/Router'
 
 function App() {
   return (
     <div >
-      DONE!
+      <GlobalStyle/>
       <Router/>
     </div>
   );

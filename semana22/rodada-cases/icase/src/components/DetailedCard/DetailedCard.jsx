@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VideoCard = () => {
+const DetailedCard = () => {
 
     return <div>
 
@@ -8,4 +8,4 @@ const VideoCard = () => {
 
 }
 
-export default VideoCard
+export default DetailedCard
