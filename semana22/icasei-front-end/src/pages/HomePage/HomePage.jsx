@@ -11,25 +11,29 @@ import DetailedCard from "../../components/DetailedCard/DetailedCard"
 
 const HomePage = () => {
 
-    const [data, setData] = useState()
+    const [data, setData] = useState([])
     const [search, setSearch] = useState('')
 
-     
-        
-    
+
+
+
 
     const setValue = (e) => {
         setSearch(e.target.value)
     }
 
     console.log(search)
-    console.log(data[0].snippet.thumbnails)
+    console.log(data)
 
-    /* const videos = data.map((video) => {
+
+    const videos = () => data.map((video) => {
         return <VideoCard
-        thumbnails={video.items.snippet.thumbnails.default.url}
+            thumbnails={video.snippet.thumbnails.medium.url}
+            title={video.snippet.title}
+            channelTitle={video.snippet.channelTitle}
+            description={video.snippet.description}
         />
-    }) */
+    })
 
     return (
         <div>
@@ -50,12 +54,16 @@ const HomePage = () => {
                     />
                 </Box>
                 <button
-                onClick={() => searchVideo(setData, search)}
+                    onClick={() => searchVideo(setData, search)}
                 >
                     <AiOutlineSearch />
                 </button>
             </SearchDiv>
-                                
+
+            {videos()}
+
+
+
 
         </div>
     )
