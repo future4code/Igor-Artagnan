@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useHistory } from 'react-router-dom'
-import { searchVideo } from "../../services/Get"
+import { searchVideo } from "../../services/SearchVideo"
 import { AiOutlineSearch } from 'react-icons/ai'
 import { SearchDiv } from "./styled"
 import VideoCard from "../../components/VideoCard/VideoCard"
