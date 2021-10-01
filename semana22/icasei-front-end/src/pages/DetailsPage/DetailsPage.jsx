@@ -4,7 +4,7 @@ import React from "react"
 const DetailsPage = () => {
 
     return <div>
-        
+        DETAIL
 
     </div>
 }

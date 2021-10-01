@@ -4,10 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import { MainDiv } from './Styled'
 
 const VideoCard = (props) => {
 
-    return <div>
+    return <MainDiv>
         <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
@@ -29,13 +30,16 @@ const VideoCard = (props) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
+                <Button 
+                onClick={props.goToVideo}
+                size="small" 
+                color="primary">
                     DETALHES DO VÍDEO
                 </Button>
             </CardActions>
         </Card>
 
-    </div>
+    </MainDiv>
 
 }
 
