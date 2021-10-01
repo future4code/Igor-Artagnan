@@ -14,11 +14,14 @@ const HomePage = () => {
     const [data, setData] = useState([])
     const [search, setSearch] = useState('')
 
+    
+
     const setValue = (e) => {
         setSearch(e.target.value)
     }
 
     const videos = () => data.map((video) => {
+        
         return <VideoCard
             key={video.id.videoId}
             thumbnails={video.snippet.thumbnails.medium.url}
@@ -27,6 +30,8 @@ const HomePage = () => {
             description={video.snippet.description}
             goToVideo={() => goToVideo(history, video.id.videoId)}
         />
+        
+    
     })
 
     return (
