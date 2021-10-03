@@ -1,35 +1,46 @@
 import React, { useEffect, useState } from "react"
 import { videoDetail } from '../../services/VideoDetail'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import DetailedCard from "../../components/DetailedCard/DetailedCard"
+import {MainDiv} from './Styled'
 
 
 const DetailsPage = () => {
 
     const [data, setData] = useState([])
     const { videoId } = useParams()
+    const history = useHistory()
 
     useEffect(() => {
         videoDetail(setData, videoId)
     }, [])
 
-    return (<div>
 
-        {console.log(data)}
- 
-         {data ? data.map((video) => {
+    const goBack = () => {
+        history.goBack()
+    }
+
+    return (<MainDiv>
+
+        {console.log(data.snippet)}
+
+        {data ? data.map((video) => {
             return <DetailedCard
+                id={video.id}
+                onClick={() => goBack()}
                 title={video.snippet.title}
-                thumbnails={video.snippet.thumbnails.medium.url}
                 channelTitle={video.snippet.channelTitle}
                 description={video.snippet.description}
+                likeCount={video.statistics.likeCount}
+                dislikeCount={video.statistics.dislikeCount}
                 viewCount={video.statistics.viewCount}
 
             />
-        }) : <p>carregando</p>} 
- 
+        }) : <p>carregando</p>}
 
-    </div>
-    )}
+
+    </MainDiv>
+    )
+}
 
 export default DetailsPage

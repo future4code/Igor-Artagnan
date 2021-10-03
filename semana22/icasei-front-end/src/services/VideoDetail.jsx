@@ -8,7 +8,7 @@ export const videoDetail = (setData, videoId) => {
 
         .then((res) => {
             setData(res.data.items)
-            console.log('requisicao', res.data)
+
         })
 
         .catch((err) => {
