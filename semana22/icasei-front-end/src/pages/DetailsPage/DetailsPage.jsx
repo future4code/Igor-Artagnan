@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { videoDetail } from '../../services/VideoDetail'
 import { useParams, useHistory } from 'react-router-dom'
 import DetailedCard from "../../components/DetailedCard/DetailedCard"
-import {MainDiv} from './Styled'
+import { MainDiv } from './Styled'
 
 
 const DetailsPage = () => {

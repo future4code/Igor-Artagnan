@@ -30,17 +30,16 @@ const VideoCard = (props) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button 
-                onClick={props.goToVideo}
-                size="small" 
-                color="primary">
+                <Button
+                    onClick={props.goToVideo}
+                    size="small"
+                    color="primary">
                     DETALHES DO VÍDEO
                 </Button>
             </CardActions>
         </Card>
 
     </MainDiv>
-
 }
 
 export default VideoCard

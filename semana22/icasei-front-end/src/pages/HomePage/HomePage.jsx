@@ -14,8 +14,6 @@ const HomePage = () => {
     const [data, setData] = useState([])
     const [search, setSearch] = useState('')
 
-
-
     const setValue = (e) => {
         setSearch(e.target.value)
     }
@@ -30,8 +28,6 @@ const HomePage = () => {
             description={video.snippet.description}
             goToVideo={() => goToVideo(history, video.id.videoId)}
         />
-
-
     })
 
     return (
@@ -58,7 +54,7 @@ const HomePage = () => {
                     <AiOutlineSearch />
                 </button>
             </SearchDiv>
-            {search ? videos()  : <InfoDiv> <h1>Uma infinidade de conteúdos, gratuitamente em suas mãos. Pesquise!</h1></InfoDiv>}
+            {search ? videos() : <InfoDiv> <h1>Uma infinidade de conteúdos, gratuitamente em suas mãos. Pesquise!</h1></InfoDiv>}
 
         </MainDiv>
     )

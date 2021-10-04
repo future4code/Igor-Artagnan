@@ -1,9 +1,12 @@
 import styled from 'styled-components'
 
 export const ContainerVideo = styled.section`
+  
   @media(min-width:769px){
-     display:flex;
-     justify-content: center;
+      
+    display:flex;
+    justify-content: center;
+
 }
     padding: 25px;
 `
@@ -28,9 +31,9 @@ export const ButtonDiv = styled.div`
 `
 
 export const InfoDiv = styled.div`
-display: flex;
-justify-content: space-between;
-margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
 
 h3{
     font-size: 15px;
