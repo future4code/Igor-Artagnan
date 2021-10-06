@@ -35,9 +35,12 @@ const HomePage = () => {
                     <MenuItem value="">
                         <em>All</em>
                     </MenuItem>
-                    <MenuItem value={'Horror'}>Horror</MenuItem>
+                    {genre.map((g) =>{
+                        return  <MenuItem value={g.id}>{g.name}</MenuItem>
+                    })}
+                    {/* <MenuItem value={'Horror'}>Horror</MenuItem>
                     <MenuItem value={'Drama'}>Drama</MenuItem>
-                    <MenuItem value={'Comedy'}>Comedy</MenuItem>
+                    <MenuItem value={'Comedy'}>Comedy</MenuItem> */}
                 </Select>
                 <FormHelperText>Select a genre</FormHelperText>
             </FormControl>
