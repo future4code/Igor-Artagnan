@@ -11,7 +11,7 @@ const Router = () => {
                     <HomePage />
                 </Route>
 
-                <Route exact path={'/movie/:id'}>
+                <Route exact path={'/movie/:movieId'}>
                     <MoviePage />
                 </Route>
             </Switch>
