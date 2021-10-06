@@ -15,7 +15,7 @@ export const Movies = (setData, movies) => {
 }
 
 export const MovieDetail = (setData, id) => {
-    axios.get(`${BASE_URL}movie/{movie_id}?api_key=${API_KEY}&language=en-US`)
+    axios.get(`${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`)
 
         .then((res) => {
             setData(res.data)
