@@ -7,7 +7,6 @@ import { CardActionArea } from '@mui/material';
 
 const MovieCard = (props) => {
     return <div>
-        {/* <img src={`https://image.tmdb.org/t/p/original/${props.img}`} /> */}
         <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
