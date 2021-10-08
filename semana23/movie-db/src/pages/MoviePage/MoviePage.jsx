@@ -17,8 +17,9 @@ const MoviePage = () => {
         <div>
             <DetailedCard
                 name={movie.original_title}
+                title={movie.title}
                 overview={movie.overview}
-                vote_average={movie.overview}
+                vote_average={movie.vote_average}
                 homepage={movie.homepage}
 
             />

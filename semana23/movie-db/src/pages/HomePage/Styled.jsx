@@ -13,7 +13,7 @@ justify-content: space-between;
 
 export const CheckDiv = styled.div`
 display: flex;
-flex-direction: row;
+flex-direction: column;
 margin-bottom: 2px;
 `
 
