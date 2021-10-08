@@ -2,12 +2,12 @@ import axios from 'axios'
 import { BASE_URL } from '../constants/Url'
 import { API_KEY } from '../constants/Key'
 
-export const Movies = (setData) => {
+export const Movies = (setData, currentPage) => {
 
-    axios.get(`${BASE_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
+    axios.get(`${BASE_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage}`)
 
         .then((res) => {
-            setData(res.data.results)
+            setData(res.data)
         })
         .catch((err) => {
             console.log(err);

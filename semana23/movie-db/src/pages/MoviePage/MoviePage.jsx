@@ -15,15 +15,14 @@ const MoviePage = () => {
 
     return (
         <div>
-            {/* movie.map((detail) => {
-                return  */<DetailedCard
-                    name={movie.original_title}
-                    overview={movie.overview}
-                    vote_average={movie.overview}
-                    homepage={movie.homepage}
+            <DetailedCard
+                name={movie.original_title}
+                overview={movie.overview}
+                vote_average={movie.overview}
+                homepage={movie.homepage}
 
-                />
-            })}
+            />
+
 
         </div>
     )
