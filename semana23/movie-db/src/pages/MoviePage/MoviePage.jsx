@@ -8,14 +8,20 @@ const MoviePage = () => {
 
     const [movie, setMovie] = useState([])
     const { movieId } = useParams()
+    const history = useHistory()
 
     useEffect(() => {
         MovieDetail(setMovie, movieId)
     }, [])
 
+    const goBack = () => {
+        history.goBack()
+    }
+
     return (
         <div>
             <DetailedCard
+                onClick={() => goBack()}
                 name={movie.original_title}
                 title={movie.title}
                 overview={movie.overview}

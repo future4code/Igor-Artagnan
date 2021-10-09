@@ -18,7 +18,7 @@ const HomePage = () => {
     useEffect(() => {
         MovieByGenre(setGenre)
         Movies(setMovies, page)
-    }, [page, genre])
+    }, [page, genreValue])
 
     const { results } = movies
 
@@ -37,10 +37,32 @@ const HomePage = () => {
         }
     }
     //transforma a array de strings em números
-    let genresFilter = genreValue.map(i=>Number(i))
+    let genresFilter = genreValue.map(i => Number(i))
 
     //Método que compara se uma array contem algo da outra
     //let isFounded = arr1.some( ai => arr2.includes(ai) )
+
+    /*  const renderVideos = () => {
+         if (genresFilter.length === 0) {
+             results && results.map((movie) => {
+                 return <MovieCard
+                     img={movie.poster_path}
+                     title={movie.original_title}
+                     details={() => goToDetails(history, movie.id)}
+                 />
+             })
+         } else {
+             results && results.filter((x) => {
+                 return  x.genre_ids === genreValue
+             }).map((x) => {
+                 return <MovieCard
+                     img={x.poster_path}
+                     title={x.original_title}
+                     details={() => goToDetails(history, x.id)}
+                 />
+             })
+         }
+     } */
 
 
     return (
@@ -64,24 +86,23 @@ const HomePage = () => {
 
             <Card>
                 {results && results.map((movie) => {
-                   /*  if (movie.genre_ids.includes(genre)) {
-                        return <MovieCard
-                            img={movie.poster_path}
-                            title={movie.original_title}
-                            details={() => goToDetails(history, movie.id)}
-                        />
-                    } */
+                    let isFounded = movie.genre_ids.some(ai => genresFilter.includes(ai))
                     return <MovieCard
                         img={movie.poster_path}
                         title={movie.original_title}
                         details={() => goToDetails(history, movie.id)}
                     />
                 })}
+
+                {/*  {renderVideos()} */}
+
             </Card>
             {console.log('Filmes', movies)}
             {console.log('Valor do filtro', genreValue)}
             {console.log('Paginação', page)}
             {console.log('Array numeros', genresFilter)}
+
+
 
 
             <PageDiv>

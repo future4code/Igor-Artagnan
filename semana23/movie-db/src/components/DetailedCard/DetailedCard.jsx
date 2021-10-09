@@ -5,6 +5,9 @@ import { GiWorld } from 'react-icons/gi'
 
 const DetailedCard = (props) => {
     return <MainDiv>
+        <div>
+        <button onClick={props.onClick}>Voltar</button>
+        </div>
         <TitleDiv>
             <h1>{props.name}</h1>
             <h3>({props.title})</h3>
