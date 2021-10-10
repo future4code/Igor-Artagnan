@@ -8,7 +8,7 @@ export const Card = styled.div`
 display: flex;
 flex-wrap: wrap;
 padding: 2px;
-justify-content: space-between;
+justify-content: space-around;
 `
 
 export const CheckDiv = styled.div`

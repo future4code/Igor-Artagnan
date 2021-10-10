@@ -22,6 +22,7 @@ const HomePage = () => {
 
     const { results } = movies
 
+
     const handleChange = (event, value) => {
         setPage(value);
     };
@@ -41,28 +42,6 @@ const HomePage = () => {
 
     //Método que compara se uma array contem algo da outra
     //let isFounded = arr1.some( ai => arr2.includes(ai) )
-
-    /*  const renderVideos = () => {
-         if (genresFilter.length === 0) {
-             results && results.map((movie) => {
-                 return <MovieCard
-                     img={movie.poster_path}
-                     title={movie.original_title}
-                     details={() => goToDetails(history, movie.id)}
-                 />
-             })
-         } else {
-             results && results.filter((x) => {
-                 return  x.genre_ids === genreValue
-             }).map((x) => {
-                 return <MovieCard
-                     img={x.poster_path}
-                     title={x.original_title}
-                     details={() => goToDetails(history, x.id)}
-                 />
-             })
-         }
-     } */
 
 
     return (
@@ -85,25 +64,33 @@ const HomePage = () => {
             </CheckDiv>
 
             <Card>
-                {results && results.map((movie) => {
-                    let isFounded = movie.genre_ids.some(ai => genresFilter.includes(ai))
-                    return <MovieCard
-                        img={movie.poster_path}
-                        title={movie.original_title}
-                        details={() => goToDetails(history, movie.id)}
-                    />
-                })}
 
-                {/*  {renderVideos()} */}
+                {
+                    results && results.filter((movie) => {
+                        let genres = movie.genre_ids
+
+                        if (genresFilter.length === 0) {
+                            return true
+                        }
+
+                        for (let id_genre of genres) {
+                            if (genresFilter.includes(id_genre)) {
+                                return true
+                            }
+                        }
+
+                    }).map((movie) => {
+                        return <MovieCard
+                            img={movie.poster_path}
+                            title={movie.original_title}
+                            details={() => goToDetails(history, movie.id)}
+                        />
+                    })
+                }
+
 
             </Card>
-            {console.log('Filmes', movies)}
-            {console.log('Valor do filtro', genreValue)}
-            {console.log('Paginação', page)}
-            {console.log('Array numeros', genresFilter)}
-
-
-
+          
 
             <PageDiv>
                 <Stack spacing={2}>
