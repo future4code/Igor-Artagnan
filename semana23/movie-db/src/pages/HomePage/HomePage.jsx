@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import { Main, Card, CheckDiv, PageDiv } from './Styled'
+import { Main, Card, CheckDiv, PageDiv, InputDiv } from './Styled'
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { MovieByGenre, Movies } from '../../services/Gets';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { goToDetails } from '../../route/coordinator'
+
 
 const HomePage = () => {
 
@@ -37,27 +38,24 @@ const HomePage = () => {
 
         }
     }
-    //transforma a array de strings em números
+  
     let genresFilter = genreValue.map(i => Number(i))
-
-    //Método que compara se uma array contem algo da outra
-    //let isFounded = arr1.some( ai => arr2.includes(ai) )
-
 
     return (
         <Main>
 
             <CheckDiv>
                 {genre.map((g) => {
-                    return <div>
+                    return <InputDiv>
                         <input
                             onChange={handleChangeCheck}
                             value={g.id}
                             type="checkbox"
                             name={g.name}
                             id={g.id}
-                        /> {g.name}&nbsp;&nbsp;
-                    </div>
+                        /> <p>{g.name}</p>&nbsp;&nbsp;
+
+                    </InputDiv>
                 })
                 }
 
@@ -90,11 +88,12 @@ const HomePage = () => {
 
 
             </Card>
-          
+
 
             <PageDiv>
+
                 <Stack spacing={2}>
-                    <Pagination count={500} page={page} onChange={handleChange} />
+                    <Pagination count={500} variant="outlined" page={page} onChange={handleChange} shape="rounded" size="medium" />
                 </Stack>
 
             </PageDiv>

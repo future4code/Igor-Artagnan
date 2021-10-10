@@ -1,50 +1,78 @@
 import styled from 'styled-components'
 
 export const MainDiv = styled.div`
-border: 1px solid red;
 display: flex;
 flex-direction: column;
 justify-content: center;
-/* background: rgba( 255, 255, 255, 0.5 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 3.5px );
--webkit-backdrop-filter: blur( 3.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+background-color:#030303;
+
+h1, h2, h3, h4{
+    color: white
+}
+
 `
 
 export const TitleDiv = styled.div`
-border: 1px solid red;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+margin-top: 5px;
+border-bottom: 1px solid white;
+height: 200px;
 `
 
 export const OverviewDiv = styled.div`
-border: 1px solid red;
-display: flex;
-flex-direction: column;
-justify-content: center;
-`
-
-
-export const VoteDiv = styled.div`
-border: 1px solid red;
+text-align: center;
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
+height: 200px;
 
-spam {
-    display: flex;
+`
+
+export const HeaderImage = styled.div`
+display: flex;
+justify-content: center;
+width: 100vw;
+height: 42vh;
+background-image: url(${props => props.background});
+background-repeat: no-repeat;
+background-position: top;
+background-size: cover;
+    img {
+        margin-top: 30px;
+        border-radius: 4px;
+        width: 35vw;
+        height: 30vh;
+        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 0px rgba(0,0,0,0);
+                }
+                
+@media (min-width: 900px) {
+background-position: center;
+height: 300px;
+    img {
+        width: 160px;
+        height: 225px;
+                }
 }
 `
-export const SiteDiv = styled.div`
-border: 1px solid red;
+
+export const ButtonDiv = styled.div`
+height: 50px;
 display: flex;
-flex-direction: column;
-justify-content: center;
 align-items: center;
+justify-content: left;
+
+button{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+spam{
+    width: 100%;
+}
 
 `
