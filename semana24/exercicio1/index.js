@@ -5,4 +5,11 @@
 //- Para a entrada `[1, 2, 3, ... , 45, 46, 48, 49, ... , 100]`, o retorno deve ser `47`
 //- Para a entrada `[1, 2, 3, ... , 69, 71, 72, ... , 100]`, o retorno deve ser `70`
 
-console.log('test')
+const findMissingNumber = (array) => {
+    const expectedSum = 5050;
+    let sum = 0;
+    for (const num of array) {
+        sum += num;
+    }
+    return expectedSum - sum;
+};
