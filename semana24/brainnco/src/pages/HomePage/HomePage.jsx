@@ -63,7 +63,7 @@ const HomePage = () => {
                 <h3>{num}</h3>
             </div>
         })}
-        {/* <ColorDiv> </ColorDiv> */}
+        {/* <ColorDiv> </ColorDiv>   */}
 
         <p> Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</p>
 
