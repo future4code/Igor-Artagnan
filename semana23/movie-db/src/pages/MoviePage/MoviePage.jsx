@@ -28,9 +28,7 @@ const MoviePage = () => {
                 vote_average={movie.vote_average}
                 homepage={movie.homepage}
                 background={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-
             />
-
 
         </div>
     )

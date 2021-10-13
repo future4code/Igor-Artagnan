@@ -38,7 +38,7 @@ const HomePage = () => {
 
         }
     }
-  
+
     let genresFilter = genreValue.map(i => Number(i))
 
     return (
@@ -63,32 +63,29 @@ const HomePage = () => {
 
             <Card>
 
-                {
-                    results && results.filter((movie) => {
-                        let genres = movie.genre_ids
+                {results && results.filter((movie) => {
+                    let genres = movie.genre_ids
 
-                        if (genresFilter.length === 0) {
+                    if (genresFilter.length === 0) {
+                        return true
+                    }
+
+                    for (let id_genre of genres) {
+                        if (genresFilter.includes(id_genre)) {
                             return true
                         }
+                    }
 
-                        for (let id_genre of genres) {
-                            if (genresFilter.includes(id_genre)) {
-                                return true
-                            }
-                        }
-
-                    }).map((movie) => {
-                        return <MovieCard
-                            img={movie.poster_path}
-                            title={movie.original_title}
-                            details={() => goToDetails(history, movie.id)}
-                        />
-                    })
+                }).map((movie) => {
+                    return <MovieCard
+                        img={movie.poster_path}
+                        title={movie.original_title}
+                        details={() => goToDetails(history, movie.id)}
+                    />
+                })
                 }
 
-
             </Card>
-
 
             <PageDiv>
 
@@ -99,7 +96,6 @@ const HomePage = () => {
             </PageDiv>
 
         </Main>
-
 
     )
 }

@@ -10,8 +10,7 @@ background-color: grey;
 `
 
 export const TitleDiv = styled.div`
-/* border: 1px solid red;
- */display: flex;
+display: flex;
 justify-content: center;
 background-color: grey;
 margin-top: 10px;

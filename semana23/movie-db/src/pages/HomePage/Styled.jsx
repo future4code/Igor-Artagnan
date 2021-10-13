@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Main = styled.div`
 background-color:  #030303;;
-
 `
 export const Card = styled.div`
 display: flex;
@@ -26,7 +25,6 @@ align-items: center;
 justify-content: space-evenly;
 margin-left: 0px;
 }
-
 `
 
 export const PageDiv = styled.div`
