@@ -1,5 +1,5 @@
 import axios from "axios";
-import BASE_URL from '../constants/url'
+import { BASE_URL } from '../constants/url'
 
 export const getLoterias = (setData) => {
     axios.get(`${BASE_URL}loterias`)
