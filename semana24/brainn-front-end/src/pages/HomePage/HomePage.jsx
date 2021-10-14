@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { getLoterias, getConcursos, getResultados } from '../../services/get'
-import { ResultDiv, ColorDiv } from './styled'
+import { ResultDiv, NumberDiv, SelectDiv, InfoDiv, ConcursoDiv, ColorDiv } from './styled'
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select'; 
+import Select from '@mui/material/Select';
 
 const HomePage = () => {
 
@@ -36,36 +36,54 @@ const HomePage = () => {
 
     const { numeros } = resultados
 
+    /* const backgroundColor = () => {
+        let color = '#6BEFA3'
+
+        switch (color) {
+            case
+        }
+            
+    } */
+
+    
+
     return <div>
-        HOME
+        <ColorDiv /* color={()=>} */>
+            <SelectDiv>
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
 
-         <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <Select
+                        value={id}
+                        onChange={handleChange}
+                    >
+                        <MenuItem value="">
 
-            <Select
-                value={id}
-                onChange={handleChange}
-            >
-                <MenuItem value="">
+                        </MenuItem>
+                        {loterias.map((x) => {
+                            return <MenuItem
+                                key={x.id}
+                                value={x.id}>{x.nome.toUpperCase()}</MenuItem>
+                        })}
 
-                </MenuItem>
-                {loterias.map((x) => {
-                    return <MenuItem
-                        key={x.id}
-                        value={x.id}>{x.nome.toUpperCase()}</MenuItem>
-                })}
+                    </Select>
 
-            </Select>
+                </FormControl>
 
-        </FormControl> 
-
-        {numeros && numeros.map((num) => {
-            return <div>
-                <h3>{num}</h3>
-            </div>
-        })}
-         <ColorDiv> </ColorDiv>   
-
-        <p> Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</p>
+            </SelectDiv>
+            <ConcursoDiv>
+                <h3>CONCURSO N° {concursoAtual ? concursoAtual : '2359'}</h3>
+            </ConcursoDiv>
+        </ColorDiv>
+        <ResultDiv>
+            {numeros && numeros.map((num) => {
+                return <NumberDiv>
+                    <h3>{num}</h3>
+                </NumberDiv>
+            })}
+        </ResultDiv>
+        <InfoDiv>
+            <p> Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</p>
+        </InfoDiv>
 
         {/* LOG'S DE TESTES */}
         {console.log('------------------------------')}
@@ -73,6 +91,8 @@ const HomePage = () => {
         {console.log('Valor do concurso que tenha o mesmo ID que foi escolhido no select', concursoAtual)}
         {console.log('Estado que guarda o resultado do sorteio (resposta da requisição que usa o id do select para ser feita)', numeros)}
         {console.log(concursoAtual.length)}
+        {console.log('Resultados', resultados)}
+
 
     </div >
 }
