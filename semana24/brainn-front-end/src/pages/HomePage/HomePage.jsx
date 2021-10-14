@@ -11,6 +11,7 @@ const HomePage = () => {
     const [lotoId, setLotoId] = useState('0');
     const [concursos, setConcursos] = useState([]);
     const [resultados, setResultados] = useState([]);
+    const [cor, setCor] = useState('')
 
     const { numeros, loteria } = resultados
 
@@ -32,7 +33,6 @@ const HomePage = () => {
 
 
     useEffect(() => {
-
         getLoterias(setLoterias)
         getConcursos(setConcursos)
         if (concursoAtual.length === 0) {
@@ -42,39 +42,48 @@ const HomePage = () => {
 
     }, [lotoId])
 
+    useEffect(() => {
+        backgroundColor()
+    }, [resultados.loteria])
 
 
-    /* const backgroundColor = () => {
-        let color = '#6BEFA3'
+    const backgroundColor = () => {
 
-        switch (color) {
-            case
+        switch (resultados.loteria) {
+            case 0:
+                return setCor('#6BEFA3')
+            case 1:
+                return setCor('#8666EF')
+            case 2:
+                return setCor('#DD7AC6')
+            case 3:
+                return setCor('#FFAB64')
+            case 4:
+                return setCor('#5AAD7D')
+            case 5:
+                return setCor('#BFAF83')
+            default:
+                return setCor('#6BEFA3')
         }
-            
-    } */
-
-
+    }
 
     return <div>
-        <ColorDiv /* color={()=>} */>
+
+        <ColorDiv color={cor} >
             <SelectDiv>
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
-
                     <Select
                         value={lotoId}
                         onChange={handleChange}
                     >
                         <MenuItem value="">
-
                         </MenuItem>
                         {loterias.map((x) => {
                             return <MenuItem
                                 key={x.id}
                                 value={x.id}>{x.nome.toUpperCase()}</MenuItem>
                         })}
-
                     </Select>
-
                 </FormControl>
 
             </SelectDiv>
@@ -96,13 +105,14 @@ const HomePage = () => {
         </InfoDiv>
 
         {/* LOG'S DE TESTES */}
-        {console.log('------------------------------')}
+        {/* {console.log('------------------------------')}
         {console.log('Estado que guarda os concursos', concursos)}
         {console.log('Valor do concurso que tenha o mesmo ID que foi escolhido no select', concursoAtual)}
         {console.log('Estado que guarda o resultado do sorteio (resposta da requisição que usa o id do select para ser feita)', numeros)}
         {console.log('loterias', loterias)}
-        {console.log('Resultados', resultados)}
-        {/* {console.log('Nome do concurso atual', nomeConcurso)} */}
+        {console.log('Resultados', resultados.loteria)}
+        {console.log('Nome do concurso atual', nomeConcurso)}
+        {console.log('ID', lotoId)} */}
 
 
     </div >
