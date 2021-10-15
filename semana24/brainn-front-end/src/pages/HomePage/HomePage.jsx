@@ -29,9 +29,6 @@ const HomePage = () => {
         return concurso.id === loteria
     }).shift()
 
-    /* const { nome, id } = nomeConcurso */
-
-
     useEffect(() => {
         getLoterias(setLoterias)
         getConcursos(setConcursos)
@@ -76,7 +73,7 @@ const HomePage = () => {
                         value={lotoId}
                         onChange={handleChange}
                     >
-                        <MenuItem value="">
+                        <MenuItem value="Selecione">
                         </MenuItem>
                         {loterias.map((x) => {
                             return <MenuItem
@@ -113,8 +110,6 @@ const HomePage = () => {
         {console.log('Resultados', resultados.loteria)}
         {console.log('Nome do concurso atual', nomeConcurso)}
         {console.log('ID', lotoId)} */}
-
-
     </div >
 }
 
