@@ -46,5 +46,6 @@ margin-bottom: 20px;
 height: 250px;
 border-radius: 0 0 50% 50% ;
 background-color: ${({ color }) => color};
+
 `
 

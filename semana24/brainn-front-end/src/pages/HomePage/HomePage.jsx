@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getLoterias, getConcursos, getResultados } from '../../services/get'
 import { ResultDiv, NumberDiv, SelectDiv, InfoDiv, ConcursoDiv, ColorDiv } from './styled'
+import Logo from '../../assets/logo.svg'
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -85,6 +86,7 @@ const HomePage = () => {
 
             </SelectDiv>
             <ConcursoDiv>
+                <img src={Logo} alt="Logo" />
                 {<h2>{nomeConcurso === undefined ? 'MEGA-SENA' : nomeConcurso.nome.toUpperCase()} </h2>}
                 {<h3>CONCURSO N° {concursoAtual.length > 0 ? concursoAtual : '2359'}</h3>}
 
