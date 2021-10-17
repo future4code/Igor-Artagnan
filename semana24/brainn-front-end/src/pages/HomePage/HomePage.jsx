@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getLoterias, getConcursos, getResultados } from '../../services/get'
-import moment from 'moment';
-import { ResultDiv, NumberDiv, SelectDiv, FooterDiv, ConcursoDiv, ColorDiv, MainDiv, NumeroConcurso, InfoDiv } from './styled'
+/* import moment from 'moment';
+ */import { ResultDiv, NumberDiv, SelectDiv, FooterDiv, ConcursoDiv, ColorDiv, MainDiv, NumeroConcurso, InfoDiv, DesktopDiv } from './styled'
 import Logo from '../../assets/logo.svg'
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -31,10 +31,9 @@ const HomePage = () => {
         return concurso.id === loteria
     }).shift()
 
-
-    /* let data = resultados.data */
-    let data = moment()
-    let dataFormatada = data.format("DD/MM/yyyy")
+    let dataInput = resultados.data
+    let data = new Date(dataInput);
+    let dataFormatada = data.toLocaleDateString('pt-BR', { timeZone: 'UTC' })
 
 
     useEffect(() => {
@@ -103,6 +102,9 @@ const HomePage = () => {
                 </NumeroConcurso>
 
             </ConcursoDiv>
+            <DesktopDiv>
+                {<h3>CONCURSO - {concursoAtual.length > 0 ? concursoAtual : '2359'} {dataFormatada}</h3>}
+            </DesktopDiv>
         </ColorDiv>
         <InfoDiv>
             <ResultDiv>
@@ -115,6 +117,7 @@ const HomePage = () => {
             <FooterDiv>
                 <p> Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</p>
             </FooterDiv>
+            {console.log('Data', dataFormatada)}
         </InfoDiv>
 
 

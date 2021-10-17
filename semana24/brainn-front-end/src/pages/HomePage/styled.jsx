@@ -3,12 +3,12 @@ import styled from 'styled-components'
 
 export const MainDiv = styled.div`
 background-color: #e5e3e3;
-border: 1px solid red;
-
+/* border: 1px solid red;
+ */
   @media (min-width: 900px) {
     display: flex;
     height: 694px;
-    /* width: 1516px; */
+   
  
 }  
 `
@@ -21,7 +21,16 @@ flex-direction: row;
 width: 100%;
 height: 203px;
 flex-wrap: wrap; 
-border: 1px solid red;
+/* border: 1px solid red;
+ */
+@media (min-width: 900px) {
+   
+height: 543px;
+   
+
+}
+
+
 
 `
 
@@ -33,7 +42,17 @@ width: 30px;
 height: 30px;
 border-radius: 50%;
 background-color: white;
-border: 1px solid red;
+/* border: 1px solid red;
+ */
+
+
+@media (min-width: 900px) {
+    width: 60px;
+    height: 60px;
+ 
+
+}
+
 
 
 h3{
@@ -49,25 +68,37 @@ height: 100px;
 display: flex;
 justify-content: center;
 align-items: center;
-border: 1px solid red;
-
+/* border: 1px solid red;
+ */
 `
 
 export const FooterDiv = styled.div`
 text-align: center;
 margin: 32px;
 
+@media (min-width: 900px) {
+   
+p {
+    margin-top: 69px;
+}
+
+}
+
  p{
     font-size: 14px;
     line-height: 21px;
+
+  
+
+
  }
 
 `
 
 export const ConcursoDiv = styled.div`
 text-align: center;
-border: 1 px solid red;
-
+/* border: 1 px solid red;
+ */
 h3{
     font-size: 14px;
     margin-top: 33px;
@@ -85,6 +116,8 @@ h2{
     justify-content: center;
     align-items: center;
     justify-content: space-around;
+    margin-top: 138px;
+
 
 }
 
@@ -94,13 +127,17 @@ export const ColorDiv = styled.div`
 margin-bottom: 20px;
 background-color: ${({ color }) => color};
 height: 314px;
-border: 1px solid red;
-
+/* border: 1px solid red;
+ */
 
  @media (min-width: 900px) {
     clip-path: polygon(0);
     height: 100%;
     width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+
 
 
 }  
@@ -114,10 +151,23 @@ export const NumeroConcurso = styled.div`
 
 export const InfoDiv = styled.div`
  @media (min-width: 900px){
-    border: 1px solid red;
-    width: 100%auto;
+/*     border: 1px solid red;
+ */    width: 1015px;
+
 
 } 
+`
+
+export const DesktopDiv = styled.div`
+border: 1px solid red;
+display: none;
+
+@media (min-width: 900px){
+    display: flex;
+    height: 50px;
+    flex-direction: column;
+    justify-content: center;
+}
 `
 
 
