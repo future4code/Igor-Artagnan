@@ -1,51 +1,125 @@
 import styled from 'styled-components'
 
+
+export const MainDiv = styled.div`
+background-color: #e5e3e3;
+border: 1px solid red;
+
+  @media (min-width: 900px) {
+    display: flex;
+    height: 694px;
+    /* width: 1516px; */
+ 
+}  
+`
+
 export const ResultDiv = styled.div`
 display: flex;
 justify-content: space-around;
 align-items: center;
 flex-direction: row;
 width: 100%;
-height: 250px;
-border: 1px solid red;
+height: 203px;
 flex-wrap: wrap; 
+border: 1px solid red;
+
 `
 
 export const NumberDiv = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-width: 50px;
-height: 50px;
+width: 30px;
+height: 30px;
 border-radius: 50%;
-border: 1px solid black;
+background-color: white;
+border: 1px solid red;
+
+
+h3{
+    color: black;
+    font-weight: 700;
+    
+}
 `
 
 export const SelectDiv = styled.div`
 width: 100%;
 height: 100px;
-border: 1 px solid red;
 display: flex;
 justify-content: center;
 align-items: center;
+border: 1px solid red;
+
 `
 
-export const InfoDiv = styled.div`
+export const FooterDiv = styled.div`
 text-align: center;
-border: 1 px solid red;
+margin: 32px;
+
+ p{
+    font-size: 14px;
+    line-height: 21px;
+ }
 
 `
 
 export const ConcursoDiv = styled.div`
 text-align: center;
 border: 1 px solid red;
-`
-export const ColorDiv = styled.div`
-border: 1px solid red;
-margin-bottom: 20px;
-height: 250px;
-border-radius: 0 0 50% 50% ;
-background-color: ${({ color }) => color};
+
+h3{
+    font-size: 14px;
+    margin-top: 33px;
+
+}
+
+h2{
+    font-size: 30px;
+    margin-top: 5px;
+
+}
+  @media (min-width: 900px) {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
 
 `
+export const ColorDiv = styled.div`
+margin-bottom: 20px;
+background-color: ${({ color }) => color};
+height: 314px;
+border: 1px solid red;
+
+
+ @media (min-width: 900px) {
+    clip-path: polygon(0);
+    height: 100%;
+    width: 500px;
+
+
+}  
+`
+
+export const NumeroConcurso = styled.div`
+ @media (min-width: 900px){
+    display: none;
+} 
+`
+
+export const InfoDiv = styled.div`
+ @media (min-width: 900px){
+    border: 1px solid red;
+    width: 100%auto;
+
+} 
+`
+
+
+
 

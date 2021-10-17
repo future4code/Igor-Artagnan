@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getLoterias, getConcursos, getResultados } from '../../services/get'
-import { ResultDiv, NumberDiv, SelectDiv, InfoDiv, ConcursoDiv, ColorDiv } from './styled'
+import moment from 'moment';
+import { ResultDiv, NumberDiv, SelectDiv, FooterDiv, ConcursoDiv, ColorDiv, MainDiv, NumeroConcurso, InfoDiv } from './styled'
 import Logo from '../../assets/logo.svg'
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -29,6 +30,12 @@ const HomePage = () => {
     let nomeConcurso = loterias.filter((concurso) => {
         return concurso.id === loteria
     }).shift()
+
+
+    /* let data = resultados.data */
+    let data = moment()
+    let dataFormatada = data.format("DD/MM/yyyy")
+
 
     useEffect(() => {
         getLoterias(setLoterias)
@@ -65,54 +72,63 @@ const HomePage = () => {
         }
     }
 
-    return <div>
+    return <MainDiv>
 
         <ColorDiv color={cor} >
-            <SelectDiv>
-                <FormControl sx={{ m: 1, minWidth: 120 }}>
-                    <Select
-                        value={lotoId}
-                        onChange={handleChange}
-                    >
-                        <MenuItem value="Selecione">
-                        </MenuItem>
-                        {loterias.map((x) => {
-                            return <MenuItem
-                                key={x.id}
-                                value={x.id}>{x.nome.toUpperCase()}</MenuItem>
-                        })}
-                    </Select>
-                </FormControl>
+            <div>
+                <SelectDiv >
+                    <FormControl sx={{/*  m: 1, minWidth: 120, */  backgroundColor: 'white', width: 250, borderRadius: 5 }}>
+                        <Select
+                            sx={{ borderRadius: 5 }}
+                            value={lotoId}
+                            onChange={handleChange}
+                        >
+                            <MenuItem value="Selecione">
+                            </MenuItem>
+                            {loterias.map((x) => {
+                                return <MenuItem
+                                    key={x.id}
+                                    value={x.id}>{x.nome.toUpperCase()}</MenuItem>
+                            })}
+                        </Select>
+                    </FormControl>
+                </SelectDiv>
+            </div>
 
-            </SelectDiv>
             <ConcursoDiv>
                 <img src={Logo} alt="Logo" />
                 {<h2>{nomeConcurso === undefined ? 'MEGA-SENA' : nomeConcurso.nome.toUpperCase()} </h2>}
-                {<h3>CONCURSO N° {concursoAtual.length > 0 ? concursoAtual : '2359'}</h3>}
+                <NumeroConcurso>
+                    {<h3>CONCURSO N° {concursoAtual.length > 0 ? concursoAtual : '2359'}</h3>}
+                </NumeroConcurso>
 
             </ConcursoDiv>
         </ColorDiv>
-        <ResultDiv>
-            {numeros && numeros.map((num) => {
-                return <NumberDiv>
-                    <h3>{num}</h3>
-                </NumberDiv>
-            })}
-        </ResultDiv>
         <InfoDiv>
-            <p> Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</p>
+            <ResultDiv>
+                {numeros && numeros.map((num) => {
+                    return <NumberDiv>
+                        <h3>{num}</h3>
+                    </NumberDiv>
+                })}
+            </ResultDiv>
+            <FooterDiv>
+                <p> Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</p>
+            </FooterDiv>
         </InfoDiv>
 
-        {/* LOG'S DE TESTES */}
-        {/* {console.log('------------------------------')}
+
+        {/*  
+        {console.log('------------------------------')}
         {console.log('Estado que guarda os concursos', concursos)}
         {console.log('Valor do concurso que tenha o mesmo ID que foi escolhido no select', concursoAtual)}
         {console.log('Estado que guarda o resultado do sorteio (resposta da requisição que usa o id do select para ser feita)', numeros)}
         {console.log('loterias', loterias)}
-        {console.log('Resultados', resultados.loteria)}
+        {console.log('Resultados', resultados.data)}
         {console.log('Nome do concurso atual', nomeConcurso)}
-        {console.log('ID', lotoId)} */}
-    </div >
+        {console.log('ID', lotoId)}
+        {console.log('Data concurso', dataFormatada)}  */}
+    </MainDiv >
 }
 
 export default HomePage
