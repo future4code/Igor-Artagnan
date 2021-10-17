@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getLoterias, getConcursos, getResultados } from '../../services/get'
-/* import moment from 'moment';
- */import { ResultDiv, NumberDiv, SelectDiv, FooterDiv, ConcursoDiv, ColorDiv, MainDiv, NumeroConcurso, InfoDiv, DesktopDiv } from './styled'
+import { ResultDiv, NumberDiv, SelectDiv, FooterDiv, ConcursoDiv, ColorDiv, MainDiv, NumeroConcurso, InfoDiv, DesktopDiv, LogoDiv } from './styled'
 import Logo from '../../assets/logo.svg'
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -76,7 +75,7 @@ const HomePage = () => {
         <ColorDiv color={cor} >
             <div>
                 <SelectDiv >
-                    <FormControl sx={{/*  m: 1, minWidth: 120, */  backgroundColor: 'white', width: 250, borderRadius: 5 }}>
+                    <FormControl sx={{ backgroundColor: 'white', width: 250, borderRadius: 5 }}>
                         <Select
                             sx={{ borderRadius: 5 }}
                             value={lotoId}
@@ -95,15 +94,18 @@ const HomePage = () => {
             </div>
 
             <ConcursoDiv>
-                <img src={Logo} alt="Logo" />
-                {<h2>{nomeConcurso === undefined ? 'MEGA-SENA' : nomeConcurso.nome.toUpperCase()} </h2>}
+                <LogoDiv>
+                    <img src={Logo} alt="Logo" />
+                    {<h2>{nomeConcurso === undefined ? 'MEGA-SENA' : nomeConcurso.nome.toUpperCase()} </h2>}
+                </LogoDiv>
                 <NumeroConcurso>
                     {<h3>CONCURSO N° {concursoAtual.length > 0 ? concursoAtual : '2359'}</h3>}
                 </NumeroConcurso>
 
             </ConcursoDiv>
             <DesktopDiv>
-                {<h3>CONCURSO - {concursoAtual.length > 0 ? concursoAtual : '2359'} {dataFormatada}</h3>}
+                {<h3>CONCURSO -  </h3>}
+                {<h3> {concursoAtual.length > 0 ? concursoAtual : '2359'} {dataFormatada}</h3>}
             </DesktopDiv>
         </ColorDiv>
         <InfoDiv>
@@ -120,17 +122,6 @@ const HomePage = () => {
             {console.log('Data', dataFormatada)}
         </InfoDiv>
 
-
-        {/*  
-        {console.log('------------------------------')}
-        {console.log('Estado que guarda os concursos', concursos)}
-        {console.log('Valor do concurso que tenha o mesmo ID que foi escolhido no select', concursoAtual)}
-        {console.log('Estado que guarda o resultado do sorteio (resposta da requisição que usa o id do select para ser feita)', numeros)}
-        {console.log('loterias', loterias)}
-        {console.log('Resultados', resultados.data)}
-        {console.log('Nome do concurso atual', nomeConcurso)}
-        {console.log('ID', lotoId)}
-        {console.log('Data concurso', dataFormatada)}  */}
     </MainDiv >
 }
 

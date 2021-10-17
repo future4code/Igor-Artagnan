@@ -8,7 +8,7 @@ export const getLoterias = (setData) => {
             setData(res.data)
         })
         .catch((err) => {
-            console.log(err)
+            alert(err)
         })
 }
 
@@ -19,7 +19,7 @@ export const getConcursos = (setData) => {
             setData(res.data)
         })
         .catch((err) => {
-            console.log(err)
+            alert(err)
         })
 }
 
@@ -30,6 +30,6 @@ export const getResultados = (setData, id) => {
             setData(res.data)
         })
         .catch((err) => {
-            console.log(err)
+            alert(err)
         })
 }
