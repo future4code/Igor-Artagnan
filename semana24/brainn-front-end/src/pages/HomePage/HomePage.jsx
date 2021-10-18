@@ -16,9 +16,7 @@ const HomePage = () => {
 
     const { numeros, loteria } = resultados
 
-    const handleChange = (event) => {
-        setLotoId(event.target.value);
-    };
+    const handleChange = event => setLotoId(event.target.value);
 
     let concursoAtual = concursos.filter((concurso) => {
         return concurso.loteriaId === lotoId
@@ -34,13 +32,11 @@ const HomePage = () => {
     let data = new Date(dataInput);
     let dataFormatada = data.toLocaleDateString('pt-BR', { timeZone: 'UTC' })
 
-
     useEffect(() => {
         getLoterias(setLoterias)
         getConcursos(setConcursos)
-        if (concursoAtual.length === 0) {
-            getResultados(setResultados, "2359")
-        }
+        if (concursoAtual.length === 0) getResultados(setResultados, "2359")
+        
         getResultados(setResultados, concursoAtual)
 
     }, [lotoId])
@@ -48,7 +44,6 @@ const HomePage = () => {
     useEffect(() => {
         backgroundColor()
     }, [resultados.loteria])
-
 
     const backgroundColor = () => {
 
@@ -119,7 +114,7 @@ const HomePage = () => {
             <FooterDiv>
                 <p> Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</p>
             </FooterDiv>
-            {console.log('Data', dataFormatada)}
+        
         </InfoDiv>
 
     </MainDiv >
