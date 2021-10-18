@@ -7,9 +7,9 @@ let retornaRepetido = (arrayOriginal) => {
 
         for (let j = i + 1; j < arrayOriginal.length; j++) {  // O loop roda uma vez para cada elemento
 
-            if (arrayOriginal[i] == arrayOriginal[j]) {      // O if compara cada elemento da array com todos os outros, 
-                                                            //  retornando o que tiver sua aparição repetida.
-                 console.log(arrayOriginal[i])
+            if (arrayOriginal[i] !== arrayOriginal[j]) {      // O if compara cada elemento da array com todos osoutros, 
+                                                            //  retornando o que não se repete na array.
+                 console.log(arrayOriginal[j])
             }
         }
 
@@ -17,6 +17,6 @@ let retornaRepetido = (arrayOriginal) => {
 
 }
 
-console.log(retornaRepetido([4,1,2,1,2])) 
+console.log(retornaRepetido([2,2,1])) 
 
 
